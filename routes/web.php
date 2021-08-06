@@ -1,0 +1,78 @@
+<?php
+
+use App\Http\Controllers\admin\CardsController;
+
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ReferController;
+use App\Http\Controllers\admin\ConfigController;
+use App\Http\Controllers\admin\UsersController;
+use App\Http\Controllers\admin\BuysController;
+use App\Http\Controllers\BuysController as ControllersBuysController;
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+require __DIR__.'/auth.php';
+
+Route::post('/dashboard/search', [IndexController::class, 'search'])->name('buscar');
+
+Route::get('/dashboard/{id}', [IndexController::class, 'index'])->name('dashboard');
+
+Route::get('/referido/{id}', [ReferController::class, 'index'])->name('refer')->middleware('auth');
+
+Route::get('/info', [IndexController::class, 'info'])->name('info')->middleware('auth');
+Route::post('/info/edit', [IndexController::class, 'edit_info'])->name('info.edit')->middleware('auth');
+Route::post('/info/pass', [IndexController::class, 'edit_pass'])->name('pass.edit')->middleware('auth');
+
+Route::get('/register/{id}', [ReferController::class, 'referir'])->name('refer.referir')->middleware('guest');
+Route::post('/register/referido', [ReferController::class, 'store'])->name('refer.store')->middleware('guest');
+
+Route::get('/card/{id}', [IndexController::class, 'card'])->name('card')->middleware('auth');
+
+Route::post('/card/{id}/buy', [IndexController::class, 'buyCard'])->name('buy.card')->middleware('auth');
+
+Route::get('/buy', [ControllersBuysController::class, 'index'])->name('buy')->middleware('auth');
+
+
+// Route::get('/correo', function () {
+
+//     $data = ['name' => 'Para Rami'];
+    
+//     Mail::to('rami92olivera@gmail.com')->send(new TestMail($data));
+
+//     return "Correo enviado";
+
+// });
+
+Route::prefix('/admin')->middleware('auth')->group(function(){
+    
+    Route::get('/', [ConfigController::class, 'index'])->name('admin');
+
+    Route::get('/cards', [CardsController::class, 'index'])->name('cards');
+    Route::get('/cards/create', [CardsController::class, 'create'])->name('cards.create');
+    Route::post('/cards/create', [CardsController::class, 'store'])->name('cards.store');
+    Route::get('/cards/{id}/delete', [CardsController::class, 'delete'])->name('cards.delete');
+
+    Route::get('/users', [UsersController::class, 'index'])->name('users');
+    Route::get('/users/{id}/delete', [UsersController::class, 'delete'])->name('users.delete');
+
+    Route::get('/buys', [BuysController::class, 'index'])->name('buys');
+    Route::get('/buys/{id}/delete', [BuysController::class, 'delete'])->name('buys.delete');
+
+    Route::get('/config', [ConfigController::class, 'config'])->name('config');
+    Route::post('/config/update', [ConfigController::class, 'store'])->name('config.update');
+
+
+});
