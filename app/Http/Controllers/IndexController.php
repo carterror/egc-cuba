@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestMail;
 use App\Models\Card;
 use App\Models\User;
 use App\Models\Buy;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
@@ -66,9 +68,6 @@ class IndexController extends Controller
 
     public function buyCard(Request $request, $id)
     {
-        $users = User::where('rango', '<', 20)->get();
-
-        return $users;
         
         $request->validate([
             'currency' => ['required'],
@@ -83,16 +82,19 @@ class IndexController extends Controller
             'price' => $request->valor*Config::get('tienda.'.$request->currency, 50),
         ]);
 
+        $array = [
+            "name" => Auth::user(),
+            'tarjeta' => Card::find($id)->name,
+            'valor' => $request->valor,
+            'currency' => $request->currency,   
+            'price' => $request->valor*Config::get('tienda.'.$request->currency, 50),
+            'id' => $card->id
+        ];
+
+        // return view('emails.test', $array);
         //email
-
-
-        $user = User::find(Auth::user()->id);
-        $user->puntos += $request->valor*Config::get('tienda.bono', 1);
-        $user->save();
-
-        $master = User::find($user->master);
-        $master->puntos += $request->valor*0.5;
-        $master->save();
+        $correos = User::where('type', 1)->get();
+        Mail::to($correos)->send(new TestMail($array));
 
         return redirect()->route('dashboard', 'all')->with(['icon' => 'small mdi-action-done green-text'])->with(['type' => 'green-text'])->with(['message' => 'Compra exitosa, Estado: en Espera. Asegurese de haber completado su información...']);
     }

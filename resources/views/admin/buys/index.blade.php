@@ -22,6 +22,7 @@ Compras
                     <table class="responsive-table striped">
                         <thead>
                           <tr>
+                            <th data-field="id">ID</th>
                               <th data-field="id">Usuario</th>
                               <th data-field="name">Correo</th>
                               <th data-field="price">Teléfono</th>
@@ -37,6 +38,7 @@ Compras
                             @foreach ($buys as $buy)
                             
                             <tr>
+                                <td>{{$buy->id}}</td>
                                 <td>{{$buy->user->name}}</td>
                                 <td>{{$buy->user->email}}</td>
                                 <td>{{$buy->user->phone}}</td>
@@ -53,8 +55,8 @@ Compras
                                 <td>{{$buy->valor}} USD</td>
                                 <td>{{$buy->price}} {{$buy->currency}}</td>
                                 <td>
-                                    <a href="" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Completar"><i class="mdi-action-done small"></i></a>
-                                    <a href="{{route('buys.delete', $buy->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Cancelar"><i class="mdi-notification-dnd-forwardslash small"></i></a>
+                                    <a href="{{route('buys.delete', [$buy->id, 2])}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Completar"><i class="mdi-action-done small"></i></a>
+                                    <a href="{{route('buys.delete', [$buy->id, 0])}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Cancelar"><i class="mdi-notification-dnd-forwardslash small"></i></a>
                                 </td>
                             </tr>
                           @endforeach

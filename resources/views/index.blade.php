@@ -53,7 +53,7 @@
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light ">
                     <a href="{{route('card', $card->id)}}"><img class="activator" src="{{asset('img/'.$card->type.'.png')}}"></a>
-                    <div class="" style="position: absolute; bottom: 1px; right: 1px; padding: 10px; font-weight: bold; background-color: rgba(255, 255, 255, 0.699);">$ {{$card->price}}</div>
+                    <div class="" style="position: absolute; bottom: 1px; right: 1px; padding: 10px; font-weight: bold; background-color: rgba(255, 255, 255, 0.699);">$ {{$card->price}} - {{$card->top}}</div>
                     </div>
                     <div class="card-content" style="padding: 0px 0px 0px 10px;">
                         <span class="card-title bold grey-text text-darken-4">{{$card->name}}</span>
@@ -61,7 +61,7 @@
                     <div class="card-action right-align" style="padding: 10px;">
                     @if (Route::has('login'))
                     @auth
-                    <a style="color: #00bfa5;">$ {{$card->price*Config::get('tienda.convert', 1)}}</a>
+                    {{-- <a style="color: #00bfa5;">{{$card->price*Config::get('tienda.cup', 1)}} - {{$card->top*Config::get('tienda.cup', 1)}} cup</a> --}}
                     <a href="{{route('card', $card->id)}}" class="waves-effect waves-light btn grey-text text-lighten-5">Ver</a>
                     @else
                     <a href="{{route('register')}}" class="waves-effect waves-light btn grey-text text-lighten-5">Ingresar</a>

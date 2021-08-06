@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Buy;
 use App\Models\User;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 
 class Range extends Command
 {
@@ -39,14 +40,14 @@ class Range extends Command
      */
     public function handle()
     {
-        $users = User::where('rango', 20)->where('rango', '<', 10)->get();
+        $users = User::where('rango', '<', 20)->get();
 
         foreach ($users as $user) {
 
             $count = 0;
             $refers = User::where('master', $user->id)->get();
             foreach ($refers as $refer) {
-                $compras = Buy::where('user_id', $refer->id)->count();
+                $compras = Buy::where('user_id', $refer->id)->where('estado', 2)->count();
                 if ($compras > 0) {
                     $count++;
                 }
@@ -66,14 +67,19 @@ class Range extends Command
                     case '20':
                         $user->puntos += 950;
                         break;
-
-                    default:
-                        
-                        break;
                 }
+                
                 $user->rango = $count;
-                $user->save();
-            }         
+
+                if($user->save()){
+
+                    $texto = "[".date('Y-m-d H:i:s')."]: Range up - ".$user->rango." - ".$user->name;
+
+                    Storage::append("range.log", $texto);
+
+                }
+            }    
+                
         }
         
     }

@@ -8,8 +8,8 @@ Referidos
 <div class="row">
     <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
         <h2 style="margin: 0px !important;"> Referidos </h2>
-        <h5 style="margin: 0px !important;"> Puntos: </h5>
-        <h3 class="teal-text text-lighten-2" style="margin: 0px !important;"> {{Auth::user()->puntos}} </h3>
+        <h5 style="margin: 0px !important;"> Rango: </h5>
+        <h3 class="teal-text text-lighten-2" style="margin: 0px !important;"> {{Auth::user()->rango}} </h3>
         <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
     </div>
     <div class="col s12 center-align">
