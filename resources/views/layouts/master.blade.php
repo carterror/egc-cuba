@@ -54,7 +54,7 @@
                   </li>
                   </form>
                 </ul>
-                <li class="@if(Auth::user()->rango >= 20) yellow darken-2 @elseif(Auth::user()->rango >= 10) blue-grey lighten-5 blue-grey-text text-darken-4 @endif "><a class="dropdown-button @if(Auth::user()->rango >= 10) blue-grey-text text-darken-4 @endif " href="" data-activates="dropdown1"><i class="mdi-action-account-circle left"></i><b>{{ Auth::user()->name }}</b><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+                <li style="@if(Auth::user()->rango >= 20) background-color: #B9F2FF; backdrop-filter: blur(5); @elseif(Auth::user()->rango >= 10) background-color: #FFD700; @elseif(Auth::user()->rango >= 5) background-color: #E3E4E5; @elseif(Auth::user()->rango >= 1) background-color: #CD7F32; @endif "><a class="dropdown-button @if(Auth::user()->rango > 1) blue-grey-text text-darken-4 @endif " href="" data-activates="dropdown1"><i class="mdi-action-account-circle left"></i><b>{{ Auth::user()->name }}</b><i class="mdi-navigation-arrow-drop-down right"></i></a></li>
                 @else
                 <li><a href="{{ route('login') }}" ><i class="mdi-action-account-circle left"></i>Ingresar</a></li>
       

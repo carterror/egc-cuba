@@ -14,27 +14,12 @@ use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
-    public function index($id)
+    public function index($id='all')
     {
         switch ($id) {
             case 'all':
                 $cards = Card::paginate(Config::get('tienda.product_pag', 9));
                 break;
-            case '10':
-                $cards = Card::where('price', 10)->paginate(Config::get('tienda.product_pag', 9));
-                break;
-            case '15':
-                $cards = Card::where('price', 15)->paginate(Config::get('tienda.product_pag', 9));
-                break;
-            case '20':
-                $cards = Card::where('price', 20)->paginate(Config::get('tienda.product_pag', 9));
-                break;
-            case '100':
-                $cards = Card::where('price', 100)->paginate(Config::get('tienda.product_pag', 9));
-                break;
-            case '200':
-                $cards = Card::where('price', 200)->paginate(Config::get('tienda.product_pag', 9));
-                break;     
             
             default:
                 $cards = Card::where('name', 'LIKE', '%'.$id.'%')->paginate(Config::get('tienda.product_pag', 9));

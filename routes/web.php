@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/auth.php';
 
-Route::prefix('/admin')->middleware('auth')->group(function(){
+Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     
     Route::get('/', [ConfigController::class, 'index'])->name('admin');
 
@@ -48,21 +48,25 @@ Route::prefix('/admin')->middleware('auth')->group(function(){
 
 });
 
+    Route::get('/', function () {
+        return redirect('/dashboard');    
+    });
+
     Route::post('/dashboard/search', [IndexController::class, 'search'])->name('buscar');
 
-    Route::get('/dashboard/{id}', [IndexController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/{search?}', [IndexController::class, 'index'])->name('dashboard');
 
-    Route::get('/referido/{id}', [ReferController::class, 'index'])->name('refer')->middleware('auth');
+    Route::get('/referido/{id}', [ReferController::class, 'index'])->name('refer')->middleware(['auth', 'verified']);
 
-    Route::get('/info', [IndexController::class, 'info'])->name('info')->middleware('auth');
-    Route::post('/info/edit', [IndexController::class, 'edit_info'])->name('info.edit')->middleware('auth');
-    Route::post('/info/pass', [IndexController::class, 'edit_pass'])->name('pass.edit')->middleware('auth');
+    Route::get('/info', [IndexController::class, 'info'])->name('info')->middleware(['auth', 'verified']);
+    Route::post('/info/edit', [IndexController::class, 'edit_info'])->name('info.edit')->middleware(['auth', 'verified']);
+    Route::post('/info/pass', [IndexController::class, 'edit_pass'])->name('pass.edit')->middleware(['auth', 'verified']);
 
     Route::get('/register/{id}', [ReferController::class, 'referir'])->name('refer.referir')->middleware('guest');
     Route::post('/register/referido', [ReferController::class, 'store'])->name('refer.store')->middleware('guest');
 
-    Route::get('/card/{id}', [IndexController::class, 'card'])->name('card')->middleware('auth');
+    Route::get('/card/{id}', [IndexController::class, 'card'])->name('card')->middleware(['auth', 'verified']);
 
-    Route::post('/card/{id}/buy', [IndexController::class, 'buyCard'])->name('buy.card')->middleware('auth');
+    Route::post('/card/{id}/buy', [IndexController::class, 'buyCard'])->name('buy.card')->middleware(['auth', 'verified']);
 
-    Route::get('/buy', [ControllersBuysController::class, 'index'])->name('buy')->middleware('auth');
+    Route::get('/buy', [ControllersBuysController::class, 'index'])->name('buy')->middleware(['auth', 'verified']);

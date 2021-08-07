@@ -6,26 +6,9 @@
 
 @section('content')
 
-
-          <ul id="dropdown2" class="dropdown-content blue-grey darken-4" style="z-index: 999;">
-            <li><a href="{{route('dashboard', 10)}}">$ 10</a></li>
-            <li><a href="{{route('dashboard', 15)}}">$ 15</a></li>
-            <li><a href="{{route('dashboard', 20)}}">$ 20</a></li>
-            <li><a href="{{route('dashboard', 100)}}">$ 100</a></li>
-            <li><a href="{{route('dashboard', 200)}}">$ 200</a></li>
-          </ul>
           <div class="row">
-            <div class="col s12 l4">
-              <nav class="" style="background-color: transparent; box-shadow: 0px 0px 0px transparent;">
-                <div class="nav-wrapper">
-                  <ul class="">
-                    <li><a class="dropdown-button center blue-grey darken-4" href="#!" data-activates="dropdown2">CATEGORIAS<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-            
-            <div class="col s12 l8">
+          
+            <div class="col s12">
               <nav class="blue-grey darken-4">
                 <div class="nav-wrapper">
                   <form method="POST" action="{{route('buscar')}}">

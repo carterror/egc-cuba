@@ -28,8 +28,9 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: #718096;">
     <center>
+    <div style="background-color: #ffffff; padding: 20px; border-radius: 5px;">
     <h1>Electronic Gift Card</h1>
     <h2>Compra:</h2>
     <br>
@@ -63,6 +64,7 @@
             <td><a href="{{route('extern.delete', [$id, 0])}}" class="btn" style="color:rgba(116, 216, 216, 0.30)">Denegar</a></td>
         </tr>
     </table>
+    </div>
 </center>
 </body>
 </html>

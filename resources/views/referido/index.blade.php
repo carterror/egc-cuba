@@ -36,7 +36,7 @@ Referidos
     
             <tbody>
                 @foreach ($refers as $refer)
-                    <tr class="@if($refer->puntos > 1000) yellow darken-2 @elseif($refer->puntos > 500) blue-grey lighten-5 blue-grey-text text-darken-4 @endif">
+                    <tr style="@if($refer->rango >= 20) background-color: #B9F2FF; backdrop-filter: blur(5); @elseif($refer->rango >= 10) background-color: #FFD700; @elseif($refer->rango >= 5) background-color: #E3E4E5; @elseif($refer->rango >= 1) background-color: #CD7F32; @endif">
                         <td>{{$refer->name}}</td>
                         <td>{{$refer->email}}</td>
                         <td>{{$refer->created_at}}</td>

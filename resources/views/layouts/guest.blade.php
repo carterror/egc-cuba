@@ -14,16 +14,16 @@
         <link rel="stylesheet" href="{{ asset('dist/css/materialize.css') }}">
         <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
         <style>
-            html{
+            body{
                 background: url('{{ asset("img/parallax.png") }}');
             }
         </style>
     </head>
-    <body style="background-color: rgba(0, 0, 0, 0.582);">
+    <body >
         
-        <div class="container" style="">
-            <div class="row" style="margin-top: 100px;">
-                <div class="col s6 offset-s3" style="">
+        <div class="container" style="background-color: rgba(0, 0, 0, 0.582);">
+            <div class="row" style="margin-top: 100px; padding: 0px;">
+                <div class="col s10 m6 offset-s1 offset-m3" style="padding: 0px;">
                     {{ $slot }}
                  </div> 
              </div>
