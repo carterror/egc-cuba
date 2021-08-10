@@ -12,7 +12,7 @@ use Illuminate\Validation\Rules\Password;
 
 class ReferController extends Controller
 {
-    public function index($id)
+    public function index()
     {
         $refers = User::where('master', Auth::user()->id)->paginate(7);
 

@@ -18,7 +18,7 @@ class Buy extends Model
         'currency',
     ];
 
-    public function user()
+    public function usert()
     {
         return $this->hasOne(User::class, 'id', 'user_id');
     }

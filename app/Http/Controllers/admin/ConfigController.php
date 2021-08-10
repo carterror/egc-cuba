@@ -19,8 +19,10 @@ class ConfigController extends Controller
         $buysh= Buy::whereDate('created_at', '=', date('Y-m-d'))->where('estado', 2)->count();
         $count= Buy::count();
         $buys= Buy::where('estado', 2)->count();
+        $buyms= Buy::where('estado', 2)->sum('valor');
+        $buymsh= Buy::whereDate('created_at', '=', date('Y-m-d'))->where('estado', 2)->sum('valor');
 
-        $data = ['users' => $users, 'card' => $card, 'buysh' => $buysh, 'counth' => $counth, 'count' => $count, 'buys' => $buys];
+        $data = ['users' => $users, 'card' => $card, 'buysh' => $buysh, 'counth' => $counth, 'count' => $count, 'buys' => $buys, 'buyms'  => $buyms, 'buymsh'  => $buymsh];
 
         return view('admin.index', $data);
     }

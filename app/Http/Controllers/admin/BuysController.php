@@ -12,8 +12,7 @@ class BuysController extends Controller
 {
     public function index()
     {
-        $buys = Buy::with(['user','card'])->latest('Updated_at')->paginate(6);
-
+        $buys = Buy::with(['usert','card'])->latest('Updated_at')->paginate(6);
         return view('admin.buys.index', compact('buys'));
     }
 

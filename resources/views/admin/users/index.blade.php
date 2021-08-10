@@ -13,11 +13,8 @@
     <div class="row" style="padding: 20px">
         <div class="col s12 z-depth-3 grey lighten-5" >
             <div class="row" style="border-bottom: 1px solid black; padding: 5px;">
-                <div class="col s10" >
+                <div class="col s12" >
                     <h5><i class="mdi-social-people small left"></i>Usuarios</h5>
-                </div>
-                <div class="col s2">
-                    <a class="waves-effect waves-light btn" style="margin-top: 5px; z-index: 0 !important;"><i class="mdi-content-add left" style="margin: 0px;"></i>Nueva</a>
                 </div>
             </div>
             <div class="row">
@@ -43,7 +40,7 @@
                                 <td>{{$user->phone}}</td>
                                 <td>{{$user->puntos}}</td>
                                 <td>
-                                    <a href="" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Editar"><i class="mdi-action-done small"></i></a>
+                                    {{-- <a href="" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Editar"><i class="mdi-action-done small"></i></a> --}}
                                     <a href="{{route('users.delete', $user->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Eliminar"><i class="mdi-action-delete small"></i></a>
                                 </td>
                             </tr>

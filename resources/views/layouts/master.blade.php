@@ -37,7 +37,7 @@
                   <li><a class="disabled">{{ Auth::user()->name }}</a></li>
                   <li class="divider"></li>
                   <li><a href="{{route('info')}}">Información</a></li>
-                  <li><a href="{{route('refer', Auth::user())}}">Referidos</a></li>
+                  <li><a href="{{route('refer')}}">Referidos</a></li>
                   @if (Auth::user()->type == 1)
                     <li class="divider"></li>
                     <li><a href="{{route('admin')}}">Administrar</a></li>
@@ -70,6 +70,7 @@
         @if (Route::has('login'))
             @auth
                 <li><a href="{{ url('/dashboard') }}" >Inicio</a></li>
+                <li> <a href="{{ route('register') }}" ><i class="mdi-action-assignment-ind left"></i>Registrarse</a></li>
             @else
             <li><a href="{{ route('login') }}" ><i class="mdi-action-account-circle left"></i>Ingresar</a></li>
       

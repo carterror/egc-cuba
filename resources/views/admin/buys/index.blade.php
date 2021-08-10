@@ -39,9 +39,9 @@ Compras
                             
                             <tr>
                                 <td>{{$buy->id}}</td>
-                                <td>{{$buy->user->name}}</td>
-                                <td>{{$buy->user->email}}</td>
-                                <td>{{$buy->user->phone}}</td>
+                                <td>{{$buy->usert->name}}</td>
+                                <td>{{$buy->usert->email}}</td>
+                                <td>{{$buy->usert->phone}}</td>
                                 <td>{{$buy->card->name}}</td>
                                 <td>
                                     @if ($buy->estado == 1)
