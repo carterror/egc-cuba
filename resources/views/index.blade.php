@@ -32,7 +32,7 @@
             <h3 class="red-text text-accent-3">Resultados de buscar: "{{$id}}"</h3>
         @endif
           @foreach ($cards as $card)
-            <div class="col s12 m4">
+            <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light ">
                     <a href="{{route('card', $card->id)}}"><img class="activator" src="{{asset('img/'.$card->type.'.png')}}"></a>
