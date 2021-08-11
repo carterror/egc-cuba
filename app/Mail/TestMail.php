@@ -31,7 +31,7 @@ class TestMail extends Mailable
      */
     public function build()
     {
-        return $this->from('no.responder.correo.98@gmail.com', 'EGC-Cuba')
+        return $this->from('soporte@egc-cuba.com', 'EGC-Cuba')
                     ->subject('EGC-Cuba')
                     ->with($this->data)
                     ->view('emails.test');
