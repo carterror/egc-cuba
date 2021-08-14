@@ -43,7 +43,6 @@ class Range extends Command
         $users = User::where('rango', '<', 20)->get();
 
         foreach ($users as $user) {
-        Storage::append("range.log", "asdasda");
             $count = 0;
             $refers = User::where('master', $user->id)->get();
             foreach ($refers as $refer) {
