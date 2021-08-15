@@ -41,7 +41,8 @@ class Range extends Command
     public function handle()
     {
         
-        $users = User::where('rango', '<', 20)->get();
+        $users = User::all();
+
         Storage::append("range.log", "asd");
         foreach ($users as $user) {
             $count = 0;
