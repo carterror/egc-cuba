@@ -41,7 +41,7 @@ class Range extends Command
     public function handle()
     {
         
-        $users = \App\Models\User::all();
+        
 
         Storage::append("range.log", "asd");
         foreach ($users as $user) {
