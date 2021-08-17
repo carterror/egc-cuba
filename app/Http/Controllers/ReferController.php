@@ -32,7 +32,7 @@ class ReferController extends Controller
     public function referir($id)
     {
         $user = User::find($id);
-        return view('Auth.referir', compact('user'));
+        return view('auth.referir', compact('user'));
     }
 
     public function store(Request $request)
