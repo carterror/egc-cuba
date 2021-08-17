@@ -17,7 +17,7 @@
                     <h5><i class="mdi-action-credit-card small left"></i>Tarjetas</h5>
                 </div>
                 <div class="col s5 right-align">
-                    <a class="waves-effect waves-light btn" href="{{ route('cards.create') }}" style="margin-top: 5px; z-index: 0 !important;"><i class="mdi-content-add left" style="margin: 0px;"></i>Nueva</a>
+                    <a class="waves-effect waves-light btn" href="{{ route('cards.create') }}" style="margin-top: 5px; z-index: 0 !important;">Nueva</a>
                 </div>
             </div>
             <div class="row">
@@ -28,7 +28,7 @@
                               <th data-field="id">Nombre</th>
                               <th data-field="name">Descripción</th>
                               <th data-field="price">Precio</th>
-                              <th data-field="action" style="width: 200px;"></th>
+                              <th data-field="action"></th>
                           </tr>
                         </thead>
                 

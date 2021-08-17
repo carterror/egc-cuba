@@ -57,6 +57,7 @@ Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     Route::get('/dashboard/{search?}', [IndexController::class, 'index'])->name('dashboard');
 
     Route::get('/referido', [ReferController::class, 'index'])->name('refer')->middleware(['auth', 'verified']);
+    Route::get('/help', [ReferController::class, 'help'])->name('help');
 
     Route::get('/info', [IndexController::class, 'info'])->name('info')->middleware(['auth', 'verified']);
     Route::post('/info/edit', [IndexController::class, 'edit_info'])->name('info.edit')->middleware(['auth', 'verified']);

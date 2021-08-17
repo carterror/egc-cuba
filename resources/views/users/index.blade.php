@@ -11,7 +11,7 @@
         <h5 style="margin: 0px !important;"> Puntos - USD </h5>
         <h3 class="teal-text text-lighten-2" style="margin: 0px !important;"> {{Auth::user()->puntos}} - ${{Auth::user()->puntos/100}}</h3>
         <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
-        <a href="{{route('refer')}}" style="margin: 0px !important;"> ¡Consiga puntos con nuestro sistema de referidos! </a>
+        <h5><a href="{{route('help')}}" style="margin: 0px !important;"> Información sobre los puntos </a></h5>
     </div>
         <div class="col s12 m4" style="margin-top: 15px; padding: 15px;">
           <form action="{{route('pass.edit')}}" method="POST">

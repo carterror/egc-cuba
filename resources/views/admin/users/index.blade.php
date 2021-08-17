@@ -26,7 +26,7 @@
                             <th data-field="name">Correo</th>
                             <th data-field="price">Teléfono</th>
                             <th data-field="puntos">Puntos</th>
-                            <th data-field="action" style="width: 200px;"></th>
+                            {{-- <th data-field="action" style="width: 200px;"></th> --}}
                           </tr>
                         </thead>
                 
@@ -39,10 +39,10 @@
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->phone}}</td>
                                 <td>{{$user->puntos}}</td>
-                                <td>
-                                    {{-- <a href="" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Editar"><i class="mdi-action-done small"></i></a> --}}
+                                {{-- <td>
+                                    <a href="" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Editar"><i class="mdi-action-done small"></i></a>
                                     <a href="{{route('users.delete', $user->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Eliminar"><i class="mdi-action-delete small"></i></a>
-                                </td>
+                                </td> --}}
                             </tr>
                           @endforeach
                         </tbody>

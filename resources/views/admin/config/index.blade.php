@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="col s5 right-align">
-                    <button type="submit" class="waves-effect waves-light btn" style="margin-top: 5px; z-index: 0 !important;"><i class="mdi-content-add left" style="margin: 0px;"></i>Guardar</button>
+                    <button type="submit" class="waves-effect waves-light btn" style="margin-top: 5px; z-index: 0 !important;">Guardar</button>
                 </div>
             </div>
             <div class="row">

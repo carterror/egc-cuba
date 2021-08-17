@@ -30,7 +30,7 @@ Compras
                               <th data-field="estado">Estado</th>
                               <th data-field="price">Valor</th>
                               <th data-field="price">Precio</th>
-                              <th data-field="action" style="width: 200px;"></th>
+                              <th data-field="action"></th>
                           </tr>
                         </thead>
                 

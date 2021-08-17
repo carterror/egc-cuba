@@ -43,7 +43,7 @@
               <div class="row">
                 <p class="col s11 offset-s2">
                     <input type="checkbox" id="test6" required/>
-                    <label for="test6">Aceptar <a href="">Terminos de Servicios</a></label>
+                    <label for="test6">Aceptar <a href="{{route('help')}}">Información de Servicios</a></label>
                   </p>
           </div>
               <div class="row">

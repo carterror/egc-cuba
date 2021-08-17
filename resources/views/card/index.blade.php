@@ -38,11 +38,11 @@
                   </div>
                 </div>
     </div>
-    <div class="row">
+    <div class="row justify-center">
         <div class="col s12 m6 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
             <div class="input-field col s6" style="margin-top: 20px;">
                 <input type="text" value="{{$card->price*Config::get('tienda.cup', 50)}}" class="validate" id="cup" disabled style="font-size: 30px; font-weight: bold; color: black;">
-                <label for="icon_prefix" style="font-size: 20px;">Precio:</label>
+                <label for="icon_prefix" style="font-size: 20px;">CUP</label>
               </div>
               <div class="input-field col s6" >
                   <input class="with-gap" name="currency" value="cup" type="radio" id="test5" />
@@ -52,13 +52,24 @@
         <div class="col s12 m6 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
             <div class="input-field col s6" style="margin-top: 20px;">
                 <input type="text" value="{{$card->price*Config::get('tienda.mlc', 0.86)}}" class="validate" id="mlc" disabled style="font-size: 30px; font-weight: bold; color: black;">
-                <label for="icon_prefix" style="font-size: 20px;">Precio:</label>
+                <label for="icon_prefix" style="font-size: 20px;">MLC</label>
               </div>
               <div class="input-field col s6" >
                   <input class="with-gap" name="currency" value="mlc" type="radio" id="test4" />
                   <label for="test4" style="font-size: 30px; font-weight: bold;">MLC</label>
               </div> 
         </div>
+
+        <div class="col s12 m6 offset-m3 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
+          <div class="input-field col s6" style="margin-top: 20px;">
+              <input type="text" value="{{$card->price*100}}" class="validate" id="punt" disabled style="font-size: 30px; font-weight: bold; color: black;">
+              <label for="icon_prefix" style="font-size: 20px;">PUNTOS</label>
+            </div>
+            <div class="input-field col s6" >
+                <input class="with-gap" name="currency" value="punt" type="radio" id="test3" />
+                <label for="test3" style="font-size: 30px; font-weight: bold;">PTS</label>
+            </div> 
+      </div>
 
     </div>
     <div class="row">
@@ -76,9 +87,11 @@
         function change() {
             var preciocup = document.getElementById("cup");
             var preciomlc = document.getElementById("mlc");
+            var preciopunt = document.getElementById("punt");
 
             preciocup.value = valor.value*cup;
             preciomlc.value = Math.round((valor.value*mlc)*100)/100;
+            preciopunt.value = valor.value*100;
         } 
       </script>
 @endsection
