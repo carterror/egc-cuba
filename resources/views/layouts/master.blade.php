@@ -34,6 +34,7 @@
         @if (Route::has('login'))
             @auth
                 <li><a href="{{ url('/dashboard/all') }}" ><i class="mdi-action-home left"></i>Inicio</a></li>
+                <li><a href="{{route('info')}}"><i class="mdi-communication-live-help left"></i>Ayuda</a></li>
                <ul id="dropdown1" class="dropdown-content blue-grey darken-4">
                   <li><a class="disabled">{{ Auth::user()->name }}</a></li>
                   <li class="divider"></li>
@@ -67,14 +68,26 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav blue-grey darken-4" style="opacity: .9;">
-        <li><a id="logo-container" href="#">Logo</a></li>
+        <li class="text-center"><a id="logo-container" href="{{ url('/dashboard') }}"><h4>EGC-Cuba</h4></a></li>
         @if (Route::has('login'))
             @auth
-                <li><a href="{{ url('/dashboard') }}" >Inicio</a></li>
-                <li> <a href="{{ route('register') }}" ><i class="mdi-action-assignment-ind left"></i>Registrarse</a></li>
+                <li><a href="{{url('/dashboard')}}"><i class="mdi-action-home left"></i>Inicio</a></li>
+                <li><a href="{{route('info')}}"><i class="mdi-action-perm-contact-cal left"></i>Perfil</a></li>
+                <li><a href="{{route('refer')}}"><i class="mdi-action-account-child left"></i>Referidos</a></li>
+                <li><a href="{{route('info')}}"><i class="mdi-communication-live-help left"></i>Ayuda</a></li>
+                <form method="POST" action="{{ route('logout') }}">
+                  <li>
+                      @csrf
+                      <a :href="route('logout')"
+                              onclick="event.preventDefault();
+                                          this.closest('form').submit();">
+                         <i class="mdi-action-input left"></i> {{ __('Log Out') }}
+                      </a>
+                  </li>
+                  </form>
             @else
-            <li><a href="{{ route('login') }}" ><i class="mdi-action-account-circle left"></i>Ingresar</a></li>
-      
+              <li><a href="{{route('info')}}"><i class="mdi-communication-live-help left"></i>Ayuda</a></li>
+              <li><a href="{{ route('login') }}" ><i class="mdi-action-account-circle left"></i>Ingresar</a></li>
                 @if (Route::has('register'))
                 <li> <a href="{{ route('register') }}" ><i class="mdi-action-assignment-ind left"></i>Registrarse</a></li>
                 @endif
@@ -132,7 +145,8 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Contacto</h5>
-          <p class="grey-text text-lighten-4">{{Config::get('tienda.phone', null)}}</p>
+          <p class="grey-text text-lighten-4">Teléfono: <a  href="tel:{{Config::get('tienda.phone', null)}}">{{Config::get('tienda.phone', null)}}</a></p>
+          <p class="grey-text text-lighten-4">Correo: <a  href="mailto:jelujan21071990@gmail.com">jelujan21071990@gmail.com</a></p>
 
 
         </div>
