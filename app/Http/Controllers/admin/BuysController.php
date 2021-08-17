@@ -57,15 +57,26 @@ class BuysController extends Controller
             $msg = "Aceptado";
 
             $user = User::find($buy->user_id);
-            $user->puntos += $buy->valor*Config::get('tienda.bono', 1);
+
+            if ($user->rango >= 5) {
+                $user->puntos +=  $buy->valor*Config::get('tienda.bono', 1);
+            }else {
+                $user->puntos += $buy->valor*0.75;
+            }
+
             $user->save();
 
             $master = User::find($user->master);
             if (!is_null($master)) {
-            $master->puntos += $buy->valor*0.5;
-            $master->save();
-            }
 
+                if ($master->rango >= 20) {
+                    $master->puntos += $buy->valor*Config::get('tienda.bonopla', 0.75);
+                }else {
+                    $master->puntos += $buy->valor*0.5;
+                }
+                
+                $master->save();
+            }
 
         } else {
             $buy->estado = 0;

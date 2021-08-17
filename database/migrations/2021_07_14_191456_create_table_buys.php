@@ -15,13 +15,16 @@ class CreateTableBuys extends Migration
     {
         Schema::create('buys', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id');
-            $table->bigInteger('tarjeta_id');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('tarjeta_id')->nullable();
             $table->integer('estado')->default(1);
             $table->double('price');
             $table->integer('valor');
             $table->string('currency');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+            $table->foreign('tarjeta_id')->references('id')->on('cards')->onUpdate('cascade')->onDelete('set null');
         });
     }
 

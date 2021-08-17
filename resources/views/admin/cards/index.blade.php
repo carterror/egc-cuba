@@ -35,10 +35,9 @@
                         <tbody>
                             @foreach ($cards as $card)
                             
-                            
                             <tr>
                                 <td>{{$card->name}}</td>
-                                <td>{{$card->description_pre}}</td>
+                                <td>{{$card->description}}</td>
                                 <td>{{$card->price}}</td>
                                 <td>
                                     {{-- <a href="" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Editar"><i class="mdi-editor-border-color small"></i></a> --}}

@@ -8,13 +8,12 @@
 
     <div class="row">
         <div class="col s12 m4" >
-            <img class="materialboxed z-depth-2" style="border-radius: 5px;" width="100%" height="300px;" src="{{asset('img/'.$card->type.'.png')}}">
+            <img class="materialboxed z-depth-2" style="border-radius: 5px;" width="100%" height="300px;" src="{{asset('uploads/'.$card->path)}}">
         </div>
         <div class="col s12 m7" >
             <h2 style="margin: 10px !important;"> {{$card->name}}</h2>
             <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 10px;"></div>
-            <h6 style="padding: 10px;"> {{$card->description}}</h6>
-            <p style="padding: 10px;"> {{$card->description_pre}}</p>
+            <p style="padding: 10px;"> {{$card->description}}</p>
         </div>
     </div>
 

@@ -7,7 +7,7 @@ Ayuda
 @section('content')
 <div class="row">
     <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
-        <h2 style="margin: 0px !important;"> Ayuda </h2>
+        <h3 style="margin: 0px !important;"> Sistema de Implementación </h3>
         <h5 style="margin: 0px !important;"> <a href="{{route('refer')}}">Referidos</a> </h5>
         <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
     </div>
@@ -20,24 +20,23 @@ Ayuda
             <h4>Puntos:</h4>
 
             <p class="">Sistema implementado en nuestra página en el cual eres recompensado por cada compra realizada.</p>
-            
             <p class=""> Los puntos pueden ser canjeados por cualquiera de nuestras tarjetas en venta.</p>
-            
-            <p class="">Opten 1 punto por cada USD en las compras que realices</p>
+            <p class="">Opten desde 0.75 hasta 1.25 punto por cada USD en las compras que realices dependiendo de tu nivel.</p>
+            <p class="">IMPORTANTE: Los puntos se agragan automáticamente después de que se confirme la compra, en un tiempo máximo de 30 minutos.</p>
             
              
             
             <h4><a href="{{route('refer')}}">Referidos:</a></h4>
             
-            <p class="">Un sistema en el que se les recompensa con puntos extras por las compras que realicen tus <a href="{{route('refer')}}">Referidos</a></p>
+            <p class="">Un sistema en el que se les recompensa con puntos extras por las compras que realicen tus <a href="{{route('refer')}}">Referidos</a>.</p>
             
-            <p class="">Opten 0.5 puntos por cada USD en las compras de tus <a href="{{route('refer')}}">Referidos</a></p>
-            
+            <p class="">Opten 0.5 puntos por cada USD en las compras de tus <a href="{{route('refer')}}">Referidos</a>.</p>
+            <p class="">IMPORTANTE: El sistema de <a href="{{route('refer')}}">Referidos</a> es de un solo nivel. Los referidos de tus referidos no te aportan bonificaciones.</p>
             
             
             <h4>Niveles:</h4>
             
-            <p class="">Bonificación en puntos por la cantidad de <a href="{{route('refer')}}">Referidos</a> que agregues a nuestra página que realicen compras</p>
+            <p class="">Bonificación en puntos por la cantidad de <a href="{{route('refer')}}">Referidos</a> que agregues a nuestra página que realicen compras.</p>
             
             <ul>
                 <li>1 <a href="{{route('refer')}}">Referido</a> con al menos una compra: 100 puntos NIVEL BRONCE</li>
@@ -50,10 +49,27 @@ Ayuda
             
             <h4>Bonificación por NIVEL:</h4>
             
-            <p class="">Cuentas ORO: rebajas en fechas de ofertas especiales </p>
-            
-            <p class="">Cuentas PLATINO: Rebajas en fechas de ofertas especiales y bono de puntos extras por las compras que realicen sus <a href="{{route('refer')}}">Referidos</a>. Enviado desde mi iPhone</p>
-            
+            <dl>
+                <dt>Cuentas BRONCE:</dt>
+                <dd>- Bonificación de 100 puntos</dd>
+                <dd>- Opten 0.75 puntos por cada USD en las compras que realices permanentemente</dd>
+                <dd>- 0.50 puntos por cada compra de tus referidos</dd>
+
+                <dt>Cuentas PLATA:</dt>
+                <dd>- Bonificación de 375 puntos</dd>
+                <dd>- Opten 1 punto por cada USD en las compras que realices permanentemente</dd>
+
+                <dt>Cuentas ORO: </dt>
+                <dd>- Bonificacione de 475 puntos</dd>
+                <dd>- Rebajas en fechas de ofertas especiales</dd>
+                
+                <dt>Cuentas PLATINO:</dt>
+                <dd>- Bonificación de 950 puntos</dd>
+                <dd>- Rebajas en fechas de ofertas especiales</dd>
+                <dd>- Bono de 0.25 puntos extras por las compras que realicen sus referidos</dd>
+
+            </dl>
+
         </div>
   
           </div>

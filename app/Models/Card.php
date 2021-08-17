@@ -9,9 +9,8 @@ class Card extends Model
 {    
     protected $fillable = [
         'name',
-        'type',
         'description',
-        'description_pre',
+        'path',
         'price',
         'top',
         'limited',

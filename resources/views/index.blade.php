@@ -35,7 +35,7 @@
             <div class="col s12 m6 l4">
                 <div class="card">
                     <div class="card-image waves-effect waves-block waves-light ">
-                    <a href="{{route('card', $card->id)}}"><img class="activator" src="{{asset('img/'.$card->type.'.png')}}"></a>
+                    <a href="{{route('card', $card->id)}}"><img class="activator" src="{{asset('uploads/'.$card->path)}}"></a>
                     <div class="" style="position: absolute; bottom: 1px; right: 1px; padding: 10px; font-weight: bold; background-color: rgba(255, 255, 255, 0.699);">$ {{$card->price}} - {{$card->top}}</div>
                     </div>
                     <div class="card-content" style="padding: 0px 0px 0px 10px;">
@@ -62,4 +62,17 @@
       {{ $cards->links() }}
     </div>
   </div>
+  <script src="{{ asset('dist/js/jquery.min.js') }}"></script>
+  <script>
+    $(document).ready(function(){
+      var bono = '{{Config::get('tienda.descript', '')}}';
+      if (bono == '') {
+        $('#modalBono').closeModal();
+      } else {
+        Materialize.toast('<i class="mdi-action-wallet-giftcard small pink-text text-accent-2" style="margin-right: 5px;"></i> <h5 class="pink-text text-accent-2">Recuerde<button data-target="modalBono" class="btn modal-trigger pink accent-2 grey-text text-darken-3" style="font-size: medium; font-weight: bold;">Oferta</button> </h5>', 5000);
+      }
+      
+    });
+  
+</script>
 @endsection

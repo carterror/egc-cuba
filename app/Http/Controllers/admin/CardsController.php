@@ -29,18 +29,18 @@ class CardsController extends Controller
 
         $request->validate([
             'nombre' => ['required', 'string', 'max:50'],
-            'tipo' => ['required'],
+            'photo' => ['required', 'image'],
             'price' => ['required', 'numeric'],
             'descripcion' => ['required', 'string', 'max:80'],
         ]);
 
-        //$fileExt = trim($request->photo->getClientOriginalExtension());
-        //$upload_path = Config::get('filesystems.disks.uploads.root');
-        //$name = Str::slug(str_replace($fileExt,'',$request->photo->getClientOriginalName()));
+        $fileExt = trim($request->photo->getClientOriginalExtension());
+        $upload_path = Config::get('filesystems.disks.uploads.root');
+        $name = Str::slug(str_replace($fileExt,'',$request->photo->getClientOriginalName()));
 
-        //$filename= rand(1,999).'-logo-'.$name.'.'.$fileExt;
+        $filename= rand(1,999).'-'.$name.'.'.$fileExt;
 
-        //$final_file= $upload_path.'/'.$filename;
+        $final_file= $upload_path.'/'.$filename;
 
         if(is_null($request->limited)){
             $limited = 1;
@@ -50,19 +50,16 @@ class CardsController extends Controller
 
         $card = card::create([
             'name' => $request->nombre,
-            'type' => $request->tipo,
+            'path' => $filename,
             'description' => $request->descripcion,
-            'description_pre' => $request->descripcion1,
             'price' => $request->price,
             'top' => $request->top,
             'limited' => $limited,
         ]);
 
-        //$request->photo->storeAs('/', $filename, 'uploads');
+        $request->photo->storeAs('/', $filename, 'uploads');
 
-        //$img = Image::make($final_file);
-        
-        
+        // $img = Image::make($final_file);
         // $img->resize(500, 300, function ($constraint){
         // $img->resizeCanvas(500, 300, function ($constraint){
         // $img->crop(500, 300, function ($constraint){

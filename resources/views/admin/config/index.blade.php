@@ -25,23 +25,9 @@
             <div class="row">
                 <div class="col s12">
                   <div class="row">
-                    <div class="input-field col s4">
+                    <div class="input-field col s6">
                         <input id="phone" name="phone" type="text" value="{{Config::get('tienda.phone', null)}}" class="validate">
                         <label for="phone">Teléfono</label>
-                    </div>
-                    <div class="input-field col s4">
-                      <input id="cup" name="cup" value="{{Config::get('tienda.cup', null)}}" type="text" class="validate">
-                      <label for="cup">Valor CUP</label>
-                  </div>
-                  <div class="input-field col s4">
-                    <input id="mlc" name="mlc" value="{{Config::get('tienda.mlc', null)}}" type="text" class="validate">
-                    <label for="mlc">Valor MLC</label>
-                </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s6">
-                        <input id="bono" name="bono" type="text" value="{!! Config::get('tienda.bono', null)!!}" class="validate">
-                        <label for="bono">Bonificación</label>
                     </div>
                     <div class="input-field col s6">
                       <input id="product_pag" name="product_pag" value="{{Config::get('tienda.product_pag', null)}}" type="number" class="validate">
@@ -49,20 +35,34 @@
                   </div>
                   </div>
                   <div class="row">
+                    <div class="input-field col s6">
+                      <input id="cup" name="cup" value="{{Config::get('tienda.cup', null)}}" type="text" class="validate">
+                      <label for="cup">Valor CUP</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="mlc" name="mlc" value="{{Config::get('tienda.mlc', null)}}" type="text" class="validate">
+                    <label for="mlc">Valor MLC</label>
+                </div>
+
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s6">
+                      <input id="bono" name="bono" type="text" value="{!! Config::get('tienda.bono', null)!!}" class="validate">
+                      <label for="bono">Bonificación</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="bonopla" name="bonopla" type="text" value="{!! Config::get('tienda.bonopla', null)!!}" class="validate">
+                    <label for="bonopla">Bonificación Platino</label>
+                </div>
+                <div class="input-field col s6">
+                  <input type="text" id="rebaja" name="rebaja" value="{{Config::get('tienda.rebaja', null)}}" class="validate">
+                  <label for="rebaja">Rebaja</label>
+                </div>
+                  </div>
+                   <div class="row">
                     <div class="input-field col s12">
                       <input id="descript" name="descript" value="{{Config::get('tienda.descript', null)}}" type="text" class="validate">
-                      <label for="descript">Breve Descripción</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <textarea id="ubicacion" name="ubicacion" value="{{Config::get('tienda.ubicacion', null)}}" class="materialize-textarea"></textarea>
-                      <label for="ubicacion">Ubicación</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                        
+                      <label for="descript">Oferta de bonificación</label>
                     </div>
                   </div>
                 </div>

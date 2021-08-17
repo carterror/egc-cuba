@@ -16,9 +16,8 @@ class CreateTableCards extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description_pre');
             $table->text('description');
-            $table->string('type');
+            $table->string('path');
             $table->double('price');
             $table->double('top');
             $table->Integer('limited');

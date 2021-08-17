@@ -57,14 +57,32 @@ class IndexController extends Controller
         $request->validate([
             'currency' => ['required'],
         ]);
+       
+        if (Auth::user()->rango >= 10) {
+            $rebaja = $request->valor-($request->valor*Config::get('tienda.rebaja', 0));
+        }else {
+            $rebaja = $request->valor;
+        }
 
+        if ($request->currency == 'punt') {
+
+            if (Auth::user()->puntos >= $rebaja*100) {
+                $user = User::findOrFail(Auth::user()->id);
+                $user->puntos -= $rebaja*100;
+                $user->save();
+            } else {
+                return back()->with(['icon' => 'small mdi-alert-error red-text'])->with(['type' => 'red-text'])->with(['message' => 'Sus puntos no son suficientes.']);
+            }
+            
+        }
+        
         $card = Buy::create([
             'user_id' => Auth::user()->id,
             'tarjeta_id' => $id,
             'estado' => 1,
             'valor' => $request->valor,
             'currency' => $request->currency,   
-            'price' => $request->valor*Config::get('tienda.'.$request->currency, 50),
+            'price' => $rebaja*Config::get('tienda.'.$request->currency, 50),
         ]);
 
         $array = [
@@ -72,14 +90,14 @@ class IndexController extends Controller
             'tarjeta' => Card::find($id)->name,
             'valor' => $request->valor,
             'currency' => $request->currency,   
-            'price' => $request->valor*Config::get('tienda.'.$request->currency, 50),
+            'price' => $rebaja*Config::get('tienda.'.$request->currency, 50),
             'id' => $card->id
         ];
 
         // return view('emails.test', $array);
         //email
         //$correos = User::where('type', 1)->get();
-        Mail::to('carlos.bramila98@gmail.com')->send(new TestMail($array));
+        Mail::to('soporte@egc-cuba.com')->send(new TestMail($array));
 
         return redirect()->route('dashboard', 'all')->with(['icon' => 'small mdi-action-done green-text'])->with(['type' => 'green-text'])->with(['message' => 'Compra exitosa, Estado: en Espera. Asegurese de haber completado su información...']);
     }

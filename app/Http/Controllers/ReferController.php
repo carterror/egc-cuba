@@ -24,6 +24,11 @@ class ReferController extends Controller
         return view('referido.help');
     }
 
+    public function termi()
+    {
+        return view('referido.termi');
+    }
+
     public function referir($id)
     {
         $user = User::find($id);

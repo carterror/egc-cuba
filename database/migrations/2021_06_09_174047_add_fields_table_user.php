@@ -18,7 +18,6 @@ class AddFieldsTableUser extends Migration
             $table->bigInteger('master')->after('last_name')->nullable();
             $table->integer('puntos')->after('master')->default(0);
             $table->integer('rango')->after('puntos')->default(0);
-
         });
     }
 

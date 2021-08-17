@@ -20,46 +20,36 @@
                 </div>
 
                 <div class="col s5 right-align">
-                    <button type="submit" class="waves-effect waves-light btn" style="margin-top: 5px; z-index: 0 !important;"><i class="mdi-content-add left" style="margin: 0px;"></i>Guardar</button>
+                    <button type="submit" class="waves-effect waves-light btn" style="margin-top: 5px; z-index: 0 !important;">Guardar</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12">
                   <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         <input id="nombre" name="nombre" type="text" class="validate">
                         <label for="nombre">Nombre</label>
                     </div>
-                    <div class="input-field col s6">
-                      <div class="file-field input-field">
-                        <select name="tipo" >
-                          <option value="" disabled selected>Tarjeta de...</option>
-                          <option value="netflix">Netflix</option>
-                          <option value="apps">App Store y iTunes</option>
-                          <option value="xbox">Xbox</option>
-                          <option value="paypal">PayPal</option>
-                          <option value="ebay">eBay</option>
-                          <option value="nintendo">Nintendo</option>
-                          <option value="spotify">Spotify</option>
-                          <option value="gplay">Google Play </option>
-                          <option value="psn">PlayStation</option>
-                          <option value="amazon">Amazon </option>
-                          <option value="fornite">Fortnite PaVos</option>
-                        </select>
-                        <label>Tipo de tarjeta</label>
+                    <div class="file-field input-field col s12 m6">
+                     
+                        <input class="file-path validate"  type="text"/>
+                        <div class="btn">
+                          <span>Foto</span>
+                          <input type="file" name="photo" />
                         </div>
+
                   </div>
                   </div>
                   <div class="row">
-                    <div class="input-field col s4">
+                    <div class="input-field col s12 m4">
                       <input id="price" name="price" type="text" class="validate">
                       <label for="price">Precio Mínimo</label>
                     </div>
-                    <div class="input-field col s4">
+                    <div class="input-field col s12 m4">
                       <input id="top" name="top" type="text" class="validate">
                       <label for="top">Precio Máximo</label>
                     </div>
-                    <div class="switch input-field col s4">
+                    <div class="switch input-field col s12 m4">
                       <label>
                         Limitada
                         <input type="checkbox" name="limited">
@@ -70,21 +60,11 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <input id="descripcion" name="descripcion" type="text" class="validate">
-                      <label for="descripcion">Breve Descripción</label>
+                      <textarea id="descripcion" name="descripcion" class="materialize-textarea"></textarea>
+                      <label for="descripcion">Descripción</label>
                     </div>
                   </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                      <textarea id="descripcion1" name="descripcion1" class="materialize-textarea"></textarea>
-                      <label for="descripcion1">Descripción</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="input-field col s12">
-                        
-                    </div>
-                  </div>
+
                 </div>
               </div>
             

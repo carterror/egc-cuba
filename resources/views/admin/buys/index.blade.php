@@ -39,10 +39,21 @@ Compras
                             
                             <tr>
                                 <td>{{$buy->id}}</td>
-                                <td>{{$buy->usert->name}}</td>
-                                <td>{{$buy->usert->email}}</td>
-                                <td>{{$buy->usert->phone}}</td>
-                                <td>{{$buy->card->name}}</td>
+                                @if (is_null($buy->usert))
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                @else
+                                    <td>{{$buy->usert->name}}</td>
+                                    <td>{{$buy->usert->email}}</td>
+                                    <td>{{$buy->usert->phone}}</td>
+                                @endif
+                                @if (is_null($buy->card))
+                                    <td>-</td>
+                                @else
+                                    <td>{{$buy->card->name}}</td>
+                                @endif
+
                                 <td>
                                     @if ($buy->estado == 1)
                                         <div class="card-panel blue lighten-2" style="padding: 5px; color: #fff;">En espera</div>
