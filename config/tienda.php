@@ -2,7 +2,7 @@
 
 return [ 
 
-"phone" => 5355016899,
+"phone" => "+5352710704",
 
 "product_pag" => 6,
 

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Mail\BuyMail;
 use Illuminate\Http\Request;
 use App\Models\Buy;
+use App\Models\Card;
 use App\Models\User;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Mail;
 
 class BuysController extends Controller
 {
@@ -22,34 +25,8 @@ class BuysController extends Controller
         return view('admin.buys.index', compact('buys'));
     }
 
-    public function delete($id, $action)
+    public function delete()
     {
-
-        $buy = Buy::find($id);
-
-        if ($action==2) {
-            $buy->estado = 2;
-            $msg = "Aceptado";
-
-            $user = User::find($buy->user_id);
-            $user->puntos += $buy->valor*Config::get('tienda.bono', 1);
-            $user->save();
-
-            $master = User::find($user->master);
-            if (!is_null($master)) {
-            $master->puntos += $buy->valor*0.5;
-            $master->save();
-            }
-
-
-        } else {
-            $buy->estado = 0;
-            $msg = "Cancelado";
-        }
-
-        if($buy->save()):
-            return back()->with(['icon' => 'mdi-action-done blue-text'])->with(['type' => 'blue-text'])->with(['message' => 'Estado de compra: '.$msg ]);
-        endif;
         
     }
 
@@ -60,10 +37,10 @@ class BuysController extends Controller
 
     if ($buy->estado == 1) {
             
-        if ($action==2 ) {
+        if ($action==2) {
 
             $buy->estado = 2;
-            $msg = "Aceptado";
+            $msg = "Confirmado";
 
             $user = User::find($buy->user_id);
 
@@ -109,12 +86,51 @@ class BuysController extends Controller
                 $master->save();
             }
 
+        } elseif ($action==1) {
+
+            $msg = "Aceptado";
+
+            $card = Card::find($buy->tarjeta_id);
+
+            $rebaja = Config::get('tienda.'.$buy->currency, 50) - $buy->price;
+
+            $array = [
+                "msg" => 'Su orden fue aceptada y está en procesamiento. En cuanto esté lista será contactado mediante mensaje de WhatsApp o Correo Electrónico para la confirmación del pago y recibir su compra.',
+                'tarjeta' => $card->name,
+                'valor' => $buy->valor,
+                'currency' => $buy->currency,   
+                'price' => $buy->price,
+                'fecha' => $buy->created_at->format('d/m/Y'),
+    
+            ];
+            
+            $user = User::find($buy->user_id);
+
+            Mail::to($user->email)->send(new BuyMail($array));
+
         } else {
             $buy->estado = 0;
+
+            $card = Card::find($buy->tarjeta_id);
+
+            $array = [
+                "msg" => 'Su orden no puedes ser procesada en estos momentos. Pedimos disculpas por los molestias que esto puede ocasionar, puede probar más tarde, y si el problema persiste comuníquese con nosotros para una respuesta más exacta.',
+                'tarjeta' => $card->name,
+                'valor' => $buy->valor,
+                'currency' => $buy->currency,   
+                'price' => $buy->price,
+                'fecha' => $buy->created_at->format('d/m/Y'),
+    
+            ];
+            
+            $user = User::find($buy->user_id);
+
+            Mail::to($user->email)->send(new BuyMail($array));
+
             $msg = "Cancelado";
         }
     }else {
-        $msg = "antiguo";
+        $msg = "Antiguo";
     }
 
         if($buy->save()):

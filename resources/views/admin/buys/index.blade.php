@@ -67,8 +67,9 @@ Compras
                                 <td>{{$buy->price}} {{$buy->currency}}</td>
                                 <td>
                                     @if ($buy->estado == 1)
-                                        <a href="{{route('extern.delete', [$buy->id, 2])}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Completar"><i class="mdi-action-done small"></i></a>
                                         <a href="{{route('extern.delete', [$buy->id, 0])}}" class="btn red lighten-2 tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Cancelar"><i class="mdi-notification-dnd-forwardslash small"></i></a>
+                                        <a href="{{route('extern.delete', [$buy->id, 1])}}" class="btn blue lighten-2 tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Aceptar"><i class="mdi-action-announcement small"></i></a>
+                                        <a href="{{route('extern.delete', [$buy->id, 2])}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Confirmar"><i class="mdi-action-done small"></i></a>
                                     @elseif ($buy->estado == 2)
                                         <a href="{{route('extern.delete', [$buy->id, 0])}}" class="btn red lighten-2 tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Cancelar"><i class="mdi-notification-dnd-forwardslash small"></i></a>
                                     @else

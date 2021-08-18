@@ -60,11 +60,16 @@
             <td>{{$price}} <b>{{$currency}}</b></td>
         </tr>
         <tr>
-            <td><a href="{{route('extern.delete', [$id, 2])}}" class="btn" style="color:rgba(116, 216, 216, 0.30)">Aceptar</a></td>
-            <td><a href="{{route('extern.delete', [$id, 0])}}" class="btn" style="color:rgba(116, 216, 216, 0.30)">Denegar</a></td>
-        </tr>
+            <td colspan="2"><a href="{{route('extern.delete', [$id, 0])}}" class="btn" style="color:rgb(131, 131, 131);">Denegar</a></td>
+        </tr> 
+        <tr>
+            <td colspan="2"><a href="{{route('extern.delete', [$id, 1])}}" class="btn" style="color:rgb(131, 131, 131);">Aceptar</a></td>
+        </tr> 
+        <tr>
+            <td colspan="2"><a href="{{route('extern.delete', [$id, 2])}}" class="btn" style="color:rgb(131, 131, 131);">Confirmar</a></td>
+        </tr>  
     </table>
     </div>
-</center>
+    </center>
 </body>
 </html>

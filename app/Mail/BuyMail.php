@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class TestMail extends Mailable
+class BuyMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,7 +16,6 @@ class TestMail extends Mailable
      *
      * @return void
      */
-
     public $data;
 
     public function __construct($data)
@@ -34,6 +33,6 @@ class TestMail extends Mailable
         return $this->from('egc.cuba.no.reply@gmail.com', 'EGC-Cuba')
                     ->subject('Compra-EGC-Cuba')
                     ->with($this->data)
-                    ->view('emails.test');
+                    ->view('emails.compra');
     }
 }

@@ -26,8 +26,6 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/auth.php';
 
-Route::get('/sms/sms', [ControllersBuysController::class, 'sms'])->name('sms');
-
 Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     
     Route::get('/', [ConfigController::class, 'index'])->name('admin');
