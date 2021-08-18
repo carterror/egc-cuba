@@ -8,12 +8,14 @@
         "php": "^7.3|^8.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/guzzle": "^6.5.1",
         "intervention/image": "^2.5",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.2",
-        "ringcentral/ringcentral-php": "^2.2"
+        "ringcentral/ringcentral-php": "^2.2",
+        "twilio/sdk": "^6.28",
+        "authy/php": "3.0.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
