@@ -55,7 +55,7 @@
                 
             </div>
             <div class="row">
-                {{ $users->links() }}
+                {{ $users->links('vendor.pagination.materiallize') }}
             </div>
            
 

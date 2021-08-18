@@ -59,7 +59,7 @@
 
   <div class="row">
     <div class="col s12">
-      {{ $cards->links() }}
+      {{ $cards->links('vendor.pagination.materiallize') }}
     </div>
   </div>
   <script src="{{ asset('dist/js/jquery.min.js') }}"></script>

@@ -88,7 +88,7 @@ Compras
                 
             </div>
             <div class="row">
-                {{ $buys->links() }}
+                {{ $buys->links('vendor.pagination.materiallize') }}
             </div>
            
 
