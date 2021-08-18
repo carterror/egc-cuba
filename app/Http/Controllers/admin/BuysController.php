@@ -58,7 +58,9 @@ class BuysController extends Controller
 
         $buy = Buy::find($id);
 
-        if ($action==2 && $buy->estado == 1) {
+    if ($buy->estado == 1) {
+            
+        if ($action==2 ) {
 
             $buy->estado = 2;
             $msg = "Aceptado";
@@ -111,6 +113,9 @@ class BuysController extends Controller
             $buy->estado = 0;
             $msg = "Cancelado";
         }
+    }else {
+        $msg = "antiguo";
+    }
 
         if($buy->save()):
             return redirect()->route('buys')->with(['icon' => 'mdi-action-done blue-text'])->with(['type' => 'blue-text'])->with(['message' => 'Estado de compra '.$id.': '.$msg ]);
