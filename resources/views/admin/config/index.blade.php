@@ -43,7 +43,7 @@
                     <input id="mlc" name="mlc" value="{{Config::get('tienda.mlc', null)}}" type="text" class="validate">
                     <label for="mlc">Valor MLC</label>
                 </div>
-
+                
                   </div>
                   <div class="row">
                     <div class="input-field col s6">
@@ -54,9 +54,15 @@
                     <input id="bonopla" name="bonopla" type="text" value="{!! Config::get('tienda.bonopla', null)!!}" class="validate">
                     <label for="bonopla">Bonificación Platino</label>
                 </div>
+              </div>
+              <div class="row">
                 <div class="input-field col s6">
                   <input type="text" id="rebaja" name="rebaja" value="{{Config::get('tienda.rebaja', null)}}" class="validate">
                   <label for="rebaja">Rebaja</label>
+                </div>
+                <div class="input-field col s6">
+                  <input type="text" id="punt" name="punt" value="{{Config::get('tienda.punt', null)}}" class="validate">
+                  <label for="punt">Valor Puntos</label>
                 </div>
                   </div>
                    <div class="row">

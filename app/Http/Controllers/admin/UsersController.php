@@ -8,6 +8,12 @@ use App\Models\User;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+        $this->middleware(['isadmin']);
+    }
+    
     public function index()
     {
         $users = User::paginate(6);

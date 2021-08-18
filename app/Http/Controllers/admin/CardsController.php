@@ -12,6 +12,12 @@ use Intervention\Image\Facades\Image;
 
 class CardsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+        $this->middleware(['isadmin']);
+    }
+    
     public function index()
     {
         $cards = Card::paginate(6);

@@ -14,8 +14,10 @@ return [
 
 "bonopla" => 0.5,
 
-"rebaja" => 0.05,
+"rebaja" => 0,
 
-"descript" => "Se viene el recuento asfas fas fasf as fas fasf as fas fas fasfas fa",
+"punt" => 100,
+
+"descript" => null,
 
 ];

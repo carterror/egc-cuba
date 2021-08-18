@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Config;
 
 class BuysController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth']);
+        $this->middleware(['isadmin']);
+    }
+
     public function index()
     {
         $buys = Buy::with(['usert','card'])->latest('Updated_at')->paginate(6);
@@ -52,7 +58,8 @@ class BuysController extends Controller
 
         $buy = Buy::find($id);
 
-        if ($action==2) {
+        if ($action==2 && $buy->estado == 1) {
+
             $buy->estado = 2;
             $msg = "Aceptado";
 
@@ -66,15 +73,37 @@ class BuysController extends Controller
 
             $user->save();
 
-            $master = User::find($user->master);
-            if (!is_null($master)) {
+            if (!is_null($user->master)) {
+                $master = User::findOrFail($user->master);
 
                 if ($master->rango >= 20) {
                     $master->puntos += $buy->valor*Config::get('tienda.bonopla', 0.75);
                 }else {
                     $master->puntos += $buy->valor*0.5;
                 }
+
+                $compras = Buy::where('user_id', $user->id)->where('estado', 2)->count();
                 
+                if (!$compras) {
+
+                    $master->rango++;
+
+                    switch ($master->rango) {
+                        case '1':
+                            $master->puntos += 100;
+                            break;
+                        case '5':
+                            $master->puntos += 375;
+                            break;
+                        case '10':
+                            $master->puntos += 450;
+                            break;
+                        case '20':
+                            $master->puntos += 950;
+                            break;
+                    }
+                }
+
                 $master->save();
             }
 

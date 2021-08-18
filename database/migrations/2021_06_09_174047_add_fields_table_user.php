@@ -16,7 +16,7 @@ class AddFieldsTableUser extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('last_name')->after('name')->nullable();
             $table->bigInteger('master')->after('last_name')->nullable();
-            $table->integer('puntos')->after('master')->default(0);
+            $table->float('puntos')->after('master')->default(0);
             $table->integer('rango')->after('puntos')->default(0);
         });
     }
