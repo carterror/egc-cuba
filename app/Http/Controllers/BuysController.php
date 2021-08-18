@@ -28,10 +28,10 @@ class BuysController extends Controller
 
         $client = new Client($sid, $token);
         $message = $client->messages->create(
-        '+5355016899', // Text this number
+        '+5352710704', // Text this number
         [
             'from' => '+18572144958', // From a valid Twilio number
-            'body' => 'Hello from Twilio!'
+            'body' => 'Hello from Twilio! Primeras pruebas Carlos Brayan sms a phone'
         ]
         );
 
