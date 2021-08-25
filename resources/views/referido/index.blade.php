@@ -9,17 +9,30 @@ Referidos
     <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
         <h2 style="margin: 0px !important;"> Referidos </h2>
         <h5 style="margin: 0px !important;"> Rango: </h5>
-        <h3 class="teal-text text-lighten-2" style="margin: 0px !important;"> {{Auth::user()->rango}} </h3>
+        <h3 class="teal-text text-lighten-2" style="margin: 0px !important;"> 
+            @if(Auth::user()->rango >= 1)
+            BRONCE
+            @elseif(Auth::user()->rango >= 5)
+            PLATA
+            @elseif(Auth::user()->rango >= 10)
+            ORO
+            @elseif(Auth::user()->rango >= 20)
+            PLATINO
+            @else 
+            <a href="{{url('/help#help')}}">Ayuda</a>
+            @endif
+        </h3>
         <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
     </div>
     <div class="col s12 center-align">
-        <div  class="input-field col s5 offset-s3">
-        <i class="mdi-action-account-circle prefix"></i>
+        <div  class="input-field col s8 m5 offset-m3">
+            <span class="prefix"><a href=""><i class="mdi-communication-live-help tooltipped" data-position="top" data-delay="50" data-tooltip="Ayuda" ></i></a></span>
+        
         <input id="referir" type="text" value="{{route('refer.referir', Auth::user())}}" class="validate">
-        <label for="referir">Enlace para Referidos</label>
+        <label for="referir">Enlace para Referidos <a href="">Ayuda</a> </label>
         </div>
-        <div  class="input-field col s3">
-        <button class="waves-effect waves-light btn-large tooltipped" style="float: left;" data-position="top" data-delay="50" data-tooltip="Copiar" onclick="setClipboardCard()"><i class="mdi-content-content-copy"></i></button>
+        <div  class="input-field col s4 m3">
+        <button class="waves-effect waves-light btn tooltipped" style="float: left;" data-position="top" data-delay="50" data-tooltip="Copiar" onclick="setClipboardCard()"><i class="mdi-content-content-copy"></i></button>
         </div>
     </div>
 </div>
