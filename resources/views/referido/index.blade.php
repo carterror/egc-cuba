@@ -26,10 +26,10 @@ Referidos
     </div>
     <div class="col s12 center-align">
         <div  class="input-field col s8 m5 offset-m3">
-            <span class="prefix"><a href=""><i class="mdi-communication-live-help tooltipped" data-position="top" data-delay="50" data-tooltip="Ayuda" ></i></a></span>
+            <span class="prefix"><a href="{{url('/help#help')}}"><i class="mdi-communication-live-help tooltipped" data-position="top" data-delay="50" data-tooltip="Ayuda" ></i></a></span>
         
         <input id="referir" type="text" value="{{route('refer.referir', Auth::user())}}" class="validate">
-        <label for="referir">Enlace para Referidos <a href="">Ayuda</a> </label>
+        <label for="referir">Enlace para Referidos <a href="{{url('/help#help')}}">Ayuda</a> </label>
         </div>
         <div  class="input-field col s4 m3">
         <button class="waves-effect waves-light btn tooltipped" style="float: left;" data-position="top" data-delay="50" data-tooltip="Copiar" onclick="setClipboardCard()"><i class="mdi-content-content-copy"></i></button>
