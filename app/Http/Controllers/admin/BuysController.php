@@ -95,7 +95,7 @@ class BuysController extends Controller
             $rebaja = Config::get('tienda.'.$buy->currency, 50) - $buy->price;
 
             $array = [
-                "msg" => 'Su orden fue aceptada y está en procesamiento. En cuanto esté lista será contactado mediante mensaje de WhatsApp o Correo Electrónico para la confirmación del pago y recibir su compra.',
+                "msg" => 'Su orden fue aceptada y está en procesamiento. En cuanto esté lista será contactado mediante mensaje de WhatsApp o Correo Electrónico para la confirmación del pago y recibir su compra. Contactenos preferentemente por WhatsApp.',
                 'tarjeta' => $card->name,
                 'valor' => $buy->valor,
                 'currency' => $buy->currency,   

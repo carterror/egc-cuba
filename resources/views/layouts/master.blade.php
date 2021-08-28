@@ -80,6 +80,9 @@
                 <li><a href="{{route('info')}}"><i class="mdi-action-perm-contact-cal left"></i>Perfil</a></li>
                 <li><a href="{{route('refer')}}"><i class="mdi-action-account-child left"></i>Referidos</a></li>
                 <li><a href="{{route('help')}}"><i class="mdi-communication-live-help left"></i>Ayuda</a></li>
+                @if (Auth::user()->type == 1)
+                  <li><a href="{{route('admin')}}"><i class="mdi-action-account-child left"></i>Administrar</a></li>
+                @endif
                 <form method="POST" action="{{ route('logout') }}">
                   <li>
                       @csrf

@@ -55,7 +55,7 @@
             <td>{{$fecha}}</td>
         </tr>
         <tr>
-            <td colspan="2" style="text-align: center;">Dudas:</td>
+            <td colspan="2" style="text-align: center;">Contactos:</td>
         </tr>
         <tr>
             <td>Correo:</td>
@@ -64,6 +64,10 @@
         <tr>
             <td>Teléfono:</td>
             <td><a href="tel:{{Config::get('tienda.phone', null)}}">{{Config::get('tienda.phone', null)}}</a></td>
+        </tr>
+        <tr>
+            <td>Contactar:</td>
+            <td><a href="https://wa.me/message/GKYEWV4I7PUGF1">WhatsApp</a></td>
         </tr>
         <tr>
     </table>
