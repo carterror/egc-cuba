@@ -18,9 +18,12 @@
           @csrf
           <div class="row grey lighten-5 z-depth-3">
             <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); margin: 5px;">
-            <div class="col s12" >
-                    <h5><i class="mdi-social-people small left"></i>Contraseña</h5>
-                </div>
+            <div class="col s8" >
+                    <h5>Contraseña</h5>
+            </div>
+            <div class="col s4" >
+            <a onclick="verpass()"><i class="mdi-image-remove-red-eye small right tooltipped" id="icono" data-position="top" data-delay="50" data-tooltip="Ver Contraseñas"></i></a>
+            </div>
             </div>
             <div class="row" style="padding: 10px;">
               <div class="input-field col s12">
@@ -83,4 +86,26 @@
 
       </div>
     </div>
+    <script>
+      function verpass() {
+        var passa = document.getElementById('passa');
+        var pass = document.getElementById('pass');
+        var passc = document.getElementById('passc');
+        var icono = document.getElementById('icono');
+
+        if (passa.type == "text") {
+          passa.type="password";
+          pass.type="password";
+          passc.type="password";
+          icono.classList="mdi-image-remove-red-eye small right tooltipped";
+        } else {
+          passa.type="text";
+          pass.type="text";
+          passc.type="text";
+          icono.classList="mdi-image-panorama-fisheye small right tooltipped";
+        }
+        
+      }
+      
+    </script>
 @endsection

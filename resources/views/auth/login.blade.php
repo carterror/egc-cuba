@@ -13,7 +13,7 @@
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
 
-        <div class="row" style="margin-top: 20px;">
+        <div class="row" style="margin-top: 20px; padding-left: 15px;">
             <form class="col s12" method="POST" action="{{ route('login') }}">
                 @csrf
               <div class="row">
@@ -25,7 +25,7 @@
               </div>
               <div class="row">
                 <div class="input-field col s11 blue-grey-text text-lighten-5">
-                    <i class="mdi-action-lock prefix"></i>
+                    <a onclick="verpass('password')" class="prefix"><i class="mdi-image-remove-red-eye tooltipped" id="password icono" data-position="top" data-delay="50" data-tooltip="Ver Contraseña"></i></a>
                     <input class="blue-grey-text text-lighten-5" id="password" type="password" name="password" required autocomplete="current-password">
                     <label for="password">Contraseña</label>
                 </div>

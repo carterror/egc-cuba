@@ -31,6 +31,24 @@
 
         <script src="{{ asset('dist/js/jquery.min.js') }}"></script>
         <script src="{{ asset('dist/js/materialize.js') }}"></script>
+        <script src="{{ asset('dist/js/init.js') }}"></script>
+        <script>
+
+            function verpass(pass) {
+
+                var passa = document.getElementById(pass);
+                var icono = document.getElementById(pass+' icono');
+
+                if (passa.type == "text") {
+                passa.type="password";
+                icono.classList="mdi-image-remove-red-eye prefix tooltipped";
+                } else {
+                passa.type="text";
+                icono.classList="mdi-image-panorama-fisheye prefix tooltipped";
+                }
+            
+            }
+        </script>
         @include('components.auth-validation-errors')
     </body>
 </html>
