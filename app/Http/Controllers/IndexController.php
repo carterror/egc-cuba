@@ -43,9 +43,22 @@ class IndexController extends Controller
             for ($i=$card->price; $i <= $card->top; $i++) { 
                 array_push($valor, $i);
             }
-        }else {
+        } else if($card->name == "Fortnite") {
+            $valor = [10, 25, 40, 100];
+        } else if($card->name == "Steam") {
+            $valor = [5, 10, 15, 20, 25, 50, 100];
+        } else if($card->name == "PlayStation") {
+            $valor = [10, 25, 50, 75, 100];
+        } else if($card->name == "Nintendo") {
+            $valor = [5, 10, 20, 35, 45, 50, 70, 100];
+        } else if($card->name == "Blizzard") {
+            $valor = [20, 50, 100];
+        } else if($card->name == "Shein") {
+            $valor = [25, 50, 80, 100, 200, 300, 500];
+        } else {
             $valor = [15, 20, 50, 100, 200];
         }
+
 
         return view('card.index', compact('card', 'valor'));
     }

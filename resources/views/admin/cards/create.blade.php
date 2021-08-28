@@ -26,6 +26,9 @@
             <div class="row">
                 <div class="col s12">
                   <div class="row">
+                    <div class="input-field col s12" style="color: red;">
+                      <i>Especiales dejando limitada: Fortnite | Steam | PlayStation | Nintendo | Blizzard | Shein</i>
+                    </div>
                     <div class="input-field col s12 m6">
                         <input id="nombre" name="nombre" type="text" class="validate">
                         <label for="nombre">Nombre</label>
@@ -60,8 +63,8 @@
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
-                      <textarea id="descripcion" name="descripcion" class="materialize-textarea"></textarea>
                       <label for="descripcion">Descripción</label>
+                      <textarea id="editor" name="descripcion"></textarea>
                     </div>
                   </div>
 
@@ -71,4 +74,17 @@
         </div>
     </div>
   </form>
+  <script src="{{ asset('dist/js/ckeditor.js') }}"></script>
+  <script>
+    ClassicEditor
+    .create( document.querySelector( '#editor' ), {
+        toolbar: [ 'heading', '|', 'bold', 'italic', 'link' , '|', 'numberedList', 'bulletedList', '|', 'undo', 'redo', '|', 'insertTable', 'blockQuote']
+    } )
+    .then( editor => {
+        window.editor = editor;
+    } )
+    .catch( err => {
+        console.error( err.stack );
+    } );
+  </script>
 @endsection

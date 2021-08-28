@@ -13,7 +13,7 @@
         <div class="col s12 m7" >
             <h2 style="margin: 10px !important;"> {{$card->name}}</h2>
             <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 10px;"></div>
-            <p style="padding: 10px;"> {{$card->description}}</p>
+            <p style="padding-left: 10px;"> {!!$card->description!!}</p>
         </div>
     </div>
 
@@ -35,7 +35,19 @@
                   <div class="input-field col s6" style="font-size: 30px; font-weight: bold;">
                     USD
                   </div>
-                </div>
+        </div>
+         @if ($card->name == "Fortnite")
+            <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
+                  <div class="input-field col s6" style="margin-top: 30px;">
+                    <input type="text" value="{{$card->price*100}}" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
+                    <label for="icon_prefix" style="font-size: 20px;">Fortnite</label>
+                  </div>
+                  <div class="input-field col s6" style="font-size: 30px; font-weight: bold;">
+                    V-Bs
+                  </div>
+            </div>
+         @else
+         @endif
     </div>
     <div class="row justify-center">
         <div class="col s12 m6 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
@@ -87,10 +99,24 @@
             var preciocup = document.getElementById("cup");
             var preciomlc = document.getElementById("mlc");
             var preciopunt = document.getElementById("punt");
+            var vb = document.getElementById("vb");
 
             preciocup.value = valor.value*cup;
             preciomlc.value = Math.round((valor.value*mlc)*100)/100;
             preciopunt.value = valor.value*100;
+
+            if (valor.value == 10) {
+              vb.value = 1000;
+            } else if(valor.value == 25) {
+              vb.value = 2800;
+            } else if(valor.value == 40) {
+              vb.value = 500;
+            } else if(valor.value == 100) {
+              vb.value = 13500;
+            } else {
+              vb.value = "...";
+            }
+            
         } 
       </script>
 @endsection
