@@ -2,7 +2,7 @@
 
 return [ 
 
-"phone" => "+5352710704",
+"phone" => 5352710704,
 
 "product_pag" => 6,
 
@@ -17,6 +17,10 @@ return [
 "rebaja" => 0,
 
 "punt" => 100,
+
+"cerrada" => 0,
+
+"hasta" => "2021-08-28T10:10",
 
 "descript" => null,
 

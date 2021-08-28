@@ -64,6 +64,18 @@
                   <input type="text" id="punt" name="punt" value="{{Config::get('tienda.punt', null)}}" class="validate">
                   <label for="punt">Valor Puntos</label>
                 </div>
+                <div class="input-field col s6">
+                  <select name="cerrada" class="validate">
+                    <option value="{{Config::get('tienda.cerrada', null)}}" selected>@if(Config::get('tienda.cerrada', null)) Abierta @else Cerrada @endif</option>
+                    <option value="1">Abierta</option>
+                    <option value="0">Cerrada</option>
+                  </select>
+                  <label>Estado de la tienda</label>
+                </div>
+                <div class="input-field col s6">
+                  <input type="datetime-local" id="hasta" name="hasta" value="{{Config::get('tienda.hasta', null)}}" class="validate">
+                  <label for="hasta"></label>
+                </div>
                   </div>
                    <div class="row">
                     <div class="input-field col s12">

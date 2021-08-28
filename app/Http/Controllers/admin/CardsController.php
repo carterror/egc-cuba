@@ -37,7 +37,7 @@ class CardsController extends Controller
             'nombre' => ['required', 'string', 'max:50'],
             'photo' => ['required', 'image'],
             'price' => ['required', 'numeric'],
-            'descripcion' => ['required', 'string', 'max:80'],
+            'descripcion' => ['required', 'string', 'max:160'],
         ]);
 
         $fileExt = trim($request->photo->getClientOriginalExtension());
