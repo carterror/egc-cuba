@@ -144,7 +144,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de puntuación por cada compra y por cada nuevo usuario que unas a nuestra plataforma.</h5>
+          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de <a href="{{route('help')}}">puntuación</a> por cada compra y por cada nuevo usuario <a href="{{url('/help#help')}}">"referido"</a> que unas a nuestra plataforma.</h5>
         </div>
       </div>
     </div>
