@@ -7,7 +7,7 @@ Ayuda
 @section('content')
 <div class="row">
     <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
-        <h3 style="margin: 0px !important;"> Sistema de Implementación </h3>
+        <h3 style="margin: 0px !important;"> Sistema de Referidos </h3>
         <h5 style="margin: 0px !important;"> <a href="{{route('refer')}}">Referidos</a> </h5>
         <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
     </div>
@@ -79,7 +79,7 @@ Ayuda
 
 <div class="row" >
     <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
-        <h3 style="margin: 0px !important;"> Sistema de Referidos </h3>
+        <h3 style="margin: 0px !important;"> Sistema de Puntuación </h3>
         <h5 style="margin: 0px !important;"> <a href="{{route('refer')}}">Referidos</a> </h5>
         <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
     </div>

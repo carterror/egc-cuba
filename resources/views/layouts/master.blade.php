@@ -112,9 +112,12 @@
         <br><br>
         <h1 class="header center teal-text text-lighten-2">Electronic Gift Card</h1>
         <div class="row center">
-          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Tarjeta de regalo o gift card puede describirse como una especie de tarjeta de débito o crédito precargada. </h5>
+          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Tarjeta de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.</h5>
         </div>
+        {{--Tarjeta de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.Te premiamos con nuestro sistema de puntuación por cada compra y por cada nuevo usuario que unas a nuestra plataforma. --}}
         {{-- <div class="row center">
+          Tarjeta de regalo o gift card puede describirse como una especie de tarjeta de débito o crédito precargada.
+          Trata de una tarjeta que contiene una cierta cantidad de dinero,  que le posibilita al titular poder adquirir una serie de bienes o servicios.
           <a href="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
         </div> --}}
         <br><br>
@@ -141,7 +144,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Trata de una tarjeta que contiene una cierta cantidad de dinero,  que le posibilita al titular poder adquirir una serie de bienes o servicios.</h5>
+          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de puntuación por cada compra y por cada nuevo usuario que unas a nuestra plataforma.</h5>
         </div>
       </div>
     </div>
