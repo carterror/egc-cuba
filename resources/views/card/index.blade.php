@@ -10,7 +10,7 @@
         <div class="col s12 m4" >
             <img class="materialboxed z-depth-2" style="border-radius: 5px;" width="100%" height="300px;" src="{{asset('uploads/'.$card->path)}}">
         </div>
-        <div class="col s12 m7" >
+        <div class="col s12 m7" style="word-break: break-all; hyphens: auto;">
             <h2 style="margin: 10px !important;"> {{$card->name}}</h2>
             <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 10px;"></div>
             <p style="padding-left: 10px;"> {!!$card->description!!}</p>

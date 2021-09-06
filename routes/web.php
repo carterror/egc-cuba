@@ -33,6 +33,9 @@ Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     Route::get('/cards', [CardsController::class, 'index'])->name('cards');
     Route::get('/cards/create', [CardsController::class, 'create'])->name('cards.create');
     Route::post('/cards/create', [CardsController::class, 'store'])->name('cards.store');
+    Route::get('/cards/{id}/edit', [CardsController::class, 'edit'])->name('cards.edit');
+    // Route::put('/cards/{id}', [CardsController::class, 'update'])->name('cards.update');
+    Route::match(['put', 'patch'], '/cards/{id}', [CardsController::class, 'update'])->name('cards.update');
     Route::get('/cards/{id}/delete', [CardsController::class, 'delete'])->name('cards.delete');
 
     Route::get('/users', [UsersController::class, 'index'])->name('users');
@@ -57,6 +60,7 @@ Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     Route::get('/dashboard/{search?}', [IndexController::class, 'index'])->name('dashboard');
 
     Route::get('/referido', [ReferController::class, 'index'])->name('refer')->middleware(['auth', 'verified']);
+    
     Route::get('/help', [ReferController::class, 'help'])->name('help');
     Route::get('/termi', [ReferController::class, 'termi'])->name('termi');
 

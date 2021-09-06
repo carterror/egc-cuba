@@ -14,5 +14,6 @@ class Card extends Model
         'price',
         'top',
         'limited',
+        'precios',
     ];
 }

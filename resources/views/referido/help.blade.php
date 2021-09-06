@@ -7,8 +7,8 @@ Ayuda
 @section('content')
 <div class="row">
     <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
-        <h3 style="margin: 0px !important;"> Sistema de Referidos </h3>
-        <h5 style="margin: 0px !important;"> <a href="{{route('refer')}}">Referidos</a> </h5>
+        <h3 style="margin: 0px !important;"> Sistema de Puntuación </h3>
+        <h5 style="margin: 0px !important;"> <a href="{{route('info')}}">Puntos</a> </h5>
         <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
     </div>
 </div>
@@ -20,7 +20,7 @@ Ayuda
             <h4>Puntos:</h4>
 
             <p class="">Sistema implementado en nuestra página en el cual eres recompensado por cada compra realizada.</p>
-            <p class=""> Los puntos pueden ser canjeados por cualquiera de nuestras tarjetas en venta.</p>
+            <p class="">Los puntos pueden ser canjeados por cualquiera de nuestras tarjetas en venta.</p>
             <p class="">Opten desde 0.75 hasta 1.25 punto por cada USD en las compras que realices dependiendo de tu nivel.</p>
             <p class="">IMPORTANTE: Los puntos se agragan automáticamente después de que se confirme la compra, en un tiempo máximo de 30 minutos.</p>
             
@@ -79,7 +79,7 @@ Ayuda
 
 <div class="row" >
     <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
-        <h3 style="margin: 0px !important;"> Sistema de Puntuación </h3>
+        <h3 style="margin: 0px !important;"> Sistema de Referidos </h3>
         <h5 style="margin: 0px !important;"> <a href="{{route('refer')}}">Referidos</a> </h5>
         <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
     </div>

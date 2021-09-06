@@ -26,9 +26,6 @@
             <div class="row">
                 <div class="col s12">
                   <div class="row">
-                    <div class="input-field col s12" style="color: red;">
-                      <i>Especiales dejando limitada: Fortnite | Steam | PlayStation | Nintendo | Blizzard | Shein</i>
-                    </div>
                     <div class="input-field col s12 m6">
                         <input id="nombre" name="nombre" type="text" class="validate">
                         <label for="nombre">Nombre</label>
@@ -59,6 +56,15 @@
                         <span class="lever"></span>
                         Abierta
                       </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12" style="color: red;">
+                      <i>Precios separados por ",", ejemplo: 15,20,50,100</i>
+                    </div>
+                    <div class="input-field col s12">
+                      <label for="descripcion">Precios</label>
+                      <input id="precios" name="precios" type="text" class="validate">
                     </div>
                   </div>
                   <div class="row">
