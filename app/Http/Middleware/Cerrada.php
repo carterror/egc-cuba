@@ -26,7 +26,6 @@ class Cerrada
         elseif(date('Y-m-d H:i:s') < $date):
             return back()->with(['icon' => 'small mdi-alert-error red-text'])->with(['type' => 'red-text'])->with(['message' => 'Tienda cerrada hasta: '.$date->format('d \\d\\e ').$meses[$date->format('m')-1]." a las ".$date->format('h:i A')]);
         else:
-            return dd($date);
             return $next($request);
         endif;
     }
