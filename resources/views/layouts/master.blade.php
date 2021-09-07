@@ -37,6 +37,20 @@
      .back-to-top:hover{
         opacity: 1;
      }
+     .stado{
+       left: 35%;
+       top: 45px;
+       position: fixed;
+       border-radius: 0px 0px 5px 5px; 
+       padding: 5px 10px; 
+       font-size: large; 
+       font-weight: bold;
+       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.575);
+       border-top: 1px solid rgb(0, 0, 0);
+       opacity: 0.9;
+       z-index: 9999;
+       cursor: pointer;
+     }
   </style>
 </head>
 <body>
@@ -116,20 +130,28 @@
     </div>
   </nav>
   </div>
-  <div id="index-banner" class="parallax-container" style="padding-top: 50px;">
+    @php
+      use Carbon\Carbon;
+      $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+      $date = Carbon::parse(Config::get('tienda.hasta', "23:59"));
+    @endphp
+
+
+    @if (Config::get('tienda.cerrada', 1) == 0)
+      <h5 class="stado tooltipped center grey-text text-lighten-4 red z-depth-2" data-position="bottom" data-delay="50" data-tooltip="Cerrada, intente más tarde">Tienda Cerrada</h5>
+    @elseif (date('Y-m-d H:i:s') < $date)
+      <h5 class="stado tooltipped center grey-text text-lighten-4 red z-depth-2" data-position="bottom" data-delay="50" data-tooltip='Cerrada hasta: {{$date->format('d \\d\\e ').$meses[$date->format('m')-1]}} a las {{$date->format('h:i A')}}'>Tienda Cerrada</h5>
+    @else
+      <h5 class="stado tooltipped center grey-text text-lighten-4 light teal z-depth-2" data-position="bottom" data-delay="50" data-tooltip="Abierta">Tienda Abierta</h5>
+    @endif
+
+  <div id="index-banner" class="parallax-container" style="padding-top: 20px;">
     <div class="section no-pad-bot">
       <div class="container">
-        <br><br>
         <h1 class="header center red-text text-darken-4">Electronic Gift Card</h1>
         <div class="row center">
           <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Tarjeta de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.</h5>
         </div>
-        {{--Tarjeta de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.Te premiamos con nuestro sistema de puntuación por cada compra y por cada nuevo usuario que unas a nuestra plataforma. --}}
-        {{-- <div class="row center">
-          Tarjeta de regalo o gift card puede describirse como una especie de tarjeta de débito o crédito precargada.
-          Trata de una tarjeta que contiene una cierta cantidad de dinero,  que le posibilita al titular poder adquirir una serie de bienes o servicios.
-          <a href="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-        </div> --}}
         <br><br>
 
       </div>
