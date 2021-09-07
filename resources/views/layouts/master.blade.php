@@ -9,7 +9,7 @@
   <meta name="description" content="Pagina para vender tarjetas de regalo" />
   <meta name="keywords" content="tarjeta, vender, regalo, referido, " />
   <meta name="copyright" content="3rroR" />
-  <link rel="icon" href="{{ asset('dist/logo.png') }}" sizes="32x32">
+  <link rel="icon" href="{{ asset('img/icon.png') }}" sizes="32x32">
   <title>{{ config('app.name', 'Tienda') }} @yield('title')</title>
 
   <!-- Fonts -->
@@ -33,7 +33,7 @@
   <div class="navbar-fixed">
   <nav class="blue-grey darken-4" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">EGC-Cuba</a>
+      <a id="logo-container" href="#" class="brand-logo" style="padding-top: 3px;"><img src="{{asset('img/logo1.png')}}" height="50px" alt="" srcset=""></a>
       <ul class="right hide-on-med-and-down">
         @if (Route::has('login'))
             @auth
@@ -110,7 +110,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">Electronic Gift Card</h1>
+        <h1 class="header center red-text text-darken-4">Electronic Gift Card</h1>
         <div class="row center">
           <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Tarjeta de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.</h5>
         </div>

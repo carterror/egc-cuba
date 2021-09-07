@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
-    <link rel="icon" href="{{ asset('dist/logo.png') }}" sizes="32x32">
+    <link rel="icon" href="{{ asset('img/icon.png') }}" sizes="32x32">
     <!--  Android 5 Chrome Color-->
     <meta name="theme-color" content="#EE6E73">
     <!-- CSS-->
@@ -72,7 +72,7 @@
       </nav>
       <ul id="nav-mobile" class="side-nav fixed grey lighten-5">
         <li class="logo"><a id="logo-container" href="{{ route('admin') }}" class="brand-logo">
-          <h4> EGC-Cuba</h4>
+          <img src="{{asset('img/logo.png')}}" width="100%" alt="" srcset="">
         </a></li>
         <li class="bold"><a href="{{route('admin')}}" class="waves-effect waves-teal active"><i class="mdi-action-home small left"></i>Inicio</a></li>
         <li class="bold"><a href="{{route('users')}}" class="waves-effect waves-teal"><i class="mdi-social-people small left"></i>Usuarios</a></li>
