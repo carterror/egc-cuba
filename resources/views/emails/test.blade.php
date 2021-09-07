@@ -30,6 +30,7 @@
 </head>
 <body style="background-color: #718096;">
     <center>
+    <img src="{{asset('img/logo1.png')}}" width="100%" alt="" srcset="">
     <div style="background-color: #ffffff; padding: 20px; border-radius: 5px;">
     <h1>Electronic Gift Card</h1>
     <h2>Compra:</h2>
