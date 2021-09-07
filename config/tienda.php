@@ -4,9 +4,9 @@ return [
 
 "phone" => 5352710704,
 
-"product_pag" => 6,
+"product_pag" => 8,
 
-"cup" => 55,
+"cup" => 58.5,
 
 "mlc" => 0.86,
 
@@ -18,9 +18,9 @@ return [
 
 "punt" => 100,
 
-"cerrada" => 0,
+"cerrada" => 1,
 
-"hasta" => "2021-08-28T10:10",
+"hasta" => "2021-09-07T08:00",
 
 "descript" => null,
 
