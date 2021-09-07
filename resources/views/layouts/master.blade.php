@@ -48,14 +48,14 @@
        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.575);
        border-top: 1px solid rgb(0, 0, 0);
        opacity: 0.9;
-       z-index: 9999;
+       z-index: 901;
        cursor: pointer;
      }
   </style>
 </head>
 <body>
-  <div class="navbar-fixed">
-  <nav class="blue-grey darken-4" role="navigation">
+  <div class="navbar-fixed" style="z-index: 900;">
+  <nav class="blue-grey darken-4"  role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo" style="padding-top: 3px;"><img src="{{asset('img/logo1.png')}}" height="50px" alt="" srcset=""></a>
       <ul class="right hide-on-med-and-down">
@@ -95,7 +95,7 @@
       @endif
       </ul>
 
-      <ul id="nav-mobile" class="side-nav blue-grey darken-4" style="opacity: .9;">
+      <ul id="nav-mobile" class="side-nav blue-grey darken-4" style="opacity: .9; z-index: 902;">
         <li class="text-center"><a id="logo-container" href="{{ url('/dashboard') }}" style="padding-top: 5px;"><img src="{{asset('img/logo1.png')}}" height="60px" alt="" srcset=""></a></li>
         @if (Route::has('login'))
             @auth
