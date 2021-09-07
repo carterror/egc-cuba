@@ -33,7 +33,7 @@
         <h1>Electronic Gift Card</h1>
     <div style="background-color: #ffffff; padding: 20px; border-radius: 5px; margin: 50px; color: #000;">
         
-            <h3>{{$msg}}</h3>
+            <h3>{!!$msg!!}</h3>
     <table border="0" cellspacing="10">
         <tr>
             <td colspan="2" style="text-align: center;">Compra:</td>
