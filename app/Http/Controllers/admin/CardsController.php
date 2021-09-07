@@ -47,7 +47,7 @@ class CardsController extends Controller
             $request->validate([
                 'nombre' => ['required', 'string', 'max:50'],
                 'price' => ['required', 'numeric'],
-                'descripcion' => ['required', 'string', 'max:160'],
+                'descripcion' => ['required', 'string', 'max:250'],
             ]);
     
             if(is_null($request->limited)){
@@ -55,8 +55,6 @@ class CardsController extends Controller
             }else{
                 $limited = 0;
             }
-    
-            
     
             $card->name = $request->nombre;
             $card->description = $request->descripcion;

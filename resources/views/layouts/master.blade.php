@@ -72,7 +72,7 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav blue-grey darken-4" style="opacity: .9;">
-        <li class="text-center"><a id="logo-container" href="{{ url('/dashboard') }}"><h4>EGC-Cuba</h4></a></li>
+        <li class="text-center"><a id="logo-container" href="{{ url('/dashboard') }}" style="padding-top: 5px;"><img src="{{asset('img/logo1.png')}}" height="60px" alt="" srcset=""></a></li>
         @if (Route::has('login'))
             @auth
                 <li><a href="{{url('/dashboard')}}"><i class="mdi-action-home left"></i>Inicio</a></li>
@@ -102,7 +102,7 @@
             @endauth
       @endif
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse red-text text-darken-4"><i class="mdi-navigation-menu"></i></a>
     </div>
   </nav>
   </div>
