@@ -36,7 +36,7 @@
                     USD
                   </div>
         </div>
-         @if ($card->name == "Fortnite")
+         @if ($card->name == "Fortnite PaVos")
             <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
                   <div class="input-field col s6" style="margin-top: 30px;">
                     <input type="text" value="{{$card->price*100}}" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
@@ -105,13 +105,13 @@
             preciomlc.value = Math.round((valor.value*mlc)*100)/100;
             preciopunt.value = valor.value*100;
 
-            if (valor.value == 10) {
+            if (valor.value == 14) {
               vb.value = 1000;
-            } else if(valor.value == 25) {
+            } else if(valor.value == 28) {
               vb.value = 2800;
             } else if(valor.value == 40) {
-              vb.value = 500;
-            } else if(valor.value == 100) {
+              vb.value = 5000;
+            } else if(valor.value == 80) {
               vb.value = 13500;
             } else {
               vb.value = "...";
