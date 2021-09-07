@@ -20,7 +20,7 @@ return [
 
 "cerrada" => 1,
 
-"hasta" => "2021-09-07T08:00",
+"hasta" => "2021-09-07T20:00",
 
 "descript" => null,
 
