@@ -16,4 +16,3 @@ storage/*.key
 Homestead.yaml
 Homestead.json
 /.vagrant
-config/tienda.php
