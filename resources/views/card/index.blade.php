@@ -43,7 +43,7 @@
                     <label for="icon_prefix" style="font-size: 20px;">Fortnite</label>
                   </div>
                   <div class="input-field col s6" style="font-size: 30px; font-weight: bold;">
-                    V-Bs
+                    PaVos
                   </div>
             </div>
          @else
