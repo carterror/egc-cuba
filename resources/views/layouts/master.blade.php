@@ -42,19 +42,18 @@
        top: 45px;
        position: fixed;
        border-radius: 0px 0px 5px 5px; 
-       padding: 5px 10px; 
+       padding: 10px 10px 5px 10px; 
        font-size: large; 
        font-weight: bold;
        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.575);
        border-top: 1px solid rgb(0, 0, 0);
        opacity: 0.9;
-       z-index: 901;
        cursor: pointer;
      }
   </style>
 </head>
 <body>
-  <div class="navbar-fixed" style="z-index: 900;">
+  <div class="navbar-fixed">
   <nav class="blue-grey darken-4"  role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo" style="padding-top: 3px;"><img src="{{asset('img/logo1.png')}}" height="50px" alt="" srcset=""></a>
@@ -95,8 +94,8 @@
       @endif
       </ul>
 
-      <ul id="nav-mobile" class="side-nav blue-grey darken-4" style="opacity: .9; z-index: 902;">
-        <li class="text-center"><a id="logo-container" href="{{ url('/dashboard') }}" style="padding-top: 5px;"><img src="{{asset('img/logo1.png')}}" height="60px" alt="" srcset=""></a></li>
+      <ul id="nav-mobile" class="side-nav blue-grey darken-4" style="opacity: .9;">
+        <li class="text-center"><a id="logo-container" href="{{ url('/dashboard') }}" style="padding-top: 4px;"><img src="{{asset('img/logo1.png')}}" height="60px" alt="" srcset=""></a></li>
         @if (Route::has('login'))
             @auth
                 <li><a href="{{url('/dashboard')}}"><i class="mdi-action-home left"></i>Inicio</a></li>
