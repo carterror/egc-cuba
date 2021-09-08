@@ -49,6 +49,7 @@
        border-top: 1px solid rgb(0, 0, 0);
        opacity: 0.9;
        cursor: pointer;
+       z-index: 2;
      }
   </style>
 </head>
