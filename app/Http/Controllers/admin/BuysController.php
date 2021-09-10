@@ -114,7 +114,7 @@ class BuysController extends Controller
             $card = Card::find($buy->tarjeta_id);
 
             $array = [
-                "msg" => 'Su orden no puedes ser procesada en estos momentos. Pedimos disculpas por los molestias que esto puede ocasionar, puede probar más tarde, y si el problema persiste comuníquese con nosotros para una respuesta más exacta.',
+                "msg" => 'Su orden no puedes ser procesada en estos momentos. Pedimos disculpas por los molestias que esto puede ocasionar, puede probar más tarde, comuníquese con nosotros para una respuesta más exacta. <a href="https://wa.me/message/GKYEWV4I7PUGF1">Link</a>',
                 'tarjeta' => $card->name,
                 'valor' => $buy->valor,
                 'currency' => $buy->currency,   

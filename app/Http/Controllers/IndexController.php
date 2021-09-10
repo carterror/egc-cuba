@@ -102,7 +102,7 @@ class IndexController extends Controller
         //$correos = User::where('type', 1)->get();
         Mail::to('compras@egc-cuba.com')->send(new TestMail($array));
 
-        return redirect()->route('dashboard', 'all')->with(['icon' => 'small mdi-action-done green-text'])->with(['type' => 'green-text'])->with(['message' => 'Compra exitosa, Estado: en Espera. Asegurese de haber completado su información...']);
+        return redirect()->route('dashboard', 'all')->with(['icon' => 'small mdi-action-done green-text'])->with(['type' => 'green-text'])->with(['message' => 'Orden Completada, Estado: en Espera.']);
     }
 
     public function info()

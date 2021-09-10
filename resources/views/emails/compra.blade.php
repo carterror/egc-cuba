@@ -24,13 +24,13 @@
             cursor: pointer;
         }
         table{
-            font-size: 1.5rem;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body style="background-color: #718096; padding: 10px; color: #fff;" >
     <center>
-        <h1>Electronic Gift Card</h1>
+    <img src="https://egc-cuba.com/img/logo1.png" width="100%" alt="Logo">
     <div style="background-color: #ffffff; padding: 20px; border-radius: 5px; margin: 50px; color: #000;">
         
             <h3>{!!$msg!!}</h3>
