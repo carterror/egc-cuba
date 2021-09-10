@@ -150,7 +150,7 @@
       <div class="container">
         <h1 class="header center red-text text-darken-4">Electronic Gift Card</h1>
         <div class="row center">
-          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Tarjeta de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.</h5>
+          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Todas las tarjetas de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.</h5>
         </div>
         <br><br>
 

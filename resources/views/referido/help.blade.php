@@ -37,6 +37,44 @@ Ayuda
     </div>
     
 </div>
+<div class="row" >
+    <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
+        <h3 style="margin: 0px !important;"> Realizar Pedido </h3>
+        <h5 style="margin: 0px !important;"> <a href="{{route('dashboard')}}">Ver tarjetas</a> </h5>
+        <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 grey lighten-1" style="border-radius: 5px; padding: 10px;">
+        <div id="flow" class="section scrollspy">
+         
+        <div id="flow-text-demo" class="card-panel grey lighten-5">
+           
+            <div class="row">
+                <div class="col s12 m6 center-align" style="padding-top: 100px;">
+                    <h3> Paso 1</h3>
+                    <h5>Dirigase al inicio y escoja la tarjeta deseada y la moneda a pagar.</h5>
+                </div>
+                <div class="col s12 m6">
+                    <img class="materialboxed responsive-img" src="{{asset('img/pedido1.png')}}">
+                </div>    
+            </div>    
+
+            <div class="row">
+                <div class="col s12 m6 center-align" style="padding-top: 100px;">
+                    <h3> Paso 2</h3>
+                    <h5>Presione el botón de encargar, y espere las instrucciones de los correos electrónicos que recibirá.</h5>
+                </div> 
+                <div class="col s12 m6">
+                    <img class="materialboxed responsive-img" src="{{asset('img/pedido2.png')}}">
+                </div>   
+            </div> 
+
+            </div>
+    </div>
+    </div>
+    
+</div>
 <div class="row">
     <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
         <h3 style="margin: 0px !important;"> Sistema de Puntuación </h3>
@@ -163,45 +201,6 @@ Ayuda
             </div> 
 
            
-
-            </div>
-    </div>
-    </div>
-    
-</div>
-
-<div class="row" >
-    <div class="col s12 center-align" style="margin-top: 0px !important; padding: 0px !important;">
-        <h3 style="margin: 0px !important;"> Realizar Pedido </h3>
-        <h5 style="margin: 0px !important;"> <a href="{{route('dashboard')}}">Ver tarjetas</a> </h5>
-        <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 5px auto;"></div>
-    </div>
-</div>
-<div class="row">
-    <div class="col s12 grey lighten-1" style="border-radius: 5px; padding: 10px;">
-        <div id="flow" class="section scrollspy">
-         
-        <div id="flow-text-demo" class="card-panel grey lighten-5">
-           
-            <div class="row">
-                <div class="col s12 m6 center-align" style="padding-top: 100px;">
-                    <h3> Paso 1</h3>
-                    <h5>Dirigase al inicio y escoja la tarjeta deseada y la moneda a pagar.</h5>
-                </div>
-                <div class="col s12 m6">
-                    <img class="materialboxed responsive-img" src="{{asset('img/pedido1.png')}}">
-                </div>    
-            </div>    
-
-            <div class="row">
-                <div class="col s12 m6 center-align" style="padding-top: 100px;">
-                    <h3> Paso 2</h3>
-                    <h5>Presione el botón de encargar, y espere las instrucciones de los correos electrónicos que recibirá.</h5>
-                </div> 
-                <div class="col s12 m6">
-                    <img class="materialboxed responsive-img" src="{{asset('img/pedido2.png')}}">
-                </div>   
-            </div> 
 
             </div>
     </div>

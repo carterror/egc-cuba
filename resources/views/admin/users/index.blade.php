@@ -26,8 +26,8 @@
                             <th data-field="name">Correo</th>
                             <th data-field="price">Teléfono</th>
                             <th data-field="puntos">Puntos</th>
-                            <th data-field="rango">p. Rango</th>
-                            {{-- <th data-field="action" style="width: 200px;"></th> --}}
+                            <th data-field="rango">Refer:Compra</th>
+                            <th data-field="action"></th>
                           </tr>
                         </thead>
                 
@@ -35,7 +35,7 @@
                             @foreach ($users as $user)
                             
                             
-                            <tr>
+                            <tr style="@if($user->rango >= 20) background-color: #B9F2FF; backdrop-filter: blur(5); @elseif($user->rango >= 10) background-color: #FFD700; @elseif($user->rango >= 5) background-color: #E3E4E5; @elseif($user->rango >= 1) background-color: #CD7F32; @endif">
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->phone}}</td>
