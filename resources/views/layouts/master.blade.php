@@ -6,7 +6,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="author" content="3rroR" />
-  <meta name="description" content="Pagina para vender tarjetas de regalo" />
+  <meta name="description" content="Página para encargar tarjetas de regalo" />
   <meta name="keywords" content="tarjeta, vender, regalo, referido, " />
   <meta name="copyright" content="3rroR" />
   <link rel="icon" href="{{ asset('img/icon.png') }}" sizes="32x32">
@@ -176,7 +176,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.8); border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de <a href="{{route('help')}}">puntuación</a> por cada compra y por cada nuevo usuario <a href="{{url('/help#help')}}">"referido"</a> que unas a nuestra plataforma.</h5>
+          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.8); border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de <a href="{{route('help')}}">puntuación</a> por cada pedido completado y por cada nuevo usuario <a href="{{url('/help#help')}}">"referido"</a> que unas a nuestra plataforma.</h5>
         </div>
       </div>
     </div>

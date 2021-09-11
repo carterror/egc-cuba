@@ -8,9 +8,6 @@ use App\Http\Controllers\admin\ConfigController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\BuysController;
 use App\Http\Controllers\BuysController as ControllersBuysController;
-use App\Mail\TestMail;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -71,7 +68,7 @@ Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     Route::get('/register/{id}', [ReferController::class, 'referir'])->name('refer.referir')->middleware('guest');
     Route::post('/register/referido', [ReferController::class, 'store'])->name('refer.store')->middleware('guest');
 
-    Route::get('/card/{id}', [IndexController::class, 'card'])->name('card')->middleware(['auth', 'verified']);
+    Route::get('/card/{id}', [IndexController::class, 'card'])->name('card');
 
     Route::post('/card/{id}/buy', [IndexController::class, 'buyCard'])->name('buy.card')->middleware(['auth', 'verified', 'iscerrada']);
 

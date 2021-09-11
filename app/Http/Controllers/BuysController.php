@@ -11,7 +11,7 @@ class BuysController extends Controller
 {
     public function index()
     {
-        $buys = Buy::with(['card'])->where('user_id', Auth::user()->id)->paginate(6);
+        $buys = Buy::with(['card'])->where('user_id', Auth::user()->id)->paginate(15);
 
         return view('buys.index', compact('buys'));
     }

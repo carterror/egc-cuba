@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\BuyMail;
+use App\Mail\PedidoMail;
 use Illuminate\Http\Request;
 use App\Models\Buy;
 use App\Models\Card;
@@ -21,7 +22,7 @@ class BuysController extends Controller
 
     public function index()
     {
-        $buys = Buy::with(['usert','card'])->latest('Updated_at')->paginate(6);
+        $buys = Buy::with(['usert','card'])->latest('Updated_at')->paginate(15);
         return view('admin.buys.index', compact('buys'));
     }
 
@@ -95,7 +96,7 @@ class BuysController extends Controller
             $rebaja = Config::get('tienda.'.$buy->currency, 50) - $buy->price;
 
             $array = [
-                "msg" => 'Su orden fue aceptada y está en procedimiento. En cuanto esté lista será contactado mediante WhatsApp o Correo Electrónico. Para efectuar el pago usar el link que aparece a continuación. <a href="https://wa.me/message/GKYEWV4I7PUGF1">Link</a> y escribir "/orden"',
+                "msg" => 'Su orden fue aceptada y está en procedimiento. En cuanto esté lista será contactado mediante Correo Electrónico. Para un seguimiento de su orden más preciso, usar el link que aparece a continuación. <a href="https://wa.me/message/GKYEWV4I7PUGF1">Link</a> y escribir "/orden", seguido de la tarjeta que solicitó',
                 'tarjeta' => $card->name,
                 'valor' => $buy->valor,
                 'currency' => $buy->currency,   
@@ -107,6 +108,21 @@ class BuysController extends Controller
             $user = User::find($buy->user_id);
 
             Mail::to($user->email)->send(new BuyMail($array));
+
+        } elseif ($action==3) {
+
+            $msg = "Tarjeta confirmada";
+
+            $card = Card::find($buy->tarjeta_id);
+
+            $array = [
+                'tarjeta' => $card->name,
+                'fecha' => $buy->created_at->format('d/m/Y'),
+            ];
+            
+            $user = User::find($buy->user_id);
+
+            Mail::to($user->email)->send(new PedidoMail($array));
 
         } else {
             $buy->estado = 0;

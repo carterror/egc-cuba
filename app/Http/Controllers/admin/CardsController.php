@@ -21,7 +21,7 @@ class CardsController extends Controller
     
     public function index()
     {
-        $cards = Card::paginate(6);
+        $cards = Card::paginate(10);
 
         return view('admin.cards.index', compact('cards'));
     }

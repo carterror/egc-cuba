@@ -24,8 +24,15 @@
                         <div class="input-field col s6 selecto" style="margin-top: 20px;" >
                             <select  name="valor" id="valor" onchange="change()" >
                               <option value="{{$card->price}}" selected>{{$card->price}}</option>
+                              @php
+                                  $i = 0;
+                              @endphp
                               @foreach ($valor as $v)
-                                <option value="{{$v}}">{{$v}}</option>
+                                @if ($card->name == "Fortnite PaVos")
+                                  <option value="{{$i++}}">{{$v}}</option>
+                                @else
+                                  <option value="{{$v}}">{{$v}}</option>
+                                @endif
                               @endforeach
                             </select>
                             <label style="font-size: 20px;">Valor:</label>
@@ -105,13 +112,13 @@
             preciomlc.value = Math.round((valor.value*mlc)*100)/100;
             preciopunt.value = valor.value*100;
 
-            if (valor.value == 14) {
+            if (valor.value == 0) {
               vb.value = 1000;
-            } else if(valor.value == 28) {
+            } else if(valor.value == 1) {
               vb.value = 2800;
-            } else if(valor.value == 40) {
+            } else if(valor.value == 2) {
               vb.value = 5000;
-            } else if(valor.value == 80) {
+            } else if(valor.value == 3) {
               vb.value = 13500;
             } else {
               vb.value = "...";

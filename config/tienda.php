@@ -12,7 +12,7 @@ return [
 
 "bono" => 1,
 
-"bonopla" => 0.5,
+"bonopla" => 0.25,
 
 "rebaja" => 0,
 
