@@ -54,22 +54,6 @@
             <td>Fecha:</td>
             <td>{{$fecha}}</td>
         </tr>
-        <tr>
-            <td colspan="2" style="text-align: center;">Contactos:</td>
-        </tr>
-        <tr>
-            <td>Correo:</td>
-            <td><a href="mailto:compras@egc-cuba.com">compras@egc-cuba.com</a></td>
-        </tr>
-        <tr>
-            <td>Teléfono:</td>
-            <td><a href="tel:{{Config::get('tienda.phone', null)}}">{{Config::get('tienda.phone', null)}}</a></td>
-        </tr>
-        <tr>
-            <td>Contactar:</td>
-            <td><a href="https://wa.me/message/GKYEWV4I7PUGF1">WhatsApp</a></td>
-        </tr>
-        <tr>
     </table>
     <h3>Gracias por su confianza. EGC-Cuba</h3>
     </div>
