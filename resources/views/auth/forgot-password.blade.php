@@ -14,7 +14,7 @@
         <x-auth-session-status class="mb-4" :status="session('status')" style="color: beige; padding: 10px;"/>
 
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        {{-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> --}}
 
     <div class="row" style="margin-top: 20px; padding-left: 15px;">
         <form method="POST" action="{{ route('password.email') }}" >

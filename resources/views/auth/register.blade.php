@@ -10,6 +10,9 @@
         {{-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> --}}
 
         <div class="row" style="margin-top: 20px; padding-left: 15px;">
+            <div class="mb-4 text-sm" style="color: beige; margin-bottom: 20px; padding: 10px; font-size: large;">
+                {{ __('Probablemente los correos sean identificados como spam, solo confirmen a gmail que no lo es, pero tendran que buscar el primer correo en la carpeta de spam. Esto debido a que somos un dominio nuevo.') }}
+            </div>
             <form class="col s12" method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="row">
@@ -42,7 +45,7 @@
               </div>
               <div class="row">
                 <p class="col s11 offset-s2">
-                    <input type="checkbox" id="test6" required/>
+                    <input type="checkbox" id="test6"/>
                     <label for="test6">Aceptar <a href="{{route('termi')}}">Terminos de Servicios</a></label>
                   </p>
           </div>

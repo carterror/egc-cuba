@@ -7,7 +7,7 @@
         </x-slot>
 
         <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        {{-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> --}}
 
         <form method="POST" action="{{ route('password.update') }}" style="margin-top: 20px; padding-left: 15px;">
             @csrf
@@ -16,10 +16,12 @@
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
             <!-- Email Address -->
-            <div class="input-field col s11 blue-grey-text text-lighten-5">
-                <i class="mdi-content-drafts prefix"></i>
-                <input id="email" class="blue-grey-text text-lighten-5" type="email" name="email" value="{{old('email')}}" required autofocus>
-                <label for="email">Correo Electrónico</label>
+            <div class="row">
+                <div class="input-field col s11 blue-grey-text text-lighten-5">
+                    <i class="mdi-content-drafts prefix"></i>
+                    <input id="email" class="blue-grey-text text-lighten-5" type="email" name="email" value="{{old('email')}}" required autofocus>
+                    <label for="email">Correo Electrónico</label>
+                </div>
             </div>
 
             <!-- Password -->
