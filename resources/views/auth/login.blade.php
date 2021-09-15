@@ -30,8 +30,8 @@
                     <label for="password">Contraseña</label>
                 </div>
               </div>
-              <div class="row">
-                    <p class="col s11 offset-s2">
+              <div class="row" style="padding: 0px;">
+                    <p class="col s8 offset-s2" style="padding: 0px; margin: 0px 55px;">
                         <input type="checkbox" id="test6"/>
                         <label for="test6">{{ __('Remember me') }}</label>
                       </p>

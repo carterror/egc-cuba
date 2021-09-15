@@ -15,15 +15,15 @@
         <link rel="stylesheet" href="{{ asset('dist/css/style.css') }}">
         <style>
             body{
-                background: url('{{ asset("img/parallax.png") }}');
+                background: url('{{ asset("img/logueo.jpg") }}') no-repeat center center fixed;
+                background-size: cover; 
             }
         </style>
     </head>
     <body >
-        
-        <div class="container" style="background-color: rgba(0, 0, 0, 0.582);">
-            <div class="row" style="margin-top: 100px; padding: 0px;">
-                <div class="col s10 m6 offset-s1 offset-m3" style="padding: 0px;">
+        <div class="container" >
+            <div class="row" style="margin-top: 100px; padding: 0px; ">
+                <div class="col s12 m6 offset-m3" style="padding: 12px 12px 0px 12px; background-color: rgba(0, 0, 0, 0.493); margin-bottom: -100px;">
                     {{ $slot }}
                  </div> 
              </div>

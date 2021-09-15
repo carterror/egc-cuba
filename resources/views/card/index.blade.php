@@ -39,7 +39,7 @@
          @if ($card->name == "Fortnite PaVos")
             <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
                   <div class="input-field col s6" style="margin-top: 30px;">
-                    <input type="text" value="{{$card->price*100}}" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
+                    <input type="text" value="1000" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
                     <label for="icon_prefix" style="font-size: 20px;">Fortnite</label>
                   </div>
                   <div class="input-field col s6" style="font-size: 30px; font-weight: bold;">
