@@ -22,8 +22,8 @@
         @csrf
         <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
                         <div class="input-field col s6 selecto" style="margin-top: 20px;" >
-                            <select  name="valor" id="valor" onchange="change()" >
-                              <option value="{{$card->price}}" selected>{{$card->price}}</option>
+                            <select name="valor" id="valor" onchange="change()" >
+                              {{-- <option value="{{$card->price}}">{{$card->price}}</option> --}}
                               @foreach ($valor as $v)
                                 <option value="{{$v}}">{{$v}}</option>
                               @endforeach
@@ -36,8 +36,8 @@
                     USD
                   </div>
         </div>
-         @if ($card->name == "Fortnite PaVos")
-            <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
+         
+            <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33); @if ($card->name != "Fortnite PaVos") display: none; @endif">
                   <div class="input-field col s6" style="margin-top: 30px;">
                     <input type="text" value="1000" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
                     <label for="icon_prefix" style="font-size: 20px;">Fortnite</label>
@@ -46,8 +46,7 @@
                     PaVos
                   </div>
             </div>
-         @else
-         @endif
+      
     </div>
     <div class="row justify-center">
         <div class="col s12 m6 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
@@ -116,7 +115,7 @@
             } else {
               vb.value = "...";
             }
-            
+
         } 
       </script>
 @endsection

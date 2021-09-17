@@ -57,7 +57,7 @@
   <div class="navbar-fixed">
   <nav class="blue-grey darken-4"  role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo" style="padding-top: 3px;"><img src="{{asset('img/logo1.png')}}" height="50px" alt="" srcset=""></a>
+      <a id="logo-container" href="{{route('dashboard')}}" class="brand-logo" style="padding-top: 3px;"><img src="{{asset('img/logo1.png')}}" height="50px" alt="" srcset=""></a>
       <ul class="right hide-on-med-and-down">
         @if (Route::has('login'))
             @auth
