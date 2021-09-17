@@ -89,30 +89,30 @@ Ayuda
         <div id="flow-text-demo" class="card-panel grey lighten-5">
             <h4>Puntos:</h4>
 
-            <p class="">Sistema implementado en nuestra página en el cual eres recompensado por cada compra realizada.</p>
+            <p class="">Sistema implementado en nuestra página en el cual eres recompensado por cada encargo completado.</p>
             <p class="">Los puntos pueden ser canjeados por cualquiera de nuestras tarjetas en venta.</p>
-            <p class="">Opten desde 0.75 hasta 1.25 punto por cada USD en las compras que realices dependiendo de tu nivel.</p>
-            <p class="">IMPORTANTE: Los puntos se agregan automáticamente después de que se confirme la compra, en un tiempo máximo de 30 minutos.</p>
+            <p class="">Opten desde 0.75 hasta 1.25 punto por cada USD en los encargos completados que realices dependiendo de tu nivel.</p>
+            <p class="">IMPORTANTE: Los puntos se agregan automáticamente después de que se confirme la encargo, en un tiempo máximo de 30 minutos.</p>
             
              
             
             <h4><a href="{{route('refer')}}">Referidos:</a></h4>
             
-            <p class="">Un sistema en el que se les recompensa con puntos extras por las compras que realicen tus <a href="{{route('refer')}}">Referidos</a>.</p>
+            <p class="">Un sistema en el que se les recompensa con puntos extras por los encargos completados que realicen tus <a href="{{route('refer')}}">Referidos</a>.</p>
             
-            <p class="">Opten 0.5 puntos por cada USD en las compras de tus <a href="{{route('refer')}}">Referidos</a>.</p>
+            <p class="">Opten 0.5 puntos por cada USD en los encargos completados de tus <a href="{{route('refer')}}">Referidos</a>.</p>
             <p class="">IMPORTANTE: El sistema de <a href="{{route('refer')}}">Referidos</a> es de un solo nivel. Los referidos de tus referidos no te aportan bonificaciones.</p>
             
             
             <h4>Niveles:</h4>
             
-            <p class="">Bonificación en puntos por la cantidad de <a href="{{route('refer')}}">Referidos</a> que agregues a nuestra página que realicen compras.</p>
+            <p class="">Bonificación en puntos por la cantidad de <a href="{{route('refer')}}">Referidos</a> que agregues a nuestra página que realicen encargos completados.</p>
             
             <ul>
-                <li>1 <a href="{{route('refer')}}">Referido</a> con al menos una compra: NIVEL BRONCE</li>
-                <li>5 <a href="{{route('refer')}}">Referidos</a> con al menos una compra: NIVEL PLATA</li>
-                <li>10 <a href="{{route('refer')}}">Referidos</a> con al menos una compra: NIVEL ORO</li>
-                <li>20 <a href="{{route('refer')}}">Referidos</a> con al menos una compra: NIVEL PLATINO</li>
+                <li>1 <a href="{{route('refer')}}">Referido</a> con al menos una encargo completados: NIVEL BRONCE</li>
+                <li>5 <a href="{{route('refer')}}">Referidos</a> con al menos una encargo completados: NIVEL PLATA</li>
+                <li>10 <a href="{{route('refer')}}">Referidos</a> con al menos una encargo completados: NIVEL ORO</li>
+                <li>20 <a href="{{route('refer')}}">Referidos</a> con al menos una encargo completados: NIVEL PLATINO</li>
             </ul>
             
         
@@ -122,12 +122,12 @@ Ayuda
             <dl>
                 <dt>Cuentas BRONCE:</dt>
                 <dd>- Bonificación de 100 puntos</dd>
-                <dd>- Opten 0.75 puntos por cada USD en las compras que realices permanentemente</dd>
-                <dd>- 0.50 puntos por cada compra de tus referidos</dd>
+                <dd>- Opten 0.75 puntos por cada USD en los encargos completados que realices permanentemente</dd>
+                <dd>- 0.50 puntos por cada encargo completado de tus referidos</dd>
 
                 <dt>Cuentas PLATA:</dt>
                 <dd>- Bonificación de 375 puntos</dd>
-                <dd>- Opten 1 punto por cada USD en las compras que realices permanentemente</dd>
+                <dd>- Opten 1 punto por cada USD en los encargos completados que realices permanentemente</dd>
 
                 <dt>Cuentas ORO: </dt>
                 <dd>- Bonificacione de 475 puntos</dd>
@@ -136,7 +136,7 @@ Ayuda
                 <dt>Cuentas PLATINO:</dt>
                 <dd>- Bonificación de 950 puntos</dd>
                 <dd>- Rebajas en fechas de ofertas especiales</dd>
-                <dd id="help">- Bono de 0.25 puntos extras por las compras que realicen sus referidos</dd>
+                <dd id="help">- Bono de 0.25 puntos extras por los encargos completados que realicen sus referidos</dd>
 
             </dl>
 
