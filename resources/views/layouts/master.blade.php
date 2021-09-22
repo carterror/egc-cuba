@@ -7,8 +7,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="author" content="3rroR" />
   <meta name="description" content="Página para encargar tarjetas de regalo" />
-  <meta name="keywords" content="tarjeta, vender, regalo, referido, " />
-  <meta name="copyright" content="3rroR" />
+  <meta name="keywords" content="tarjeta, vender, regalo, referido, encargo" />
+  <meta name="copyright" content="egc-cuba.com" />
+  <meta name="robots" content="index, follow">
   <link rel="icon" href="{{ asset('img/icon.png') }}" sizes="32x32">
   <title>{{ config('app.name', 'Tienda') }} @yield('title')</title>
 
@@ -148,7 +149,9 @@
   <div id="index-banner" class="parallax-container" style="padding-top: 20px;">
     <div class="section no-pad-bot">
       <div class="container">
-        <h1 class="header center red-text text-darken-4">Electronic Gift Card</h1>
+        
+        <h1 class="header center red-text text-darken-4"><br><br></h1>
+        
         <div class="row center">
           <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Todas las tarjetas de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.</h5>
         </div>
@@ -156,7 +159,7 @@
 
       </div>
     </div>
-    <div class="parallax"><img src="{{asset('img/banner2.jpg')}}" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="{{asset('img/banner2.jpg')}}" alt="Tarjetas de regalo"></div>
   </div>
   <div class="row">
     <div class="container">
@@ -180,7 +183,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="{{asset('img/parallax.png')}}" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="{{asset('img/parallax.jpg')}}" alt="Tarjetas de regalo"></div>
   </div>
 
   <footer class="page-footer blue-grey darken-4">
