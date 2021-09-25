@@ -12,7 +12,7 @@
         </div>
         <div class="col s12 m7" style="word-break: break-all; hyphens: auto;">
             <h2 style="margin: 10px !important;"> {{$card->name}}</h2>
-            <div style="width: 100px; height: 5px; background-color: #bdbdbd; margin: 10px;"></div>
+            <div style="width: 100px; height: 5px; background-color: #01589bcc; margin: 10px;"></div>
             <p style="padding-left: 10px;"> {!!$card->description!!}</p>
         </div>
     </div>
@@ -20,7 +20,7 @@
     <div class="row" style="">
       <form action="{{route('buy.card', $card->id)}}" method="POST">
         @csrf
-        <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
+        <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid #01579b;">
                         <div class="input-field col s6 selecto" style="margin-top: 20px;" >
                             <select name="valor" id="valor" onchange="change()" >
                               {{-- <option value="{{$card->price}}">{{$card->price}}</option> --}}
@@ -37,7 +37,7 @@
                   </div>
         </div>
          
-            <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33); @if ($card->name != "Fortnite PaVos") display: none; @endif">
+            <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid #01579b; @if ($card->name != "Fortnite PaVos") display: none; @endif">
                   <div class="input-field col s6" style="margin-top: 30px;">
                     <input type="text" value="1000" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
                     <label for="icon_prefix" style="font-size: 20px;">Fortnite</label>
@@ -49,7 +49,7 @@
       
     </div>
     <div class="row justify-center">
-        <div class="col s12 m6 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
+        <div class="col s12 m6 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid #01579b;">
             <div class="input-field col s6" style="margin-top: 20px;">
                 <input type="text" value="{{$card->price*Config::get('tienda.cup', 50)}}" class="validate" id="cup" disabled style="font-size: 30px; font-weight: bold; color: black;">
                 <label for="icon_prefix" style="font-size: 20px;">CUP</label>
@@ -59,7 +59,7 @@
                   <label for="test5" style="font-size: 30px; font-weight: bold;">CUP</label>
               </div> 
         </div>
-        <div class="col s12 m6 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
+        <div class="col s12 m6 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid #01579b;">
             <div class="input-field col s6" style="margin-top: 20px;">
                 <input type="text" value="{{$card->price*Config::get('tienda.mlc', 0.86)}}" class="validate" id="mlc" disabled style="font-size: 30px; font-weight: bold; color: black;">
                 <label for="icon_prefix" style="font-size: 20px;">MLC</label>
@@ -70,7 +70,7 @@
               </div> 
         </div>
 
-        <div class="col s12 m6 offset-m3 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid rgb(33, 129, 33);">
+        <div class="col s12 m6 offset-m3 grey lighten-5 z-depth-2" style="border-radius: 5px; padding: 15px; border-left: 5px solid #01579b;">
           <div class="input-field col s6" style="margin-top: 20px;">
               <input type="text" value="{{$card->price*100}}" class="validate" id="punt" disabled style="font-size: 30px; font-weight: bold; color: black;">
               <label for="icon_prefix" style="font-size: 20px;">PUNTOS</label>
@@ -84,7 +84,7 @@
     </div>
     <div class="row">
       <div class="col s12 right-align" style="border-radius: 5px; margin-top: 15px;">
-            <button type="submit" style="display: inline; float: right;" max-value="2" class="waves-effect waves-light btn grey-text text-lighten-5">$ Encargar</button>
+            <button type="submit" style="display: inline; float: right;" max-value="2" class="waves-effect waves-light btn grey-text text-lighten-5 light-blue darken-4">$ Encargar</button>
         </form>
     </div>
     </div>

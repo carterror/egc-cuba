@@ -2100,7 +2100,15 @@ img.responsive-img, video.responsive-video {
     min-height: 100%;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    transform: translateX(-50%); }
+    transform: translateX(-50%); 
+    width: 95%;
+  }
+
+  @media only screen and  (max-width: 600px) {
+    .parallax img {
+      width: 200%;
+    }
+  }
 
 .pin-top, .pin-bottom {
   position: relative; }
