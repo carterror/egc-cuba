@@ -2104,9 +2104,9 @@ img.responsive-img, video.responsive-video {
     width: 95%;
   }
 
-  @media only screen and  (max-width: 600px) {
+  @media only screen and (max-width: 600px) {
     .parallax img {
-      width: 200%;
+      width: 250%;
     }
   }
 
