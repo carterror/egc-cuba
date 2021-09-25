@@ -183,7 +183,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.322); text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.863); color: #fff ; font-weight: 400;border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de <a href="{{route('help')}}">puntuación</a> por cada pedido completado y por cada nuevo usuario <a href="{{url('/help#help')}}">"referido"</a> que unas a nuestra plataforma.</h5>
+          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.322); text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.863); color: #fff ; font-weight: 400;border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de <a href="{{route('help')}}" class="red-text text-darken-3">puntuación</a> por cada pedido completado y por cada nuevo usuario <a href="{{url('/help#help')}}" class="red-text text-darken-3">"referido"</a> que unas a nuestra plataforma.</h5>
         </div>
       </div>
     </div>
@@ -195,8 +195,8 @@
       <div class="row">
         <div class="col m4 s12">
           <h5 class="white-text asdasd">Contacto</h5>
-          <p class="grey-text text-lighten-4" style="line-height: 1;">Teléfono: <a  href="tel:+{{Config::get('tienda.phone', null)}}" class="indigo-text text-darken-4">+{{Config::get('tienda.phone', null)}}</a></p>
-          <p class="grey-text text-lighten-4" style="line-height: 1;">Correo: <a  href="mailto:soporte@egc-cuba.com" class="indigo-text text-darken-4">soporte@egc-cuba.com</a></p>
+          <p class="grey-text text-lighten-4" style="line-height: 1;">Teléfono: <a  href="tel:+{{Config::get('tienda.phone', null)}}" class="red-text text-darken-4">+{{Config::get('tienda.phone', null)}}</a></p>
+          <p class="grey-text text-lighten-4" style="line-height: 1;">Correo: <a  href="mailto:soporte@egc-cuba.com" class="red-text text-darken-4">soporte@egc-cuba.com</a></p>
 
 
         </div>
