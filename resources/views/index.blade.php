@@ -9,14 +9,18 @@
           <div class="row">
           
             <div class="col s12">
-              <nav class="blue-grey darken-4">
+              <nav class="light-blue darken-4">
                 <div class="nav-wrapper">
                   <form method="POST" action="{{route('buscar')}}">
                     @csrf
                     <div class="input-field">
-                      <input id="search" type="search" name="buscar" style="height: 64px;" required>
-                      <label for="search"><i class="mdi-action-search"></i></label>
-                      <i class="mdi-navigation-close"></i>
+                      <input id="search" type="search" name="buscar" style="height: 64px;" list="datali" required>
+                      <datalist id="datali">
+                        @foreach ($cards as $card)
+                          <option value="{{$card->name}}">
+                        @endforeach
+                      </datalist>
+                      <label for="search" style="left: 15px;"><i class="mdi-action-search light-blue-text text-lighten-3"></i></label>
                     </div>
                   </form>
                 </div>
@@ -26,14 +30,14 @@
           </div>
 
         @if (!$conteo)
-            <h2 class="red-text text-accent-3">NO SE ENCUENTRAN TARJETAS!!! <br> "{{$id}}"</h2>
+            <h5 class="light-blue-text text-darken-4">No se encontraron coincidencias!!! <br> "{{$id}}"</h5>
         @else
         @if ($id!="all")
-            <h3 class="red-text text-accent-3">Resultados de buscar: "{{$id}}"</h3>
+            <h5 class="light-blue-text text-darken-4">Resultados de buscar: "{{$id}}"</h5>
         @endif
           @foreach ($cards as $card)
             <div class="col s6 m4 l3">
-                <div class="card">
+                <div class="card" style="border-radius: 10px;">
                     <div class="card-image waves-effect waves-block waves-light ">
                     <a href="{{route('card', $card->id)}}"><img class="activator" src="{{asset('uploads/'.$card->path)}}"></a>
                     <div class="" style="position: absolute; bottom: 1px; right: 1px; padding: 10px; font-weight: bold; background-color: rgba(255, 255, 255, 0.699);">$ {{$card->price}} - {{$card->top}}</div>
@@ -45,9 +49,9 @@
                     @if (Route::has('login'))
                     @auth
                     {{-- <a style="color: #00bfa5;">{{$card->price*Config::get('tienda.cup', 1)}} - {{$card->top*Config::get('tienda.cup', 1)}} cup</a> --}}
-                    <a href="{{route('card', $card->id)}}" class="waves-effect waves-light btn grey-text text-lighten-5">Ver</a>
+                    <a href="{{route('card', $card->id)}}" class="waves-effect waves-light btn grey-text text-lighten-5 light-blue darken-4">Ver</a>
                     @else
-                    <a href="{{route('register')}}" class="waves-effect waves-light btn grey-text text-lighten-5">Entrar</a>
+                    <a href="{{route('register')}}" class="waves-effect waves-light btn grey-text text-lighten-5 light-blue darken-4">Entrar</a>
                     @endauth
                     @endif
                     </div>

@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="{{ asset('dist/css/jquery.fancybox.css') }}">
   {{-- <link rel="stylesheet" href="{{ asset('dist/app.css') }}"> --}}
   <style>
+    html {
+      font-family: 'Open Sans';
+    }
     .selecto .select-wrapper input.select-dropdown {
       font-size: 30px; 
       font-weight: bold;
@@ -52,11 +55,14 @@
        cursor: pointer;
        z-index: 2;
      }
+     footer a:hover{
+        text-decoration: underline; 
+     }
   </style>
 </head>
-<body>
+<body class="light-blue lighten-4">
   <div class="navbar-fixed">
-  <nav class="blue-grey darken-4"  role="navigation">
+  <nav class="light-blue darken-3"  role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="{{route('dashboard')}}" class="brand-logo" style="padding-top: 3px;"><img src="{{asset('img/logo1.png')}}" height="50px" alt="" srcset=""></a>
       <ul class="right hide-on-med-and-down">
@@ -64,7 +70,7 @@
             @auth
                 <li><a href="{{ url('/dashboard/all') }}" ><i class="mdi-action-home left"></i>Inicio</a></li>
                 <li><a href="{{route('help')}}"><i class="mdi-communication-live-help left"></i>Ayuda</a></li>
-               <ul id="dropdown1" class="dropdown-content blue-grey darken-4">
+               <ul id="dropdown1" class="dropdown-content light-blue darken-3">
                   <li><a class="disabled">{{ Auth::user()->name }}</a></li>
                   <li class="divider"></li>
                   <li><a href="{{route('info')}}">Información</a></li>
@@ -96,7 +102,7 @@
       @endif
       </ul>
 
-      <ul id="nav-mobile" class="side-nav blue-grey darken-4" style="opacity: .9;">
+      <ul id="nav-mobile" class="side-nav light-blue darken-3" style="opacity: .8;">
         <li class="text-center"><a id="logo-container" href="{{ url('/dashboard') }}" style="padding-top: 4px;"><img src="{{asset('img/logo1.png')}}" height="60px" alt="" srcset=""></a></li>
         @if (Route::has('login'))
             @auth
@@ -127,7 +133,7 @@
             @endauth
       @endif
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse red-text text-darken-4"><i class="mdi-navigation-menu"></i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse grey-text text-lighten-5"><i class="mdi-navigation-menu"></i></a>
     </div>
   </nav>
   </div>
@@ -143,20 +149,18 @@
     @elseif (date('Y-m-d H:i:s') < $date)
       <h5 class="stado tooltipped center grey-text text-lighten-4 red z-depth-2" data-position="bottom" data-delay="50" data-tooltip='Cerrada hasta: {{$date->format('d \\d\\e ').$meses[$date->format('m')-1]}} a las {{$date->format('h:i A')}}'>Tienda Cerrada</h5>
     @else
-      <h5 class="stado tooltipped center grey-text text-lighten-4 light teal z-depth-2" data-position="bottom" data-delay="50" data-tooltip="Abierta">Tienda Abierta</h5>
+      <h5 class="stado tooltipped center grey-text text-lighten-4 light-blue darken-4 z-depth-2" data-position="bottom" data-delay="50" data-tooltip="Abierta">Tienda Abierta</h5>
     @endif
 
   <div id="index-banner" class="parallax-container" style="padding-top: 20px;">
     <div class="section no-pad-bot">
       <div class="container">
         
-        <h1 class="header center red-text text-darken-4"><br><br></h1>
+        <h1 class="header center red-text text-darken-4"><br></h1>
         
         <div class="row center">
-          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.685); border-radius: 5px; padding: 10px;">Todas las tarjetas de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.</h5>
+          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.322); text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.863); color: #fff ; font-weight: 400; border-radius: 5px; padding: 10px;">Todas las tarjetas de regalo a su alcance. Te brindamos un sistema para encargar tus tarjetas preferida de forma muy fácil.</h5>
         </div>
-        <br><br>
-
       </div>
     </div>
     <div class="parallax"><img src="{{asset('img/banner2.jpg')}}" alt="Tarjetas de regalo"></div>
@@ -179,20 +183,20 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.8); border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de <a href="{{route('help')}}">puntuación</a> por cada pedido completado y por cada nuevo usuario <a href="{{url('/help#help')}}">"referido"</a> que unas a nuestra plataforma.</h5>
+          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.322); text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.863); color: #fff ; font-weight: 400;border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de <a href="{{route('help')}}">puntuación</a> por cada pedido completado y por cada nuevo usuario <a href="{{url('/help#help')}}">"referido"</a> que unas a nuestra plataforma.</h5>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="{{asset('img/parallax.jpg')}}" alt="Tarjetas de regalo"></div>
+    <div class="parallax"><img src="{{asset('img/banner1.jpg')}}" alt="Tarjetas de regalo"></div>
   </div>
 
-  <footer class="page-footer blue-grey darken-4">
+  <footer class="page-footer light-blue darken-3 ">
     <div class="container">
       <div class="row">
         <div class="col m4 s12">
-          <h5 class="white-text">Contacto</h5>
-          <p class="grey-text text-lighten-4">Teléfono: <a  href="tel:{{Config::get('tienda.phone', null)}}">{{Config::get('tienda.phone', null)}}</a></p>
-          <p class="grey-text text-lighten-4">Correo: <a  href="mailto:soporte@egc-cuba.com">soporte@egc-cuba.com</a></p>
+          <h5 class="white-text asdasd">Contacto</h5>
+          <p class="grey-text text-lighten-4" style="line-height: 1;">Teléfono: <a  href="tel:+{{Config::get('tienda.phone', null)}}" class="indigo-text text-darken-4">+{{Config::get('tienda.phone', null)}}</a></p>
+          <p class="grey-text text-lighten-4" style="line-height: 1;">Correo: <a  href="mailto:soporte@egc-cuba.com" class="indigo-text text-darken-4">soporte@egc-cuba.com</a></p>
 
 
         </div>
@@ -224,14 +228,14 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright grey darken-4" >
-      <div class="container">
+    <div class="footer-copyright light-blue darken-4" >
+      <div class="container  grey-text text-lighten-5">
       Desarrollado por <a class="brown-text text-lighten-3" href="https://www.facebook.com/carlosbrayan.ramilachorens.5/">+++CT3rroR+++</a>
       </div>
     </div>
   </footer>
 
-<a class="back-to-top btn-floating red darken-4 btn-large waves-effect waves-light" id="back-to-top"><i class="mdi-navigation-expand-less"></i></a>
+<a class="back-to-top btn-floating light-blue darken-4 btn-large waves-effect waves-light" id="back-to-top"><i class="mdi-navigation-expand-less"></i></a>
 
 <!-- Modal Structure -->
 <div id="modalBono" class="modal pink-text text-accent-2 grey darken-3">
@@ -240,7 +244,7 @@
     <h6>{{Config::get('tienda.descript', null)}}</h6>
   </div>
   <div class="modal-footer pink-text text-accent-2 grey darken-3">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-pink btn-flat pink-text text-accent-2">Entendido!</a>
+    <a href="#!" class="modal-action modal-close waves-effect waves-pink btn-flat pink-text text-accent-2">Entendido!</a>
   </div>
 </div>
 
