@@ -166,7 +166,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light" style="background-color: rgba(0, 0, 0, 0.322); text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.863); color: #fff ; font-weight: 400;border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de <a href="{{route('help')}}" class="red-text text-darken-3">puntuación</a> por cada pedido completado y por cada nuevo usuario <a href="{{url('/help#help')}}" class="red-text text-darken-3">"referido"</a> que unas a nuestra plataforma.</h5>
+          <h5 class="header col s12 light" style="margin-top: -10px; background-color: rgba(0, 0, 0, 0.322); text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.863); color: #fff ; font-weight: 400;border-radius: 5px; padding: 10px;">Te premiamos con nuestro sistema de <a href="{{route('help')}}" class="red-text text-darken-3">puntuación</a> por cada pedido completado y por cada nuevo usuario <a href="{{url('/help#help')}}" class="red-text text-darken-3">"referido"</a> que unas a nuestra plataforma.</h5>
         </div>
       </div>
     </div>
