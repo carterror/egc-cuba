@@ -20,14 +20,14 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="mobile-web-app-status-bar-style" content="black-translucent">
 
-  <link rel="shortcut icon" type="image/png" href="./img/icon.png">
-  <link rel="apple-touch-icon" href="./icon.png">
-  <link rel="touch-icon" href="./icon.png">
-  <link rel="apple-touch-startup-image" href="./icon.png">
-  <link rel="touch-startup-image" href="./icon.png">
+  <link rel="shortcut icon" type="image/png" href="{{ asset('img/icon_512.png') }}">
+  <link rel="apple-touch-icon" href="{{ asset('img/icon_512.png') }}">
+  <link rel="touch-icon" href="{{ asset('img/icon_512.png') }}">
+  <link rel="apple-touch-startup-image" href="{{ asset('img/icon_512.png') }}">
+  <link rel="touch-startup-image" href="{{ asset('img/icon_512.png') }}">
   <link rel="manifest" href="{{ asset('manifest.json') }}">
 
-  <link rel="icon" href="{{ asset('img/icon.png') }}" sizes="32x32">
+  <link rel="icon" href="{{ asset('img/icon_512.png') }}" sizes="32x32">
   <title>{{ config('app.name', 'Tienda') }} @yield('title')</title>
 
   <!-- Fonts -->
