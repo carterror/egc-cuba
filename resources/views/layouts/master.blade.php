@@ -5,16 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
   <meta name="author" content="3rroR" />
   <meta name="description" content="Página para encargar tarjetas de regalo" />
   <meta name="keywords" content="tarjeta, vender, regalo, referido, encargo" />
   <meta name="copyright" content="egc-cuba.com" />
   <meta name="robots" content="index, follow">
+
+  <meta name="theme-color" content="#01579b">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="shortcut icon" type="image/png" href="./img/icon.png">
+  <link rel="apple-touch-icon" href="./icon.png">
+  <link rel="touch-icon" href="./icon.png">
+  <link rel="apple-touch-startup-image" href="./icon.png">
+  <link rel="touch-startup-image" href="./icon.png">
+  <link rel="manifest" href="{{ asset('manifest.json') }}">
+
   <link rel="icon" href="{{ asset('img/icon.png') }}" sizes="32x32">
   <title>{{ config('app.name', 'Tienda') }} @yield('title')</title>
 
   <!-- Fonts -->
-  {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
+  {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=OpenSans:wght@400;600;700&display=swap"> --}}
 
   <!-- Styles -->
   
@@ -23,41 +40,7 @@
   <link rel="stylesheet" href="{{ asset('dist/css/jquery.fancybox.css') }}">
   {{-- <link rel="stylesheet" href="{{ asset('dist/app.css') }}"> --}}
   <style>
-    html {
-      font-family: 'Open Sans';
-    }
-    .selecto .select-wrapper input.select-dropdown {
-      font-size: 30px; 
-      font-weight: bold;
-      margin-top: 10px;
-     }
-     .back-to-top{
-        opacity: 0;
-        transition: .6s;
-     }
-     .back-to-top-ap{
-        opacity: 0.6;
-     }
-     .back-to-top:hover{
-        opacity: 1;
-     }
-     .stado{
-       left: 35%;
-       top: 45px;
-       position: fixed;
-       border-radius: 0px 0px 5px 5px; 
-       padding: 10px 10px 5px 10px; 
-       font-size: large; 
-       font-weight: bold;
-       box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.575);
-       border-top: 1px solid rgb(0, 0, 0);
-       opacity: 0.9;
-       cursor: pointer;
-       z-index: 2;
-     }
-     footer a:hover{
-        text-decoration: underline; 
-     }
+
   </style>
 </head>
 <body class="light-blue lighten-4">
@@ -253,16 +236,17 @@
     <script src="{{ asset('dist/js/materialize.js') }}"></script>
     <script src="{{ asset('dist/js/init.js') }}"></script>
     <script src="{{ asset('dist/js/clipboard.min.js') }}"></script>
+    
     <script>
-      const boton = document.getElementById('back-to-top');
-      window.onscroll = function () {
-        var y = window.scrollY;
-        if (y > 500) {
-          boton.classList.add('back-to-top-ap');
-        } else {
-          boton.classList.remove('back-to-top-ap');
-        }
-      };
+    window.onload = () => {
+      'use strict';
+
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('{{ asset("sw.js") }}')
+            .then(reg => console.log('Registro de SW exitoso', reg))
+            .catch(err => console.warn('Error al tratar de registrar el sw', err))
+      }
+    }
     </script>
     @include('components.auth-validation-errors')
   </body>

@@ -1,0 +1,49 @@
+{
+  "name": "Electronic Gift Card Cuba",
+  "short_name": "Egc-Cuba",
+  "description": "Bienvenid@s a Electronic Gift Card Cuba. Plataforma para encargar tarjetas de regalo :)",
+  "background_color": "#b3e5fc",
+  "theme_color": "#01579b",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./?utm_source=web_app_manifest",
+  "scope": "./",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "./img/icon_1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icon_256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icon_128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icon_64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icon_32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icon_16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ]
+}

@@ -108,3 +108,53 @@ transition: .6s;
   color: #26a69a;
   font-size: 50px;
 }
+
+html {
+  font-family: 'Open Sans';
+}
+.selecto .select-wrapper input.select-dropdown {
+  font-size: 30px; 
+  font-weight: bold;
+  margin-top: 10px;
+ }
+ .back-to-top{
+    opacity: 0;
+    transition: .6s;
+ }
+ .back-to-top-ap{
+    opacity: 0.6;
+ }
+ .back-to-top:hover{
+    opacity: 1;
+ }
+ .stado{
+   left: 35%;
+   top: 45px;
+   position: fixed;
+   border-radius: 0px 0px 5px 5px; 
+   padding: 10px 10px 5px 10px; 
+   font-size: large; 
+   font-weight: bold;
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.575);
+   border-top: 1px solid rgb(0, 0, 0);
+   opacity: 0.9;
+   cursor: pointer;
+   z-index: 2;
+ }
+ footer a:hover{
+    text-decoration: underline; 
+ }
+ html::-webkit-scrollbar {
+    width: 10px;
+    background: #01589bb2;
+    transition: .6s;
+}
+html::-webkit-scrollbar-thumb {
+    background: #01579b;
+    transition: .6s;
+    border: 2px solid rgba(11, 88, 255, 0.596)
+}
+html::-webkit-scrollbar-thumb:hover {
+    background: #01579b;
+    border: 2px solid #01579b;
+}
