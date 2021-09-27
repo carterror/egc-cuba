@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Card;
 use App\Models\Buy;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 
 class ConfigController extends Controller
 {
@@ -29,7 +30,21 @@ class ConfigController extends Controller
         $buyms= Buy::where('estado', 2)->sum('valor');
         $buymsh= Buy::whereDate('created_at', '=', date('Y-m-d'))->where('estado', 2)->sum('valor');
 
-        $data = ['users' => $users, 'card' => $card, 'buysh' => $buysh, 'counth' => $counth, 'count' => $count, 'buys' => $buys, 'buyms'  => $buyms, 'buymsh'  => $buymsh];
+        $cards = DB::select('SELECT tarjeta_id, count(tarjeta_id) c FROM buys GROUP BY tarjeta_id HAVING c > ?', [1]);
+        
+        $ventas = 0;
+        $id = 0;
+
+        foreach ($cards as $value) {
+            if ($value->c > $ventas) {
+                $ventas = $value->c;
+                $id = $value->tarjeta_id;
+            }
+        }
+
+        $cardvv = Card::find($id);
+
+        $data = ['cardvv' => $cardvv, 'ventas' => $ventas, 'users' => $users, 'card' => $card, 'buysh' => $buysh, 'counth' => $counth, 'count' => $count, 'buys' => $buys, 'buyms'  => $buyms, 'buymsh'  => $buymsh];
 
         return view('admin.index', $data);
     }

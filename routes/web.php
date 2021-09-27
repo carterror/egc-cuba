@@ -36,9 +36,13 @@ Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     Route::get('/cards/{id}/delete', [CardsController::class, 'delete'])->name('cards.delete');
 
     Route::get('/users', [UsersController::class, 'index'])->name('users');
+    Route::post('/users', [UsersController::class, 'store'])->name('users.store');
+    Route::get('/users/{id}', [UsersController::class, 'show'])->name('users.show');
     Route::get('/users/{id}/delete', [UsersController::class, 'delete'])->name('users.delete');
 
     Route::get('/buys', [BuysController::class, 'index'])->name('buys');
+    Route::get('/buys/find/{id}', [BuysController::class, 'find'])->name('buys.find');
+    Route::post('/buys/search', [BuysController::class, 'search'])->name('buys.search');
     Route::get('/buys/{id}/{action}', [BuysController::class, 'delete'])->name('buys.delete');
     Route::get('/buys/extern/{id}/{action}', [BuysController::class, 'extern'])->name('extern.delete');
 
@@ -57,6 +61,7 @@ Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     Route::get('/dashboard/{search?}', [IndexController::class, 'index'])->name('dashboard');
 
     Route::get('/referido', [ReferController::class, 'index'])->name('refer')->middleware(['auth', 'verified']);
+    Route::get('/referido/{id}/order/', [ReferController::class, 'order'])->name('order')->middleware(['auth', 'verified']);
     
     Route::get('/help', [ReferController::class, 'help'])->name('help');
     Route::get('/termi', [ReferController::class, 'termi'])->name('termi');

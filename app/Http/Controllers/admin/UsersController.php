@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Twilio\TwiML\Voice\Refer;
 
 class UsersController extends Controller
 {
@@ -14,11 +15,41 @@ class UsersController extends Controller
         $this->middleware(['isadmin']);
     }
     
-    public function index()
+    public function index($find=null)
     {
-        $users = User::paginate(15);
+        if (is_null($find)) {
+            $users = User::paginate(15);
+        }else {
+            $users = $find;
+        }
 
         return view('admin.users.index', compact('users'));
+    }
+
+    public function store(Request $request)
+    {
+        $users = User::where('name', 'LIKE', '%'.$request->user.'%')->orWhere('email', 'LIKE', '%'.$request->user.'%')->paginate(15);
+        
+        return $this->index($users);
+        // return view('admin.users.index', compact('users'));
+    }
+
+    public function show($id)
+    {
+        if ($id == 'c' || $id == 'n') {
+            if ($id == 'n') {
+                $users = User::latest('rango')->paginate(15);
+            } else {
+                $users = User::latest('puntos')->paginate(15);
+            }
+
+            return view('admin.users.index', compact('users'));
+        } else {
+            $referidos = User::where('master', $id)->paginate(15);
+            $user = User::find($id);
+            return view('admin.users.show', compact('referidos', 'user'));
+        }
+
     }
 
     public function delete($id)

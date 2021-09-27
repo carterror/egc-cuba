@@ -5,7 +5,7 @@
 @endsection
 
 @section('breadcrumb')
-    <a href="{{ route('cards') }}" class="breadcrumb"><span class="mdi-social-people"> Usuarios</span></a>
+    <a href="{{ route('users') }}" class="breadcrumb"><span class="mdi-social-people"> Usuarios</span></a>
 @endsection
 
 @section('content')
@@ -13,12 +13,32 @@
     <div class="row" style="padding: 20px">
         <div class="col s12 z-depth-3 grey lighten-5" >
             <div class="row" style="border-bottom: 1px solid black; padding: 5px;">
-                <div class="col s6" >
+                <div class="col s12 m6" >
                     <h5><i class="mdi-social-people small left"></i>Usuarios</h5>
                 </div>
-                {{-- <div class="col s6" >
-                    
-                </div> --}}
+                <div class="col s12 m6" style="padding-top: 5px;">
+                    <div class="col s12 m5">
+                        <a class='dropdown-button btn' data-beloworigin="true" data-activates='dropdown2'>Ordenar<i class="mdi-navigation-arrow-drop-down right"></i></a>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown2' class='dropdown-content'>
+                            <li><a href="{{ route('users.show', 'n') }}">Nivel</a></li>
+                            <li><a href="{{ route('users.show', 'c') }}">Puntos</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="col s12 m7">
+                        <form action="{{ route('users.store') }}" method="post">
+                            @csrf
+                            <div class="col s7">
+                            <input type="search" name="user" id="" placeholder="Nombre o email">
+                            </div>
+                            <div class="col s5">
+                            <button class="btn" type="submit">Buscar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col s12" style="border-bottom: 1px solid black;">
@@ -44,8 +64,8 @@
                                 <td>{{$user->puntos}}</td>
                                 <td>{{$user->rango}}</td>
                                 <td>
-                                    {{-- <a href="" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Editar"><i class="mdi-action-done small"></i></a>
-                                    --}}<a href="{{route('users.delete', $user->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Eliminar"><i class="mdi-action-delete small"></i></a>
+                                    <a href="{{route('users.show', $user->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Referidos"><i class="mdi-action-account-child small"></i></a>
+                                    <a href="{{route('users.delete', $user->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Eliminar"><i class="mdi-action-delete small"></i></a>
                                 </td> 
                             </tr>
 

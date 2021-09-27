@@ -5,7 +5,7 @@ Compras
 @endsection
 
 @section('breadcrumb')
-    <a href="{{ route('cards') }}" class="breadcrumb"><span class="mdi-action-shopping-cart" >Compras</span></a>
+    <a href="{{ route('buys') }}" class="breadcrumb"><span class="mdi-action-shopping-cart" >Compras</span></a>
 @endsection
 
 @section('content')
@@ -13,8 +13,33 @@ Compras
     <div class="row" style="padding: 20px">
         <div class="col s12 z-depth-3 grey lighten-5" >
             <div class="row" style="border-bottom: 1px solid black; padding: 5px;">
-                <div class="col s10" >
-                    <h5><i class="mdi-action-shopping-cart small left"></i>Compras</h5>
+                <div class="col s12 m6" >
+                    <h5><i class="mdi-social-people small left"></i>Compras</h5>
+                </div>
+                <div class="col s12 m6" style="padding-top: 5px;">
+                    <form action="{{ route('buys.search') }}" method="post">
+                    @csrf
+                    <div class="col s12 m5">
+                        <!-- Dropdown Structure -->
+                            <select name="estado">
+                              <option value="5" selected>Estado</option>
+                              <option value="4">Todos</option>
+                              <option value="1" @if ($para[1] == 1) selected @endif>En Espera</option>
+                              <option value="2" @if ($para[1] == 2) selected @endif>Completado</option>
+                              <option value="0" @if ($para[1] == 0) selected @endif>Cancelado</option>
+                            </select>
+                    </div>
+                    <div class="col s12 m7">
+
+                            <div class="col s7">
+                            <input type="date" value="{{$para[0]}}" name="date" id="">
+                            </div>
+                            <div class="col s5">
+                            <button class="btn" type="submit">Buscar</button>
+                            </div>
+
+                    </div>
+                    </form>
                 </div>
             </div>
             <div class="row">
@@ -36,23 +61,13 @@ Compras
                 
                         <tbody>
                             @foreach ($buys as $buy)
-                            
+                            @if (!is_null($buy->usert))
                             <tr>
                                 <td>{{$buy->id}}</td>
-                                @if (is_null($buy->usert))
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                @else
                                     <td>{{$buy->usert->name}}</td>
                                     <td>{{$buy->usert->email}}</td>
                                     <td>{{$buy->usert->phone}}</td>
-                                @endif
-                                @if (is_null($buy->card))
-                                    <td>-</td>
-                                @else
                                     <td>{{$buy->card->name}}</td>
-                                @endif
 
                                 <td>
                                     @if ($buy->estado == 1)
@@ -79,6 +94,7 @@ Compras
 
                                 </td>
                             </tr>
+                            @endif
                           @endforeach
                         </tbody>
                         <tfoot>

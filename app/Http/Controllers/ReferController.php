@@ -18,6 +18,17 @@ class ReferController extends Controller
 
         return view('referido.index', compact('refers'));
     }
+    
+    public function order($id)
+    {
+        if ($id) {
+            $refers = User::where('master', Auth::user()->id)->latest('puntos')->paginate(10);
+        } else {
+            $refers = User::where('master', Auth::user()->id)->latest('rango')->paginate(10);
+        }
+
+        return view('referido.index', compact('refers'));
+    }
 
     public function help()
     {

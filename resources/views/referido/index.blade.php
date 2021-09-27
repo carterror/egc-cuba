@@ -41,9 +41,11 @@ Referidos
         <table class="responsive-table hoverable">
             <thead>
               <tr>
-                  <th data-field="id">Nombre</th>
-                  <th data-field="name">Correo</th>
-                  <th data-field="price">Fecha de Cuenta</th>
+                  <th data-field="id"><b>Nombre</b></th>
+                  <th data-field="name"><b>Correo</b></th>
+                  <th data-field="puntos"><b><a href="{{route('order', 1)}}" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Ordenar">Puntos <i class="mdi-action-swap-vert" ></i></a></b></th>
+                  <th data-field="rango"><b><a href="{{route('order', 0)}}" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Ordenar">Rango <i class="mdi-action-swap-vert" ></i></a></b></th>
+                  <th data-field="price"><b>Fecha de Cuenta</b></th>
               </tr>
             </thead>
     
@@ -52,6 +54,20 @@ Referidos
                     <tr style="@if($refer->rango >= 20) background-color: #B9F2FF; backdrop-filter: blur(5); @elseif($refer->rango >= 10) background-color: #FFD700; @elseif($refer->rango >= 5) background-color: #E3E4E5; @elseif($refer->rango >= 1) background-color: #CD7F32; @endif">
                         <td>{{$refer->name}}</td>
                         <td>{{$refer->email}}</td>
+                        <td>{{$refer->puntos}}</td>
+                        <td>
+                            @if($refer->rango >= 20)
+                            PLATINO
+                            @elseif($refer->rango >= 10)
+                            ORO
+                            @elseif($refer->rango >= 5)
+                            PLATA
+                            @elseif($refer->rango >= 1)
+                            BRONCE
+                            @else 
+                            Principiante
+                            @endif
+                        </td>
                         <td>{{$refer->created_at}}</td>
                     </tr>
                 @endforeach

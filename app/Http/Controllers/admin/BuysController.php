@@ -20,15 +20,40 @@ class BuysController extends Controller
         $this->middleware(['isadmin']);
     }
 
-    public function index()
+    public function index($request = null)
     {
-        $buys = Buy::with(['usert','card'])->latest('Updated_at')->paginate(15);
-        return view('admin.buys.index', compact('buys'));
+        $para= [null,4];
+        if (is_null($request)) {
+            $buys = Buy::with(['usert','card'])->latest('Updated_at')->paginate(15);
+        } else {
+            $para = [$request->date,$request->estado];
+            if ($request->estado == 4) {
+                $buys = Buy::with(['usert','card'])->whereDate('updated_at', '=', $request->date)->latest('Updated_at')->paginate(15);
+            } elseif (is_null($request->date)) {
+                $buys = Buy::with(['usert','card'])->where('estado', $request->estado)->latest('Updated_at')->paginate(15);
+            } else {
+                $buys = Buy::with(['usert','card'])->where('estado', $request->estado)->whereDate('updated_at', '=', $request->date)->latest('Updated_at')->paginate(15);
+            }
+        }
+        
+        return view('admin.buys.index', compact('buys', 'para'));
     }
 
-    public function delete()
+    public function search(Request $request)
     {
+        if ($request->estado == 5 && is_null($request->date)) {
+            return back()->with(['icon' => 'mdi-action-exclamation red-text'])->with(['type' => 'red-text'])->with(['message' => 'Parametros de filtrado obligatorio']);
+        } else {
+            return $this->index($request);
+        }
+
+    }
+
+    public function find($id)
+    {
+        $buys = Buy::with(['usert','card'])->where('estado', $id)->latest('Updated_at')->paginate(15);
         
+        return view('admin.buys.index', compact('buys'));
     }
 
     public function extern($id, $action)
