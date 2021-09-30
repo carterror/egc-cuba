@@ -72,8 +72,12 @@ Referidos
                     </tr>
                 @endforeach
             </tbody>
-            <tfoot>
-               
+            <tfoot >
+                <div class="row" style="text-align: center; margin: 0px;">
+                    <div class="col s12">
+                        <h5 style="padding: 5px;  margin: 0px;"><b>Total:</b> {{$refers->count()}}</h5>
+                    </div>
+                </div>
             </tfoot>
           </table>
     </div>

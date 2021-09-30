@@ -47,7 +47,7 @@
           <div class="row grey lighten-5 z-depth-3">
             <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
             <div class="col s12" >
-                    <h5><i class="mdi-social-people small left"></i>Tarjetas</h5>
+                    <h5><i class="mdi-action-credit-card small left"></i>Tarjetas</h5>
                 </div>
             </div>
             <div class="row">
@@ -63,7 +63,7 @@
           <div class="row grey lighten-5 z-depth-3">
             <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
             <div class="col s12" >
-                    <h5><i class="mdi-social-people small left"></i>Recaudado</h5>
+                    <h5><i class="mdi-editor-attach-money small left"></i>Recaudado</h5>
                 </div>
             </div>
             <div class="row">
@@ -77,7 +77,7 @@
           <div class="row grey lighten-5 z-depth-3">
             <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
             <div class="col s12" >
-                    <h5><i class="mdi-social-people small left"></i>Recaudado hoy</h5>
+                    <h5><i class="mdi-editor-attach-money small left"></i>Recaudado hoy</h5>
                 </div>
             </div>
             <div class="row">
@@ -95,7 +95,7 @@
           <div class="row grey lighten-5 z-depth-3">
             <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
             <div class="col s12" >
-                    <h5><i class="mdi-social-people small left"></i>Ordenes</h5>
+                    <h5><i class="mdi-action-add-shopping-cart small left"></i>Ordenes</h5>
                 </div>
             </div>
             <div class="row">
@@ -113,7 +113,7 @@
           <div class="row grey lighten-5 z-depth-3">
             <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
             <div class="col s12" >
-                    <h5><i class="mdi-social-people small left"></i>Ventas</h5>
+                    <h5><i class="mdi-action-shopping-cart small left"></i>Ventas</h5>
                 </div>
             </div>
             <div class="row">
@@ -131,7 +131,7 @@
           <div class="row grey lighten-5 z-depth-3">
             <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
             <div class="col s12" >
-                    <h5><i class="mdi-social-people small left"></i>Ordenes Hoy</h5>
+                    <h5><i class="mdi-action-add-shopping-cart small left"></i>Ordenes Hoy</h5>
                 </div>
             </div>
             <div class="row">
@@ -149,7 +149,7 @@
           <div class="row grey lighten-5 z-depth-3">
             <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
             <div class="col s12" >
-                    <h5><i class="mdi-social-people small left"></i>Ventas Hoy</h5>
+                    <h5><i class="mdi-action-shopping-cart small left"></i>Ventas Hoy</h5>
                 </div>
             </div>
             <div class="row">

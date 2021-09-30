@@ -14,10 +14,12 @@
     <div class="row" style="padding: 20px">
         <div class="col s12 z-depth-3 grey lighten-5" >
             <div class="row" style="border-bottom: 1px solid black; padding: 5px;">
-                <div class="col s12" >
+                <div class="col s12 m8" >
                     <h5><i class="mdi-social-people small left"></i>Referidos de {{$user->email}}</h5>
                 </div>
-
+                <div class="col s12 m4" >
+                    <h5>Total: {{$referidos->count()}}</h5>
+                </div>
             </div>
             <div class="row">
                 <div class="col s12" style="border-bottom: 1px solid black;">
