@@ -200,7 +200,7 @@
 
         </div>
         <div class="col m4 s12">
-          <h5 class="white-text">Horarios de pedidos:</h5>
+          <h5 class="white-text">Horarios de entregas:</h5>
           <ul class="white-text">
             <li>Lunes a Jueves:</li>
             <li> 8:00am - 10:00am y 8:00pm - 10:00pm </li>
