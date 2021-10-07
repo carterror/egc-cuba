@@ -84,7 +84,7 @@
     </div>
     <div class="row">
       <div class="col s12 right-align" style="border-radius: 5px; margin-top: 15px;">
-            <h5>Tus puntos: {{Auth::user()->puntos}}</h5>
+            <h5>Tus puntos: {{Auth::user()->puntos ?? ''}}</h5>
             <button type="submit" style="display: inline; float: right;" max-value="2" class="waves-effect waves-light btn grey-text text-lighten-5 light-blue darken-4">$ Encargar</button>
         </form>
     </div>
