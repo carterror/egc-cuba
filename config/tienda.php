@@ -18,9 +18,9 @@ return [
 
 "punt" => 100,
 
-"cerrada" => 0,
+"cerrada" => 1,
 
-"hasta" => "2021-09-07T20:00",
+"hasta" => "2021-10-01T20:00",
 
 "descript" => null,
 

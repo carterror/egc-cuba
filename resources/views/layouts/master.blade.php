@@ -204,7 +204,7 @@
           <ul class="white-text">
             <li>Lunes a Jueves:</li>
             <li> 8:00am - 10:00am y 8:00pm - 10:00pm </li>
-            <li>Viernes a Sábados:</li>
+            <li>Viernes y Sábados:</li>
             <li> 8:00am - 10:00pm</li>
             <li>Domingos: No se responden pedidos.</li>
           </ul>
