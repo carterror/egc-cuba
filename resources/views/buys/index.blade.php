@@ -67,7 +67,7 @@ Compras
                 
             </div>
             <div class="row">
-                {{ $buys->links() ?? ''}}
+                {{ $buys->links()}}
             </div>
            
 

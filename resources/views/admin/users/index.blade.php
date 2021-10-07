@@ -31,7 +31,7 @@
                         <form action="{{ route('users.store') }}" method="post">
                             @csrf
                             <div class="col s7">
-                            <input type="search" name="user" id="" placeholder="Nombre o email">
+                            <input type="search" name="user" id="" placeholder="Nombre o email o teléfono">
                             </div>
                             <div class="col s5">
                             <button class="btn" type="submit">Buscar</button>
