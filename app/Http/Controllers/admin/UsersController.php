@@ -28,7 +28,7 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        $users = User::where('name', 'LIKE', '%'.$request->user.'%')->orWhere('email', 'LIKE', '%'.$request->user.'%')->orWhere('phone', 'LIKE', '%'.$request->user.'%')->get();
+        $users = User::where('name', 'LIKE', '%'.$request->user.'%')->orWhere('email', 'LIKE', '%'.$request->user.'%')->orWhere('phone', 'LIKE', '%'.$request->user.'%')->paginate(20);
         
         return $this->index($users);
         // return view('admin.users.index', compact('users'));
