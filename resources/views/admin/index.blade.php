@@ -224,7 +224,7 @@
           </div>
           <div class="row">
             <div class="col s12 center-align" >
-              <h1 style="font-weight: bold; margin: 0px;">{{$users->where('rango', '>', 1)->where('rango', '<', 5)->count()}}</h1>
+              <h1 style="font-weight: bold; margin: 0px;">{{$users->where('rango', '>', 0)->where('rango', '<', 5)->count()}}</h1>
             </div>
           
           </div>
