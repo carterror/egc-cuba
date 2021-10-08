@@ -21,7 +21,7 @@ class ConfigController extends Controller
     
     public function index()
     {
-        $users = User::count();
+        $users = User::get();
         $card = Card::count();
         $counth= Buy::whereDate('created_at', '=', date('Y-m-d'))->count();
         $buysh= Buy::whereDate('created_at', '=', date('Y-m-d'))->where('estado', 2)->count();

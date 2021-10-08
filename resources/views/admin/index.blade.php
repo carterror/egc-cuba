@@ -34,7 +34,7 @@
             </div>
             <div class="row">
               <div class="col s12 center-align" >
-                <h1 style="font-weight: bold; margin: 0px;">{{$users}}</h1>
+                <h1 style="font-weight: bold; margin: 0px;">{{$users->count()}}</h1>
               </div>
             
             </div>
@@ -88,6 +88,7 @@
           </div>
         </div>
     </div>
+
     <div class="row" style="padding: 20px;">
       
         <div class="col s12 m6 l3" style="margin-top: 15px; padding: 15px;">
@@ -162,6 +163,74 @@
           </a>
         </div>
 
+    </div>
+
+    <div class="row" style="padding: 20px;">
+      
+      <div class="col s12 m6 l3" style="margin-top: 15px; padding: 15px;">
+        <div class="row z-depth-3" style="background-color: #B9F2FF; backdrop-filter: blur(5);">
+          <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
+          <div class="col s12" >
+                  <h5><i class="mdi-social-people small left"></i>Platinos</h5>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col s12 center-align" >
+              <h1 style="font-weight: bold; margin: 0px;">{{$users->where('rango', '>', 19)->count()}}</h1>
+            </div>
+          
+          </div>
+        </div>
       </div>
+
+      <div class="col s12 m6 l3" style="margin-top: 15px; padding: 15px;">
+        <div class="row z-depth-3" style="background-color: #FFD700;">
+          <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
+          <div class="col s12" >
+                  <h5><i class="mdi-social-people small left"></i>Oro</h5>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col s12 center-align" >
+              <h1 style="font-weight: bold; margin: 0px;">{{$users->where('rango', '>', 9)->where('rango', '<', 20)->count()}}</h1>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6 l3" style="margin-top: 15px; padding: 15px;">
+        <div class="row z-depth-3" style="background-color: #E3E4E5;">
+          <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
+          <div class="col s12" >
+                  <h5><i class="mdi-social-people small left"></i>Plata</h5>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col s12 center-align" >
+              <h1 style="font-weight: bold; margin: 0px;">{{$users->where('rango', '>', 4)->where('rango', '<', 10)->count()}}</h1>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+
+      <div class="col s12 m6 l3" style="margin-top: 15px; padding: 15px; ">
+        <div class="row z-depth-3" style="background-color: #CD7F32;">
+          <div class="row" style="border-bottom: 1px solid rgb(138, 138, 138); padding: 5px;">
+          <div class="col s12" >
+                  <h5><i class="mdi-social-people small left"></i>Bronce</h5>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col s12 center-align" >
+              <h1 style="font-weight: bold; margin: 0px;">{{$users->where('rango', '>', 1)->where('rango', '<', 5)->count()}}</h1>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+
+  </div>
 
 @endsection

@@ -30,7 +30,7 @@
     <img src="https://egc-cuba.com/img/logo1.png" width="60%" alt="Logo">
     <div style="background-color: #ffffff; padding: 20px; border-radius: 5px; margin: 50px; color: #000;">
         
-    <h3>Su pedido ya está listo por favor comunicarse con nosotros mediante este link: <a href="https://wa.me/message/GKYEWV4I7PUGF1">WhatsApp</a></h3>
+    <h3>Su pedido ya está listo por favor comunicarse con nosotros mediante los enlaces: <a href="https://wa.me/message/GKYEWV4I7PUGF1">WhatsApp</a> o <a href="https://t.me/Jorge_GiftCards">Telegram</a></h3>
     
     <h3>Gracias por la elección, atentamente Egc-cuba.</h3>
     </div>
