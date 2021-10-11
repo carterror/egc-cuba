@@ -51,7 +51,19 @@ class UsersController extends Controller
         }
 
     }
-
+    
+    public function update(Request $request, $id)
+    {
+        
+        $user = User::find($id);
+        
+        $user->puntos += $request->puntos; 
+        // return $user;
+        if($user->update()):
+            return back()->with(['icon' => 'small mdi-action-done green-text'])->with(['type' => 'green-text'])->with(['message' => 'Puntos sumados con éxito']);
+        endif;
+        
+    }
     public function delete($id)
     {
         $user = User::find($id);

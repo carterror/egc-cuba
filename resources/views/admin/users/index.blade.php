@@ -64,6 +64,7 @@
                                 <td>{{$user->puntos}}</td>
                                 <td>{{$user->rango}}</td>
                                 <td>
+                                    <a onclick="money({{$user->id}}, '{{$user->name}}')" href="#modal1" class="btn tooltipped modal-trigger" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Sumar Puntos"><i class="mdi-editor-attach-money small"></i></a>
                                     <a href="{{route('users.show', $user->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Referidos"><i class="mdi-action-account-child small"></i></a>
                                     <a href="{{route('users.delete', $user->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Eliminar"><i class="mdi-action-delete small"></i></a>
                                 </td> 
@@ -87,4 +88,35 @@
         </div>
     </div>
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <form action="" id="formu" method="POST">
+        @csrf
+        <div class="modal-content">
+            <h4>Agregar Puntos</h4>
+            <p id="update"></p>
+                <div class="input-field col s6">
+                  <input id="puntos" name="puntos" type="text" class="validate">
+                  <label class="active" for="puntos">Puntos</label>
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Sumar</button>
+        </div>
+    </form>
+
+  </div>
+  <script>
+    var base = location.protocol + '//' + location.host;
+    
+      function money(id, name) {
+        var title = document.getElementById('update');
+        var form = document.getElementById('formu');
+        title.innerHTML = 'A '+name;
+
+        form.action = base + "/admin/users/" + id + "/money";
+      }
+      
+  </script>
 @endsection
+
