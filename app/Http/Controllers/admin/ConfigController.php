@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Card;
 use App\Models\Buy;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 
@@ -21,13 +22,15 @@ class ConfigController extends Controller
     
     public function index()
     {
+        $date = new Carbon('2021/11/01');
+
         $users = User::get();
         $card = Card::count();
         $counth= Buy::whereDate('created_at', '=', date('Y-m-d'))->count();
         $buysh= Buy::whereDate('created_at', '=', date('Y-m-d'))->where('estado', 2)->count();
-        $count= Buy::count();
-        $buys= Buy::where('estado', 2)->count();
-        $buyms= Buy::where('estado', 2)->sum('valor');
+        $count= Buy::whereDate('created_at', '>', $date)->count();
+        $buys= Buy::where('estado', 2)->whereDate('created_at', '>', $date)->count();
+        $buyms= Buy::where('estado', 2)->whereDate('created_at', '>', $date)->sum('valor');
         $buymsh= Buy::whereDate('created_at', '=', date('Y-m-d'))->where('estado', 2)->sum('valor');
 
         $cards = DB::select('SELECT tarjeta_id, count(tarjeta_id) c FROM buys WHERE estado = 2 GROUP BY tarjeta_id HAVING c > ?', [1]);
