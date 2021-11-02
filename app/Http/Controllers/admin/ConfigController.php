@@ -33,7 +33,7 @@ class ConfigController extends Controller
         $buyms= Buy::where('estado', 2)->whereDate('created_at', '>', $date)->sum('valor');
         $buymsh= Buy::whereDate('created_at', '=', date('Y-m-d'))->where('estado', 2)->sum('valor');
 
-        $cards = DB::select('SELECT tarjeta_id, count(tarjeta_id) c FROM buys WHERE estado = 2 GROUP BY tarjeta_id HAVING c > ?', [1]);
+        $cards = DB::select('SELECT tarjeta_id, count(tarjeta_id) c FROM buys WHERE estado = 2 AND created_at > ? GROUP BY tarjeta_id HAVING c > ?', [$date, 1]);
         
         $ventas = 0;
         $id = 0;
