@@ -71,11 +71,11 @@ Compras
 
                                 <td>
                                     @if ($buy->estado == 1)
-                                        <div class="card-panel blue lighten-2" style="padding: 5px; color: #fff;">{{$buy->updated_at}}</div>
+                                        <div class="card-panel blue lighten-2" style="padding: 5px; color: #fff;">{{$buy->updated_at->format('d/m/Y')}}</div>
                                     @elseif ($buy->estado == 2)
-                                        <div class="card-panel teal lighten-2" style="padding: 5px; color: #fff;">{{$buy->updated_at}}</div>
+                                        <div class="card-panel teal lighten-2" style="padding: 5px; color: #fff;">{{$buy->updated_at->format('Y/m/d')}}</div>
                                     @else
-                                        <div class="card-panel red lighten-2" style="padding: 5px; color: #fff;">{{$buy->updated_at}}</div>
+                                        <div class="card-panel red lighten-2" style="padding: 5px; color: #fff;">{{$buy->updated_at->format('Y/m/d')}}</div>
                                     @endif
                                 </td>
                                 <td>{{$buy->valor}} USD</td>
