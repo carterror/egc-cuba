@@ -71,11 +71,11 @@ Compras
 
                                 <td>
                                     @if ($buy->estado == 1)
-                                        <div class="card-panel blue lighten-2" style="padding: 5px; color: #fff;">En espera</div>
+                                        <div class="card-panel blue lighten-2" style="padding: 5px; color: #fff;">{{$buy->updated_at}}</div>
                                     @elseif ($buy->estado == 2)
-                                        <div class="card-panel teal lighten-2" style="padding: 5px; color: #fff;">Completado</div>
+                                        <div class="card-panel teal lighten-2" style="padding: 5px; color: #fff;">{{$buy->updated_at}}</div>
                                     @else
-                                        <div class="card-panel red lighten-2" style="padding: 5px; color: #fff;">Cancelado</div>
+                                        <div class="card-panel red lighten-2" style="padding: 5px; color: #fff;">{{$buy->updated_at}}</div>
                                     @endif
                                 </td>
                                 <td>{{$buy->valor}} USD</td>
