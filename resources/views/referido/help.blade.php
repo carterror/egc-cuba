@@ -91,7 +91,7 @@ Ayuda
 
             <p class="">Sistema implementado en nuestra página en el cual eres recompensado por cada encargo completado.</p>
             <p class="">Los puntos pueden ser canjeados por cualquiera de nuestras tarjetas en venta.</p>
-            <p class="">Opten desde 0.75 hasta 1.25 punto por cada USD en los encargos completados que realices dependiendo de tu nivel.</p>
+            <p class="">Todos los nuevos usuarios obtienen 0.75 puntos por cada USD en los encargos completados.</p>
             <p class="">IMPORTANTE: Los puntos se agregan automáticamente después de que se confirme la encargo, en un tiempo máximo de 30 minutos.</p>
             
              
@@ -106,7 +106,7 @@ Ayuda
             
             <h4>Niveles:</h4>
             
-            <p class="">Bonificación en puntos por la cantidad de <a href="{{route('refer')}}">Referidos</a> que agregues a nuestra página que realicen encargos completados.</p>
+            <p class="">Se ganan por la cantidad de <a href="{{route('refer')}}">Referidos</a> que completan encargos.</p>
             
             <ul>
                 <li>1 <a href="{{route('refer')}}">Referido</a> con al menos una encargo completados: NIVEL BRONCE</li>

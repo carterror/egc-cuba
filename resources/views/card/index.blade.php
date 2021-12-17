@@ -107,11 +107,11 @@
 
             if (valor.value == 14) {
               vb.value = 1000;
-            } else if(valor.value == 26) {
+            } else if(valor.value == 27) {
               vb.value = 2800;
-            } else if(valor.value == 38) {
+            } else if(valor.value == 40) {
               vb.value = 5000;
-            } else if(valor.value == 84) {
+            } else if(valor.value == 88) {
               vb.value = 13500;
             } else {
               vb.value = "...";

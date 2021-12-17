@@ -40,7 +40,9 @@
   <link rel="stylesheet" href="{{ asset('dist/css/jquery.fancybox.css') }}">
   {{-- <link rel="stylesheet" href="{{ asset('dist/app.css') }}"> --}}
   <style>
-
+    .carro:hover {
+      color: #0000009a;
+    }
   </style>
 </head>
 <body class="light-blue lighten-4">
@@ -84,6 +86,7 @@
             @endauth
       @endif
       </ul>
+      <a href="" class="carro btn-large waves-effect waves-light light-blue darken-3 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mis encargos" style="position: fixed; top: 2px; right: 5px; border-radius: 5px !important; box-shadow: none;"><i class="mdi-action-shopping-cart left"></i> <span class="carrito-red red accent-4" ></span></a>
 
       <ul id="nav-mobile" class="side-nav light-blue darken-3" style="opacity: .8;">
         <li class="text-center"><a id="logo-container" href="{{ url('/dashboard') }}" style="padding-top: 4px;"><img src="{{asset('img/logo1.png')}}" height="60px" alt="" srcset=""></a></li>

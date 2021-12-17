@@ -14,14 +14,14 @@ return [
 
 "bonopla" => 0.25,
 
-"rebaja" => 0,
+"rebaja" => 0.5,
 
 "punt" => 100,
 
-"cerrada" => 1,
+"cerrada" => 0,
 
 "hasta" => "2021-10-01T20:00",
 
-"descript" => null,
+"descript" => "",
 
 ];

@@ -28,11 +28,11 @@ class BuysController extends Controller
         } else {
             $para = [$request->date,$request->estado];
             if ($request->estado == 4) {
-                $buys = Buy::with(['usert','card'])->whereDate('updated_at', '=', $request->date)->latest('Updated_at')->paginate(15);
+                $buys = Buy::with(['usert','card'])->whereDate('updated_at', '=', $request->date)->latest('Updated_at')->paginate(150);
             } elseif (is_null($request->date)) {
-                $buys = Buy::with(['usert','card'])->where('estado', $request->estado)->latest('Updated_at')->paginate(15);
+                $buys = Buy::with(['usert','card'])->where('estado', $request->estado)->latest('Updated_at')->paginate(150);
             } else {
-                $buys = Buy::with(['usert','card'])->where('estado', $request->estado)->whereDate('updated_at', '=', $request->date)->latest('Updated_at')->paginate(15);
+                $buys = Buy::with(['usert','card'])->where('estado', $request->estado)->whereDate('updated_at', '=', $request->date)->latest('Updated_at')->paginate(150);
             }
         }
         
@@ -51,7 +51,7 @@ class BuysController extends Controller
 
     public function find($id)
     {
-        $buys = Buy::with(['usert','card'])->where('estado', $id)->latest('Updated_at')->paginate(15);
+        $buys = Buy::with(['usert','card'])->where('estado', $id)->latest('Updated_at')->paginate(150);
         
         return view('admin.buys.index', compact('buys'));
     }
