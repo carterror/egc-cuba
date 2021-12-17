@@ -22,7 +22,7 @@ class ConfigController extends Controller
     
     public function index()
     {
-        $date = new Carbon('2021/11/01');
+        $date = new Carbon('2021/12/10');
 
         $users = User::get();
         $card = Card::count();
@@ -50,6 +50,21 @@ class ConfigController extends Controller
         $data = ['cardvv' => $cardvv, 'ventas' => $ventas, 'users' => $users, 'card' => $card, 'buysh' => $buysh, 'counth' => $counth, 'count' => $count, 'buys' => $buys, 'buyms'  => $buyms, 'buymsh'  => $buymsh];
 
         return view('admin.index', $data);
+    }
+
+    public function limpia()
+    {
+        $historial = Buy::where('estado', 0)->get();
+
+        foreach ($historial as $h) {
+            try {
+                $h->delete();
+            } catch (\Throwable $th) {
+                throw $th;
+            }
+        }
+
+        return dd($historial);
     }
 
     public function config()

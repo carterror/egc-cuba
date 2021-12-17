@@ -26,6 +26,7 @@ require __DIR__.'/auth.php';
 Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     
     Route::get('/', [ConfigController::class, 'index'])->name('admin');
+    Route::get('/limpia', [ConfigController::class, 'limpia'])->name('limpia');
 
     Route::get('/cards', [CardsController::class, 'index'])->name('cards');
     Route::get('/cards/create', [CardsController::class, 'create'])->name('cards.create');
