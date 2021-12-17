@@ -18,7 +18,7 @@
                     <h5><i class="mdi-social-people small left"></i>Referidos de {{$user->email}}</h5>
                 </div>
                 <div class="col s12 m4" >
-                    <h5>Total: {{$referidos->count()}}</h5>
+                    <h5>Total: {{$cantirefer}}</h5>
                 </div>
             </div>
             <div class="row">

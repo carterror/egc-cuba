@@ -46,8 +46,9 @@ class UsersController extends Controller
             return view('admin.users.index', compact('users'));
         } else {
             $referidos = User::where('master', $id)->paginate(15);
+            $cantirefer = User::where('master', $id)->count();
             $user = User::find($id);
-            return view('admin.users.show', compact('referidos', 'user'));
+            return view('admin.users.show', compact('referidos', 'user', 'cantirefer'));
         }
 
     }
