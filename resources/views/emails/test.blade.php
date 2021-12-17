@@ -33,7 +33,7 @@
     
     <div style="background-color: #ffffff; padding: 20px; border-radius: 5px;">
     <h1>Electronic Gift Card</h1>
-    <h2>Compra:</h2>
+    <h2>Compra {{$id}}:</h2>
     <br>
     <table border="0" cellspacing="10">
         <tr>

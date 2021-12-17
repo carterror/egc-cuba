@@ -121,12 +121,14 @@ class BuysController extends Controller
             $rebaja = Config::get('tienda.'.$buy->currency, 50) - $buy->price;
 
             $array = [
+                'subject' => 'Compra-EGC-Cuba #'.$card->id,
                 "msg" => 'Su orden fue aceptada y está en procedimiento. En cuanto esté lista será contactado mediante Correo Electrónico. Para un seguimiento de su orden más preciso, usar los enlaces que aparece a continuación. <a href="https://wa.me/message/GKYEWV4I7PUGF1">WhatsApp</a> o <a href="https://t.me/Jorge_GiftCards">Telegram</a> y escribir "/orden", seguido de la tarjeta que solicitó',
                 'tarjeta' => $card->name,
                 'valor' => $buy->valor,
                 'currency' => $buy->currency,   
                 'price' => $buy->price,
                 'fecha' => $buy->created_at->format('d/m/Y'),
+                'id' => $buy->id,
     
             ];
             

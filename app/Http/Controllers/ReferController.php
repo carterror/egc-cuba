@@ -16,7 +16,9 @@ class ReferController extends Controller
     {
         $refers = User::where('master', Auth::user()->id)->paginate(15);
 
-        return view('referido.index', compact('refers'));
+        $cant = User::where('master', Auth::user()->id)->count();
+
+        return view('referido.index', compact('refers', 'cant'));
     }
     
     public function order($id)

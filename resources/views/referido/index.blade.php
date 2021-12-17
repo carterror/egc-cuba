@@ -10,14 +10,14 @@ Referidos
         <h2 style="margin: 0px !important;"> Referidos </h2>
         <h5 style="margin: 0px !important;"> Rango: </h5>
         <h3 class="teal-text text-lighten-2" style="margin: 0px !important;"> 
-            @if(Auth::user()->rango >= 1)
-            BRONCE
-            @elseif(Auth::user()->rango >= 5)
-            PLATA
+            @if(Auth::user()->rango >= 20)
+            PLATINO
             @elseif(Auth::user()->rango >= 10)
             ORO
-            @elseif(Auth::user()->rango >= 20)
-            PLATINO
+            @elseif(Auth::user()->rango >= 5)
+            PLATA
+            @elseif(Auth::user()->rango >= 1)
+            BRONCE
             @else 
             <a href="{{url('/help#help')}}">Ayuda</a>
             @endif
@@ -73,10 +73,10 @@ Referidos
                 @endforeach
             </tbody>
             <tfoot >
-                {{$refers->links()}}
+                {{$refers->links('vendor.pagination.materiallize')}}
                 <div class="row" style="text-align: center; margin: 0px;">
                     <div class="col s12">
-                        <h5 style="padding: 5px;  margin: 0px;"><b>Total:</b> {{$refers->count()}}</h5>
+                        <h5 style="padding: 5px;  margin: 0px;"><b>Total:</b> {{$cant}}</h5>
                     </div>
                 </div>
             </tfoot>

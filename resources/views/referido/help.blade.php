@@ -122,8 +122,8 @@ Ayuda
             <dl>
                 <dt>Cuentas BRONCE:</dt>
                 <dd>- Bonificación de 100 puntos</dd>
-                {{-- <dd>- Opten 0.75 puntos por cada USD en los encargos completados que realices permanentemente</dd>
-                <dd>- 0.50 puntos por cada encargo completado de tus referidos</dd> --}}
+                {{-- <dd>- Opten 0.75 puntos por cada USD en los encargos completados que realices permanentemente</dd> --}}
+                <dd>- 0.50 puntos por cada encargo completado de tus referidos</dd>
 
                 <dt>Cuentas PLATA:</dt>
                 <dd>- Bonificación de 375 puntos</dd>

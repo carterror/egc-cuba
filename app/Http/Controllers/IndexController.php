@@ -89,6 +89,7 @@ class IndexController extends Controller
         ]);
 
         $array = [
+            'subject' => 'Compra-EGC-Cuba #'.$card->id,
             "name" => Auth::user(),
             'tarjeta' => Card::find($id)->name,
             'valor' => $request->valor,
