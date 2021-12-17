@@ -36,7 +36,7 @@
             <h3>{!!$msg!!}</h3>
     <table border="0" cellspacing="10">
         <tr>
-            <td colspan="2" style="text-align: center;">Compra {{$id}}:</td>
+            <td colspan="2" style="text-align: center;">{{$subject}}:</td>
         </tr>
         <tr>
             <td>Tarjeta:</td>
