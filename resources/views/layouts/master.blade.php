@@ -86,10 +86,18 @@
             @endauth
       @endif
       </ul>
-
+      @php
+          use App\Models\Buy;
+          use Carbon\Carbon;
+      @endphp
       @if (Route::has('login'))
       @auth
-      <a href="{{route('buy')}}" class="carro btn-large waves-effect waves-light light-blue darken-3 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mis encargos" style="position: fixed; top: 2px; right: 5px; border-radius: 5px !important; box-shadow: none;"><i class="mdi-action-shopping-cart left"></i> <span class="carrito-red red accent-4" ></span></a>
+
+      @php
+          $carrito = Buy::where('user_id', Auth::user()->id)->where('estado', 1)->count();
+      @endphp
+
+      <a href="{{route('buy')}}" class="carro btn-large waves-effect waves-light light-blue darken-3 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mis encargos" style="position: fixed; top: 2px; right: 5px; border-radius: 5px !important; box-shadow: none;"><i class="mdi-action-shopping-cart left"></i> <span class="carrito-red red accent-4" style="padding: 3px;"><b>{{$carrito}}</b></span></span></a>
       
       @else
       <a href="{{route('help')}}" class="carro btn-large waves-effect waves-light light-blue darken-3 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Ayuda" style="position: fixed; top: 2px; right: 5px; border-radius: 5px !important; box-shadow: none;"><i class="mdi-communication-live-help left"></i> <span class="carrito-red red accent-4" ></span></a>
@@ -134,7 +142,6 @@
   </nav>
   </div>
     @php
-      use Carbon\Carbon;
       $meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
       $date = Carbon::parse(Config::get('tienda.hasta', "23:59"));
     @endphp

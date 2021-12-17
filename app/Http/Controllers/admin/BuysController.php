@@ -26,9 +26,13 @@ class BuysController extends Controller
         if (is_null($request)) {
             $buys = Buy::with(['usert','card'])->latest('Updated_at')->paginate(15);
         } else {
-            $para = [$request->date,$request->estado];
+            $para = [$request->date, $request->estado];
             if ($request->estado == 4) {
-                $buys = Buy::with(['usert','card'])->whereDate('updated_at', '=', $request->date)->latest('Updated_at')->paginate(150);
+                if (is_null($request->date)) {
+                    $buys = Buy::with(['usert','card'])->latest('Updated_at')->paginate(150);
+                }else {
+                    $buys = Buy::with(['usert','card'])->whereDate('updated_at', '=', $request->date)->latest('Updated_at')->paginate(150);
+                }
             } elseif (is_null($request->date)) {
                 $buys = Buy::with(['usert','card'])->where('estado', $request->estado)->latest('Updated_at')->paginate(150);
             } else {
@@ -121,7 +125,7 @@ class BuysController extends Controller
             $rebaja = Config::get('tienda.'.$buy->currency, 50) - $buy->price;
 
             $array = [
-                'subject' => 'Compra-EGC-Cuba #'.$card->id,
+                'subject' => 'Compra-EGC-Cuba #'.$buy->id,
                 "msg" => 'Su orden fue aceptada y está en procedimiento. En cuanto esté lista será contactado mediante Correo Electrónico. Para un seguimiento de su orden más preciso, usar los enlaces que aparece a continuación. <a href="https://wa.me/message/GKYEWV4I7PUGF1">WhatsApp</a> o <a href="https://t.me/Jorge_GiftCards">Telegram</a> y escribir "/orden", seguido de la tarjeta que solicitó',
                 'tarjeta' => $card->name,
                 'valor' => $buy->valor,
@@ -143,6 +147,7 @@ class BuysController extends Controller
             $card = Card::find($buy->tarjeta_id);
 
             $array = [
+                'subject' => 'Pedido-EGC-Cuba #'.$buy->id,
                 'tarjeta' => $card->name,
                 'fecha' => $buy->created_at->format('d/m/Y'),
             ];
@@ -157,6 +162,7 @@ class BuysController extends Controller
             $card = Card::find($buy->tarjeta_id);
 
             $array = [
+                'subject' => 'Compra-EGC-Cuba #'.$buy->id,
                 "msg" => 'Su orden no puedes ser procesada en estos momentos. Pedimos disculpas por los molestias que esto puede ocasionar, puede probar más tarde, comuníquese con nosotros para una respuesta más exacta. <a href="https://wa.me/message/GKYEWV4I7PUGF1">WhatsApp</a> o <a href="https://t.me/Jorge_GiftCards">Telegram</a>',
                 'tarjeta' => $card->name,
                 'valor' => $buy->valor,

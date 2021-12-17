@@ -31,7 +31,7 @@ class PedidoMail extends Mailable
     public function build()
     {
         return $this->from('egc.cuba.no.reply@gmail.com', 'EGC-Cuba')
-                    ->subject('Pedido-EGC-Cuba')
+                    ->subject($this->data['subject'])
                     ->with($this->data)
                     ->view('emails.pedido');
     }

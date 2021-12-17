@@ -22,7 +22,7 @@ Compras
                     <div class="col s12 m5">
                         <!-- Dropdown Structure -->
                             <select name="estado">
-                              <option value="5" selected>Estado</option>
+                              <option value="4" selected>Estado</option>
                               <option value="4">Todos</option>
                               <option value="1" @if ($para[1] == 1) selected @endif>En Espera</option>
                               <option value="2" @if ($para[1] == 2) selected @endif>Completado</option>
