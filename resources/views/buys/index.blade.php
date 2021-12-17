@@ -22,11 +22,10 @@ Compras
                     <table class="responsive-table striped">
                         <thead>
                           <tr>
-                              <th data-field="id">Usuario</th>
-                              <th data-field="name">Correo</th>
-                              <th data-field="price">Teléfono</th>
+                              <th data-field="tarjeta">ID</th>
                               <th data-field="tarjeta">Tarjeta</th>
                               <th data-field="estado">Estado</th>
+                              <th data-field="valor">Valor</th>
                               <th data-field="price">Precio</th>
                               <th data-field="action" style="width: 200px;"></th>
                           </tr>
@@ -37,9 +36,7 @@ Compras
                             
                             
                             <tr>
-                                <td>{{$buy->user->name}}</td>
-                                <td>{{$buy->user->email}}</td>
-                                <td>{{$buy->user->phone}}</td>
+                                <td>{{$buy->id}}</td>
                                 <td>{{$buy->card->name}}</td>
                                 <td>
                                     @if ($buy->estado == 1)
@@ -50,11 +47,13 @@ Compras
                                         <div class="card-panel red lighten-2" style="padding: 5px; color: #fff;">* Cancelado</div>
                                     @endif
                                 </td>
-                                <td>{{$buy->price}}</td>
+                                <td>{{$buy->valor}}</td>
+                                <td>{{$buy->price}} {{$buy->currency}}</td>
+                                @if ($buy->estado != 0)
                                 <td>
-                                    <a href="" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Completar"><i class="mdi-action-done small"></i></a>
-                                    <a href="{{route('buys.delete', $buy->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Cancelar"><i class="mdi-action-delete small"></i></a>
+                                    <a href="{{route('buy.cancel', $buy->id)}}" class="btn tooltipped red lighten-2" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Cancelar"><i class="mdi-action-delete small"></i></a>
                                 </td>
+                                @endif
                             </tr>
                           @endforeach
                         </tbody>
@@ -67,7 +66,7 @@ Compras
                 
             </div>
             <div class="row">
-                {{ $buys->links()}}
+                {{ $buys->links('vendor.pagination.materiallize')}}
             </div>
            
 

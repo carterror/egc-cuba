@@ -16,7 +16,23 @@ class BuysController extends Controller
         return view('buys.index', compact('buys'));
     }
 
+    public function cancel($id)
+    {
+        $buy = Buy::find($id);
+        
+        if ($buy->user_id == Auth::user()->id) {
+            $buy->estado = 0;
+        } else {
+            
+            return back()->with(['icon' => 'mdi-action-done red-text'])->with(['type' => 'red-text'])->with(['message' => 'Podría ser expulsado.']);
+        }
 
+        if($buy->save()):
+            return back()->with(['icon' => 'mdi-action-done blue-text'])->with(['type' => 'blue-text'])->with(['message' => 'Compra cancelada con exito.']);
+        endif;
+    }
+
+    
     public function sms()
     {
 //         AC1c34457a7bd2e56e4a21ed2817504243

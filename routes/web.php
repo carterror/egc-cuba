@@ -79,3 +79,5 @@ Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     Route::post('/card/{id}/buy', [IndexController::class, 'buyCard'])->name('buy.card')->middleware(['auth', 'verified', 'iscerrada', 'datos']);
 
     Route::get('/buy', [ControllersBuysController::class, 'index'])->name('buy')->middleware(['auth', 'verified']);
+    Route::get('/buy/{id}', [ControllersBuysController::class, 'cancel'])->name('buy.cancel')->middleware(['auth', 'verified']);
+    // Route::get('/buy', [ControllersBuysController::class, 'index'])->name('buy')->middleware(['auth', 'verified']);

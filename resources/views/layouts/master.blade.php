@@ -89,8 +89,8 @@
 
       @if (Route::has('login'))
       @auth
-      <a href="" class="carro btn-large waves-effect waves-light light-blue darken-3 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mis encargos" style="position: fixed; top: 2px; right: 5px; border-radius: 5px !important; box-shadow: none;"><i class="mdi-action-shopping-cart left"></i> <span class="carrito-red red accent-4" ></span></a>
-
+      <a href="{{route('buy')}}" class="carro btn-large waves-effect waves-light light-blue darken-3 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Mis encargos" style="position: fixed; top: 2px; right: 5px; border-radius: 5px !important; box-shadow: none;"><i class="mdi-action-shopping-cart left"></i> <span class="carrito-red red accent-4" ></span></a>
+      
       @else
       <a href="{{route('help')}}" class="carro btn-large waves-effect waves-light light-blue darken-3 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Ayuda" style="position: fixed; top: 2px; right: 5px; border-radius: 5px !important; box-shadow: none;"><i class="mdi-communication-live-help left"></i> <span class="carrito-red red accent-4" ></span></a>
 
