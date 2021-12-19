@@ -47,7 +47,7 @@ Compras
                     <table class="responsive-table striped">
                         <thead>
                           <tr>
-                            <th data-field="id">ID</th>
+                             <th data-field="id"> <a class="waves-effect waves-light modal-trigger" href="#modal1">ID</a> </th>
                               <th data-field="id">Usuario</th>
                               <th data-field="name">Correo</th>
                               <th data-field="price">Teléfono</th>
@@ -113,4 +113,24 @@ Compras
         </div>
     </div>
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <form action="{{route('buys.sid')}}" method="GET">
+        @csrf
+        <div class="modal-content">
+        <h4>Buscar por ID</h4>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="mdi-action-search prefix"></i>
+                  <input id="icon_prefix" type="text" class="validate" name="id">
+                  <label for="icon_prefix">ID</label>
+                </div>
+              </div>
+          </div>
+        <div class="modal-footer">
+        <button type="submit" class=" modal-action modal-close waves-effect waves-green btn-flat">Buscar</button>
+        </div>
+    </form>
+  </div>
+          
 @endsection

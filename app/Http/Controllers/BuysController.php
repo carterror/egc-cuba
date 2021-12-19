@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\BuyMail;
 use Illuminate\Http\Request;
 use App\Models\Buy;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Twilio\Rest\Client;
 
 class BuysController extends Controller
@@ -28,6 +30,20 @@ class BuysController extends Controller
         }
 
         if($buy->save()):
+
+            $array = [
+                'subject' => 'Cancelado-EGC-Cuba #'.$buy->id,
+                "msg" => 'Orden Cancelada EGC-Cuba #'.$buy->id,
+                'tarjeta' => "",
+                'valor' => "",
+                'currency' => "",
+                'price' => "",
+                'fecha' => $buy->created_at->format('d/m/Y'),
+    
+            ];
+
+            Mail::to('compras@egc-cuba.com')->send(new BuyMail($array));
+
             return back()->with(['icon' => 'mdi-action-done blue-text'])->with(['type' => 'blue-text'])->with(['message' => 'Compra cancelada con exito.']);
         endif;
     }

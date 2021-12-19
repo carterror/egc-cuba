@@ -44,6 +44,7 @@ Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
 
     Route::get('/buys', [BuysController::class, 'index'])->name('buys');
     Route::get('/buys/find/{id}', [BuysController::class, 'find'])->name('buys.find');
+    Route::get('/buys/sid', [BuysController::class, 'sid'])->name('buys.sid');
     Route::post('/buys/search', [BuysController::class, 'search'])->name('buys.search');
     Route::get('/buys/{id}/{action}', [BuysController::class, 'delete'])->name('buys.delete');
     Route::get('/buys/extern/{id}/{action}', [BuysController::class, 'extern'])->name('extern.delete');

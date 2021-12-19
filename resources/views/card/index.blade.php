@@ -36,8 +36,27 @@
                     USD
                   </div>
         </div>
-         @if ($card->name != "Steam") 
-         
+        @if ($card->name == "Steam") 
+            <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid #01579b; @if ($card->name != "Steam" ) display: none; @endif">
+              <div class="input-field col s6" style="margin-top: 30px;">
+                <input type="text" value="5" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
+                <label for="icon_prefix" style="font-size: 20px;">Steam</label>
+              </div>
+              <div class="input-field col s6" style="font-size: 30px; font-weight: bold;">
+                Steam
+              </div>
+            </div>
+        @elseif ($card->name == "Blizzard")
+            <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid #01579b; @if ($card->name != "Blizzard" ) display: none; @endif">
+              <div class="input-field col s6" style="margin-top: 30px;">
+                <input type="text" value="20" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
+                <label for="icon_prefix" style="font-size: 20px;">Blizzard</label>
+              </div>
+              <div class="input-field col s6" style="font-size: 30px; font-weight: bold;">
+                Blizzard
+              </div>
+            </div>
+        @else
             <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid #01579b; @if ($card->name != "Fortnite PaVos" ) display: none; @endif">
                   <div class="input-field col s6" style="margin-top: 30px;">
                     <input type="text" value="1000" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
@@ -48,15 +67,7 @@
                   </div>
             </div>
         @endif
-            <div class="col s12 m6 z-depth-2 grey lighten-5" style="border-radius: 5px; padding: 15px; border-left: 5px solid #01579b; @if ($card->name != "Steam" ) display: none; @endif">
-              <div class="input-field col s6" style="margin-top: 30px;">
-                <input type="text" value="1000" class="validate" id="vb" disabled style="font-size: 30px; font-weight: bold; color: black;">
-                <label for="icon_prefix" style="font-size: 20px;">Steam</label>
-              </div>
-              <div class="input-field col s6" style="font-size: 30px; font-weight: bold;">
-                Steam
-              </div>
-        </div>
+
       
     </div>
     <div class="row justify-center">
@@ -105,6 +116,9 @@
         const valor = document.querySelector("#valor");
         const cup = {!! Config::get('tienda.cup', 50) !!};
         const mlc = {!! Config::get('tienda.mlc', 0.86) !!};
+        const tar = '{{$card->name}}'; 
+
+        console.log(tar)
 
         function change() {
             var preciocup = document.getElementById("cup");
@@ -116,17 +130,46 @@
             preciomlc.value = Math.round((valor.value*mlc)*100)/100;
             preciopunt.value = valor.value*100;
 
-            if (valor.value <= 20 ) {
-              vb.value = 1000;
-            } else if(valor.value <= 30) {
-              vb.value = 2800;
-            } else if(valor.value < 80) {
-              vb.value = 5000;
-            } else if(valor.value >= 75 && valor.value < 100) {
-              vb.value = 13500;
+            if (tar == "Blizzard") {
+              if (valor.value <= 40 ) {
+                vb.value = 20;
+              } else if(valor.value <= 60) {
+                vb.value = 50;
+              } else if(valor.value >= 90 && valor.value < 150) {
+                vb.value = 100;
+              } else {
+                vb.value = "...";
+              }
+            } else if (tar == "Steam") {
+              if (valor.value <= 10 ) {
+                vb.value = 5;
+              } else if(valor.value <= 19) {
+                vb.value = 10;
+              } else if(valor.value <= 29) {
+                vb.value = 20;
+              } else if(valor.value <= 49) {
+                vb.value = 30;
+              } else if(valor.value <= 69) {
+                vb.value = 50;
+              } else if(valor.value >= 90 && valor.value < 150) {
+                vb.value = 100;
+              } else {
+                vb.value = "...";
+              }
             } else {
-              vb.value = "...";
+              if (valor.value <= 20 ) {
+                vb.value = 1000;
+              } else if(valor.value <= 30) {
+                vb.value = 2800;
+              } else if(valor.value < 80) {
+                vb.value = 5000;
+              } else if(valor.value >= 75 && valor.value < 100) {
+                vb.value = 13500;
+              } else {
+                vb.value = "...";
+              }
             }
+
 
         } 
       </script>

@@ -60,6 +60,16 @@ class BuysController extends Controller
         return view('admin.buys.index', compact('buys'));
     }
 
+    public function sid(Request $request)
+    {
+        $para= [null,4];
+
+        $buys = Buy::where('id', 'LIKE', '%'.$request->id.'%')->paginate(150);
+        
+        // return $this->index($users);
+        return view('admin.buys.index', compact('buys', 'para'));
+    }
+
     public function extern($id, $action)
     {
 
@@ -126,7 +136,7 @@ class BuysController extends Controller
 
             $array = [
                 'subject' => 'Compra-EGC-Cuba #'.$buy->id,
-                "msg" => 'Su orden fue aceptada y está en procedimiento. En cuanto esté lista será contactado mediante Correo Electrónico. Para un seguimiento de su orden más preciso, usar los enlaces que aparece a continuación. <a href="https://wa.me/message/GKYEWV4I7PUGF1">WhatsApp</a> o <a href="https://t.me/Jorge_GiftCards">Telegram</a> y escribir "/orden", seguido de la tarjeta que solicitó',
+                "msg" => 'Su orden fue aceptada y está en procedimiento. En cuanto esté lista será contactado mediante Correo Electrónico. Para un seguimiento de su orden más preciso, usar los enlaces que aparece a continuación. <a href="https://wa.me/message/GKYEWV4I7PUGF1">WhatsApp</a> o <a href="https://t.me/Jorge_GiftCards">Telegram</a> y escribir "/orden # '.$buy->id.'", seguido de la tarjeta que solicitó',
                 'tarjeta' => $card->name,
                 'valor' => $buy->valor,
                 'currency' => $buy->currency,   
