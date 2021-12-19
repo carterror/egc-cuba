@@ -43,7 +43,7 @@
                 <label for="icon_prefix" style="font-size: 20px;">Steam</label>
               </div>
               <div class="input-field col s6" style="font-size: 30px; font-weight: bold;">
-                Steam
+                Saldo
               </div>
             </div>
         @elseif ($card->name == "Blizzard")
@@ -53,7 +53,7 @@
                 <label for="icon_prefix" style="font-size: 20px;">Blizzard</label>
               </div>
               <div class="input-field col s6" style="font-size: 30px; font-weight: bold;">
-                Blizzard
+                Saldo
               </div>
             </div>
         @else

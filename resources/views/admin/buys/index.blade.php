@@ -122,7 +122,7 @@ Compras
               <div class="row">
                 <div class="input-field col s12">
                   <i class="mdi-action-search prefix"></i>
-                  <input id="icon_prefix" type="text" class="validate" name="id">
+                  <input id="icon_prefix" type="number" class="validate" name="id">
                   <label for="icon_prefix">ID</label>
                 </div>
               </div>
