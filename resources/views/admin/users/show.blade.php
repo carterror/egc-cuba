@@ -31,7 +31,7 @@
                             <th data-field="price">Teléfono</th>
                             <th data-field="puntos">Puntos</th>
                             <th data-field="rango">Refer:Compra</th>
-                            <th data-field="action"></th>
+                            <th data-field="action"><a href="{{route('users.export', $user->id)}}" class="btn tooltipped" style="padding: 0px 15px;" data-position="top" data-delay="50" data-tooltip="Exportar referidos"><i class="mdi-maps-local-print-shop small"></i></a></th>
                           </tr>
                         </thead>
                 

@@ -37,6 +37,7 @@ Route::prefix('/admin')->middleware(['auth', 'isadmin'])->group(function(){
     Route::get('/cards/{id}/delete', [CardsController::class, 'delete'])->name('cards.delete');
 
     Route::get('/users', [UsersController::class, 'index'])->name('users');
+    Route::get('/users/{id}/export', [UsersController::class, 'export'])->name('users.export');
     Route::post('/users/{id}/money', [UsersController::class, 'update'])->name('users.money');
     Route::post('/users', [UsersController::class, 'store'])->name('users.store');
     Route::get('/users/{id}', [UsersController::class, 'show'])->name('users.show');

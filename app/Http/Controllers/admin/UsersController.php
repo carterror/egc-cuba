@@ -5,7 +5,9 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 use Twilio\TwiML\Voice\Refer;
+use Illuminate\Support\Facades\Response;
 
 class UsersController extends Controller
 {
@@ -33,6 +35,26 @@ class UsersController extends Controller
         return $this->index($users);
         // return view('admin.users.index', compact('users'));
     }
+
+    public function export($id)
+    {
+        $referidos = User::where('master', $id)->get();
+        $master = User::find($id);
+        $file = fopen(storage_path("app/refer-".$id.".txt"), 'w');
+        fwrite($file, $master->name." - ".$master->email . PHP_EOL);
+        fwrite($file, "" . PHP_EOL);
+        foreach ($referidos as $user) :
+
+            fwrite($file, "[".$user->created_at."]: ".$user->name." - ".$user->email . PHP_EOL);
+
+        endforeach;
+
+        if (fclose($file)) :
+            return Response::download(storage_path("app/referidos-".$id.".txt"));
+        endif;
+        // return view('admin.users.index', compact('users'));
+    }
+    
 
     public function show($id)
     {
