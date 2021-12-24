@@ -45,7 +45,7 @@ class UsersController extends Controller
         fwrite($file, "" . PHP_EOL);
         foreach ($referidos as $user) :
 
-            fwrite($file, "[".$user->created_at."]: ".$user->name." - ".$user->email . PHP_EOL);
+            fwrite($file, "[".$user->created_at."]: ".$user->name." - ".$user->email." - ".$user->puntos . PHP_EOL);
 
         endforeach;
 
