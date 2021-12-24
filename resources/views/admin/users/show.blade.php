@@ -38,7 +38,7 @@
                         <tbody>
                           @foreach ($referidos as $refer)
 
-                            <tr style="@if($user->rango >= 20) background-color: #B9F2FF; backdrop-filter: blur(5); @elseif($user->rango >= 10) background-color: #FFD700; @elseif($user->rango >= 5) background-color: #E3E4E5; @elseif($user->rango >= 1) background-color: #CD7F32; @endif">
+                            <tr style="@if($refer->rango >= 20) background-color: #B9F2FF; backdrop-filter: blur(5); @elseif($refer->rango >= 10) background-color: #FFD700; @elseif($refer->rango >= 5) background-color: #E3E4E5; @elseif($refer->rango >= 1) background-color: #CD7F32; @endif">
                                 <td>{{$refer->name}}</td>
                                 <td>{{$refer->email}}</td>
                                 <td>{{$refer->phone}}</td>

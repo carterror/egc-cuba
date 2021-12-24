@@ -17,7 +17,7 @@ Ayuda
         <div id="flow" class="section scrollspy">
             <a id="flow-toggle" class="btn waves-effect waves-light"> <i class="mdi-action-search left"></i> Zoom</a>
         <div id="flow-text-demo" class="card-panel grey lighten-5">
-            <h4>Empezemos:</h4>
+            <h4>Empecemos:</h4>
 
             <p class="">Te ofrecemos nuestra plataforma para poder encargar de forma rápida y fácil cualquiera gift card de su preferencia. Y un sistema de puntos por los que eres recompensado por cada encargo completado con éxito y por los nuevos usuarios que traigas a nuestra plataforma.</p>
            
