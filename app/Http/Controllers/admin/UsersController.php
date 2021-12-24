@@ -40,7 +40,7 @@ class UsersController extends Controller
     {
         $referidos = User::where('master', $id)->get();
         $master = User::find($id);
-        $file = fopen(storage_path("app/refer-".$id.".txt"), 'w');
+        $file = fopen(storage_path("app/referidos-".$id.".txt"), 'w');
         fwrite($file, $master->name." - ".$master->email . PHP_EOL);
         fwrite($file, "" . PHP_EOL);
         foreach ($referidos as $user) :
