@@ -9,5 +9,5 @@ https://t.me/EGC_Cuba
 ## Página de Facebook (En el canal hay evidencias de sorteos y funciones de la Web)
 https://www.facebook.com/egc.cuba
 
-## Video Youtube
+## Video creado por youtuber
 https://youtu.be/khJJGftmbKw
