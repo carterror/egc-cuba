@@ -6,7 +6,7 @@ https://carlosbrc98.atlassian.net/jira/software/projects/EGCCUBA/list?atlOrigin=
 ## Canal de Telegram (En el canal hay evidencias de sorteos y funciones de la Web)
 https://t.me/EGC_Cuba 
 
-## Página de Facebook (En el canal hay evidencias de sorteos y funciones de la Web)
+## Página de Facebook (En la página hay evidencias de sorteos y funciones de la Web)
 https://www.facebook.com/egc.cuba
 
 ## Video creado por youtuber
