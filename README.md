@@ -10,4 +10,4 @@ https://t.me/EGC_Cuba
 https://www.facebook.com/egc.cuba
 
 ## Video Youtube
-https://www.youtube.com/embed/khJJGftmbKw?si=VRPQlVyL3IpiuDH_
+https://youtu.be/khJJGftmbKw
