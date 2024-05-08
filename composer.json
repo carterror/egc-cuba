@@ -13,8 +13,6 @@
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravelcollective/html": "^6.2",
-        "ringcentral/ringcentral-php": "^2.2",
-        "twilio/sdk": "^6.28",
         "authy/php": "3.0.5"
     },
     "require-dev": {
